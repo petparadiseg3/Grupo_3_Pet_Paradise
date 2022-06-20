@@ -8,3 +8,19 @@ Nuestros clientes son personas con mascotas, estas personas encontraran todos lo
 
 ¿Cómo ajustaremos nuestra oferta a ese público?
 Para los diferentes públicos tenemos tres tipos de interacciones, comprando productos, adoptando, y haciendo donaciones, ya sea única o con un plan de apadrinamiento. 
+
+Referentes
+●	Por los productos o servicios que ofrecen.
+	LAIKA - shorturl.at/akmrT
+	TIERRAGRO - https://www.tierragro.com/
+  
+●	Por los clientes a los que apuntan.
+	MATRUSKA - https://www.instagram.com/accounts/login/?next=/matruska_catlovers/
+  MI AMIGO FIEL - https://www.instagram.com/accounts/login/?next=/tufielamigovet/
+
+●	Por la estética que presentan.
+	ADOPCIONES GATUNAS - https://www.instagram.com/accounts/login/?next=/adopcionesgatunasmedellin/
+
+●	Por las funcionalidades implementadas.
+	KANU - https://www.kanu.pet/?gclid=Cj0KCQjwkruVBhCHARIsACVIiOxjs-k-n2RinFM_E_1fjWEc0ktljFh7CEvq3uVide4tFwiG2HvcCqkaAg2wEALw_wcB
+  LAIKA - shorturl.at/akmrT
