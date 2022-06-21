@@ -1,0 +1,25 @@
+{
+  "name": "grupo_3_pet_paradise",
+  "version": "1.0.0",
+  "description": "Todo lo que necesitas para tu mascota y para apoyar a los peludos sin hogar",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petparadiseg3/Grupo_3_Pet_Paradise.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/petparadiseg3/Grupo_3_Pet_Paradise/issues"
+  },
+  "homepage": "https://github.com/petparadiseg3/Grupo_3_Pet_Paradise#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16"
+  }
+}
