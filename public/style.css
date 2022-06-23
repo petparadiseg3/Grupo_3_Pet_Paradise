@@ -33,13 +33,7 @@ header h1 {
     width: 35%;
     height: auto;
 }
-.conteiner-cart{
-    box-sizing: border-box;
-}
-.producto-cart{
-    position:relative;
-    align-items: center;
-}
+
 
 header div.container-search {
   display: flex;
@@ -264,4 +258,39 @@ footer div.copyright {
     bottom: 8px;
 }
 
+}
+
+/* cart */
+.resumenDeCompra{
+  text-align: center;
+}
+.conteiner-cart{
+  box-sizing: border-box;
+  margin: 20px;
+  border:#ff4500 3px solid;
+  border-radius: 25px;
+}
+.producto-cart{
+  position:relative;
+  align-items: center;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+.producto-cart .card{
+  text-align: center;
+  flex: auto;
+  background-color: #ecc02a;
+  border-radius: 40px;
+}
+.imgCart{
+  max-width: 100%;
+  margin-top: 10%;
+}
+article h4{
+  color: #000000;
+  font-size: 30px
+}
+article h3{
+  color: #ff4500;
+  font-size: 40px;
 }
