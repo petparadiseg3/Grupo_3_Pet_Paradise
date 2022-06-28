@@ -11,6 +11,7 @@
     <title>Carrito de compras</title>
 </head>
 <body>
+
     <header class="main-header">
         <div class="top-header">
             <img src="images/logoPepModi2.png" alt="logo" class="logo" id="cart" ><!-- Acá va air el logo -->
@@ -38,39 +39,185 @@
         </nav>    
     </header>
 
-<div class="conteiner-cart">
-    
-<div><h3 class="resumenDeCompra">RESUMEN DE COMPRA</h3></div>
+    <div class="title">
+        <h1><i class="fa-solid fa-cart-shopping"></i> Mi Carrito</h1>
+      </div>
+      <div class="maqueta__pc">
+        <div class="maq__con__vaciar__cart">
+          <div class="product__conteiner">
+            <section>
+              <div class="titulosProd">
+                <h2 class="prod" >Producto</h2>
+                <h2 class="cant">Cantidad</h2>
+                <h2 class="tot">Total</h2>
+              </div>
+  
+              <!--?  INICIO PRODUCTO 1 -->
+              <article class="card__art">
+                <div class="prod__cant__maqueta">
+                  <div class="img__conteiner">
+                    <img src="/images/product/prod_purina.png" alt="img-product" />
+                  </div>
+                  <div class="prod__cant__conteiner">
+                    <div class="desc__prod">
+                    <h4>
+                      Pro plan 23kg.
+                      <h3 class="marca__prod">Purina</h3>
+                    </h4>
+                  </div>
+  
+                  <div class="prod__container">
+                    <input class="sumayresta" type="button" value="-" />
+                    <input
+                      type="number"
+                      name="cantidad"
+                      id="cant"
+                      class="cant prod__cant__conteiner"
+                    />
+                    <input class="sumayresta" type="button" value="+" />
+                  </div>
+                  <h3 class="price__prod">$8.997,00</h3>
+                </div>
+  
+                <div class="tacho">
+                  <i class="fa-solid fa-trash-can"></i>
+                </div>
+              </article>
+  
+              <!--!  FIN PRODUCTO 1 -->
+              <!--?  INICIO PRODUCTO 2 -->
+  
+              <article class="card__art">
+                <div class="prod__cant__maqueta">
+                  <div class="img__conteiner">
+                    <img src="/images/product/prod_unik.png" alt="img-product" />
+                  </div>
+                  <div class="prod__cant__conteiner">
+                    <div class="desc__prod">
+                    <h4>
+                      Alimento premium para perro adulto 15kg.
+                      <h3 class="marca__prod">Ünik</h3>
+                    </h4>
+                  </div>
+  
+                  <div class="prod__container">
+                    <input class="sumayresta" type="button" value="-" />
+                    <input
+                      type="number"
+                      name="cantidad"
+                      id="cant"
+                      class="cant prod__cant__conteiner"
+                    />
+                    <input class="sumayresta" type="button" value="+" />
+                  </div>
+                  <h3 class="price__prod">$7.614,00</h3>
+                </div>
+  
+                <div class="tacho">
+                  <i class="fa-solid fa-trash-can"></i>
+                </div>
+              </article>
+  
+              <!--!  FIN PRODUCTO 2 -->
+              <!--?  INICIO PRODUCTO 3 -->
+  
+              <article class="card__art">
+                <div class="prod__cant__maqueta">
+                  <div class="img__conteiner">
+                    <img src="/images/product/prod_oldprince.png" alt="img-product" />
+                  </div>
+                  <div class="prod__cant__conteiner">
+                    <div class="desc__prod">
+                    <h4>
+                      Alimento para perro sabor a cerdo y legumbres naturales
+                      <h3 class="marca__prod">Old Prince</h3>
+                    </h4>
+                  </div>
+  
+                  <div class="prod__container">
+                    <input class="sumayresta" type="button" value="-" />
+                    <input
+                      type="number"
+                      name="cantidad"
+                      id="cant"
+                      class="cant prod__cant__conteiner"
+                    />
+                    <input class="sumayresta" type="button" value="+" />
+                  </div>
+                  <h3 class="price__prod">$44.580,00</h3>
+                </div>
+  
+                <div class="tacho">
+                  <i class="fa-solid fa-trash-can"></i>
+                </div>
+              </article>
+  
+              <!--!  FIN PRODUCTO 3 -->
+              
+            </section>
+          </div>
+          <div class="vaciar__carro">
+            <a href="#">Vaciar carrito</a>
+          </div>
+        </div>
+        <!--? CÓDIGO PROMOCIONAL -->
+        <div class="barra__derecha">
+          <div class="prom__conteiner">
+            <p class="code">
+              <i class="fa-solid fa-tag"></i> Ingresá tu código promocional
+            </p>
+            <div class="valid__code">
+              <input class="insert__code" type="text" placeholder="Código" />
+              <input class="insert__btn" type="button" value="Aplicar" />
+            </div>
+          </div>
+          <!--? inicio RESUMEN DE COMPRA  -->
+          <div class="resume__conteiner">
+            <div class="title__resume">
+              <p>Resumen de la compra</p>
+            </div>
+            <div class="price__products__conteiner">
+              <div class="price__products">
+                <p>Precio de mis productos</p>
+              </div>
+              <div class="price__products__item">
+                <p>$68.035,00</p>
+              </div>
+            </div>
+            <div class="total__disc__conteiner">
+              <div class="total__disc">
+                <p>Descuentos</p>
+              </div>
+              <div class="total__disc__item">
+                <p>$-6.844,00</p>
+              </div>
+            </div>
+            <div class="total__compra__conteiner">
+              <div class="total__compra">
+                <p>Total de mis productos</p>
+              </div>
+              <div class="total__compra__item">
+                <p>$61.191,00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="buttons">
+        <div class="cont__compra">
+          <input
+            class="cont__compra__button"
+            type="button"
+            value="Continuar compra"
+          />
+        </div>
+        <div class="elegirmasproductos">
+          <a href="#">Elegir más productos</a>
+        </div>
+      </div>
+  
 
-<div class="producto-cart">
-    <article class="card">
-        <img class="imgCart" src="images/product/producto.jpg" alt="" >
-        <h4>Purina 23kg</h4>
-        <h4>Precio:</h4><h3>$3500</h3>
-        <form action="/" method="post">
-            <input type="number" name="cantidad" id="cant" value="cant" placeholder="Cantidad">
-        </form>
-    </article>
 
-    <div class="producto-cart">
-        <article class="card">
-            <img class="imgCart" src="images/product/producto.jpg" alt="">
-            <h4>Purina 35kg</h4>
-            <h4>Precio:</h4><h3>$5500</h3>
-            <form action="/" method="post">
-                <input type="number" name="cantidad" id="cant" value="cant" placeholder="Cantidad">
-            </form>
-        </article>
-        
-        <div class="producto-cart">
-            <article class="card">
-                <img class="imgCart" src="images/product/productob.jpg" alt="">
-                <h4>Purina 23kg</h4>
-                <h4>Precio:</h4><h3>$2500</h3>
-                <form action="/" method="post">
-                    <input type="number" name="cantidad" id="cant" value="cant" placeholder="Cantidad">
-                </form>
-            </article>
 
 </div>
 <div><h2>Pet Paradise crece con tu ayuda, finaliza la compra y haz feliz a un animalito!</h2></div>

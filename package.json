@@ -20,6 +20,6 @@
   "homepage": "https://github.com/petparadiseg3/Grupo_3_Pet_Paradise#readme",
   "dependencies": {
     "express": "^4.18.1",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.18"
   }
 }
