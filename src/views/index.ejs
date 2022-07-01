@@ -1,151 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet Paradise</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="images/iconoParadise2.ico">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/03e8e208c1.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <header class="main-header">
-            <div class="top-header">
-                <img src="images/logoPepModi2.png" alt="logo" class="logo"><!--Acá va air el logo-->
-                <h1 id="title">Pet Paradise</h1>
-                <div class="container-search">
-                    <input type="search" class="input_text" placeholder="Buscar productos, marcas">
-                    <a href="" class="lupa">
-                    <i class="posicion-lupa fa-solid fa-magnifying-glass"></i>
-                    </a>
-                </div>
-            </div>
-            <nav class="main-navbar">
-                <ul class="left-navbar">
-                    <li><a href="#">QUIÉNES SOMOS</a></li>
-                    <li><a href="#">NOTICIAS</a></li>
-                    <li><a href="#">DONATIVOS</a></li>
-                    <li><a href="#">ADOPCIÓN</a></li>
-                </ul>
-    
-                <ul class="right-navbar">
-                    <li><a href="#">CREÁ TU CUENTA <i class="fa-solid fa-credit-card"></i></a></i></li>
-                    <li><a href="#">INGRESÁ <i class="fa-solid fa-right-to-bracket"></i></a></li>
-                    <li><a href="/cart">MIS COMPRAS <i class="fa-solid fa-basket-shopping"></i></a></li>
-                </ul>
-            </nav>    
-        </header>
+    <%- include('./partials/head') %>
+    <body>
+        <%- include('./partials/header') %>
 
         <section class="banner">
             <img src="images/banner.jpg" alt="Banner de ofertas">
         </section>
-    <main>    
-        <div class="container-pet">
-            <article class="card">
-                <img src="images/pep/imagen11a-1200x800.jpg" alt="">
-                <h4>Coco</h4>
-                <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, corrupti! Quisquam distinctio dolores explicabo impedit alias consectetur recusandae quae doloremque aliquid cum, nostrum quos accusamus sint nesciunt nisi reprehenderit sit?
-                </p>
-                <a href="#">Leer mas...</a>
-            </article>
-            <article class="card">
-                <img src="images/pep/imagen14a-1200x800.jpg" alt="">
-                <h4>Thor</h4>
-                <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, corrupti! Quisquam distinctio dolores explicabo impedit alias consectetur recusandae quae doloremque aliquid cum, nostrum quos accusamus sint nesciunt nisi reprehenderit sit?
-                </p>
-                <a href="#">Leer mas...</a>
-            </article>
-            <article class="card">
-                <img src="images/pep/imagen16a-1200x800.jpg" alt="">
-                <h4>Rocky</h4>
-                <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, corrupti! Quisquam distinctio dolores explicabo impedit alias consectetur recusandae quae doloremque aliquid cum, nostrum quos accusamus sint nesciunt nisi reprehenderit sit?
-                </p>
-                <a href="#">Leer mas...</a>
-            </article>
-            <div class="card">
-                <img src="images/pep/imagen20a-1200x800.jpg" alt="">
-                <h4>Rocky</h4>
-                <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, corrupti! Quisquam distinctio dolores explicabo impedit alias consectetur recusandae quae doloremque aliquid cum, nostrum quos accusamus sint nesciunt nisi reprehenderit sit?
-                </p>
-                <a href="#">Leer mas...</a>
-            </article>
-        </div>
+      
+        <main>
+            <div class="container-pet">
+                <article class="card">
+                    <img src="images/pep/imagen11a-1200x800.jpg" alt="">
+                    <h4>Coco</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, corrupti! Quisquam distinctio
+                        dolores explicabo impedit alias consectetur recusandae quae doloremque aliquid cum, nostrum quos
+                        accusamus sint nesciunt nisi reprehenderit sit?
+                    </p>
+                    <a href="#">Leer mas...</a>
+                </article>
+                <article class="card">
+                    <img src="images/pep/imagen14a-1200x800.jpg" alt="">
+                    <h4>Thor</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, corrupti! Quisquam distinctio
+                        dolores explicabo impedit alias consectetur recusandae quae doloremque aliquid cum, nostrum quos
+                        accusamus sint nesciunt nisi reprehenderit sit?
+                    </p>
+                    <a href="#">Leer mas...</a>
+                </article>
+                <article class="card">
+                    <img src="images/pep/imagen16a-1200x800.jpg" alt="">
+                    <h4>Rocky</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, corrupti! Quisquam distinctio
+                        dolores explicabo impedit alias consectetur recusandae quae doloremque aliquid cum, nostrum quos
+                        accusamus sint nesciunt nisi reprehenderit sit?
+                    </p>
+                    <a href="#">Leer mas...</a>
+                </article>
+                <div class="card">
+                    <img src="images/pep/imagen20a-1200x800.jpg" alt="">
+                    <h4>Rocky</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, corrupti! Quisquam distinctio
+                        dolores explicabo impedit alias consectetur recusandae quae doloremque aliquid cum, nostrum quos
+                        accusamus sint nesciunt nisi reprehenderit sit?
+                    </p>
+                    <a href="#">Leer mas...</a>
+                    </article>
+                </div>
 
-        <div class="container-pet">
-            <article class="card">
-                <img src="images/product/producto.jpg" alt="">
-                <h4>Purina 23kg</h4>
-                <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, corrupti! Quisquam distinctio dolores explicabo impedit alias consectetur recusandae quae doloremque aliquid cum, nostrum quos accusamus sint nesciunt nisi reprehenderit sit?
-                </p>
-                <a href="#">Leer mas...</a>
-            </article>
-            <article class="card">
-                <img src="images/product/producto.jpg" alt="">
-                <h4>Purina 35kg</h4>
-                <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, corrupti! Quisquam distinctio dolores explicabo impedit alias consectetur recusandae quae doloremque aliquid cum, nostrum quos accusamus sint nesciunt nisi reprehenderit sit?
-                </p>
-                <a href="#">Leer mas...</a>
-            </article>
-            <article class="card">
-                <img src="images/product/productob.jpg" alt="">
-                <h4>Ünik 15kg</h4>
-                <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, corrupti! Quisquam distinctio dolores explicabo impedit alias consectetur recusandae quae doloremque aliquid cum, nostrum quos accusamus sint nesciunt nisi reprehenderit sit?
-                </p>
-                <a href="#">Leer mas...</a>
-            </article>
-            <div class="card">
-                <img src="images/product/productoc.jpg" alt="">
-                <h4>Old Price 17kg</h4>
-                <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, corrupti! Quisquam distinctio dolores explicabo impedit alias consectetur recusandae quae doloremque aliquid cum, nostrum quos accusamus sint nesciunt nisi reprehenderit sit?
-                </p>
-                <a href="#">Leer mas...</a>
-            </article>
-        </div>
-    </main>
+                <div class="container-pet">
+                    <article class="card">
+                        <img src="images/product/producto.jpg" alt="">
+                        <h4>Purina 23kg</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, corrupti! Quisquam
+                            distinctio dolores explicabo impedit alias consectetur recusandae quae doloremque aliquid
+                            cum, nostrum quos accusamus sint nesciunt nisi reprehenderit sit?
+                        </p>
+                        <a href="#">Leer mas...</a>
+                    </article>
+                    <article class="card">
+                        <img src="images/product/producto.jpg" alt="">
+                        <h4>Purina 35kg</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, corrupti! Quisquam
+                            distinctio dolores explicabo impedit alias consectetur recusandae quae doloremque aliquid
+                            cum, nostrum quos accusamus sint nesciunt nisi reprehenderit sit?
+                        </p>
+                        <a href="#">Leer mas...</a>
+                    </article>
+                    <article class="card">
+                        <img src="images/product/productob.jpg" alt="">
+                        <h4>Ünik 15kg</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, corrupti! Quisquam
+                            distinctio dolores explicabo impedit alias consectetur recusandae quae doloremque aliquid
+                            cum, nostrum quos accusamus sint nesciunt nisi reprehenderit sit?
+                        </p>
+                        <a href="#">Leer mas...</a>
+                    </article>
+                    <div class="card">
+                        <img src="images/product/productoc.jpg" alt="">
+                        <h4>Old Price 17kg</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, corrupti! Quisquam
+                            distinctio dolores explicabo impedit alias consectetur recusandae quae doloremque aliquid
+                            cum, nostrum quos accusamus sint nesciunt nisi reprehenderit sit?
+                        </p>
+                        <a href="#">Leer mas...</a>
+                        </article>
+                    </div>
+        </main>
 
-    <footer>
-            <div class="footer-category">
-                <p><strong>Categorias</strong></p>
-                <ul>
-                    <li><a href="#">Perros <i class="fa-solid fa-dog"></i></a></li>
-                    <li><a href="#">Gatos <i class="fa-solid fa-cat"></i></a></li>
-                    <li><a href="#">Alimentos <i class="fa-solid fa-bone"></i></a></li>
-                    <li><a href="#">Juguetes <i class="fa-solid fa-shield-dog"></i></a></li>
-                    <li><a href="#">Adopción <i class="fa-solid fa-paw"></i></a></li>
-                </ul>
-            </div>
-            <div class="footer-fee">
-                <p><strong>Pagá con tarjeta o en efectivo</strong></p>
-                <i class="icons-footer fa-solid fa-credit-card"></i>
-                <i class="fa-brands fa-cc-visa"></i>
-                <i class="fa-brands fa-cc-mastercard"></i>
-                <i class="fa-solid fa-money-bill"></i>
-
-            </div>
-            <div class="footer-contacts">
-                <p><strong>Contáctanos</strong></p>
-                <ul>
-                    <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-facebook-messenger"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
-                    <li><a href="mailto:moiseszuleta02@hotmail.com;juan.solis.trabajo@gmail.com;valentinlanzillotta@hotmail.com;andrea.aguah@gmail.com"><i class="fa-solid fa-envelope"></i></a></li>
-                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                </ul>
-            </div>
-            <div class="copyright">
-                <p>Copyright © 2022 Petparadise S.R.L.</p>
-            </div>
-        </footer>
- 
-</body>
+        <%- include('./partials/footer') %>
+    </body>
 </html>
