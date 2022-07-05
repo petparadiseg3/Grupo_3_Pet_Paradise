@@ -409,7 +409,7 @@ body {
   font-family: "Signika Negative", sans-serif;
 }
 
-.cart img {
+.cart .product__conteiner img {
   max-width: 100px;
 }
 

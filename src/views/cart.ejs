@@ -14,33 +14,7 @@
     <title>Carrito de compras</title>
 </head>
 <body class="cart">
-
-    <header class="main-header">
-        <div class="top-header">
-            <img src="images/logoPepModi2.png" alt="logo" class="logo" id="cart" ><!-- Acá va air el logo -->
-            <h1 id="title">Pet Paradise</h1>
-            <div class="container-search">
-                <input type="search" class="input_text" placeholder="Buscar productos, marcas">
-                <a href="" class="lupa">
-                <i class="posicion-lupa fa-solid fa-magnifying-glass"></i>
-                </a>
-            </div>
-        </div>
-        <nav class="main-navbar" id="cart">
-            <ul class="left-navbar">
-                <li><a href="#">QUIÉNES SOMOS</a></li>
-                <li><a href="#">NOTICIAS</a></li>
-                <li><a href="#">DONATIVOS</a></li>
-                <li><a href="#">ADOPCIÓN</a></li>
-            </ul>
-
-            <ul class="right-navbar">
-                <li><a href="#">CREÁ TU CUENTA <i class="fa-solid fa-credit-card"></i></a></i></li>
-                <li><a href="#">INGRESÁ <i class="fa-solid fa-right-to-bracket"></i></a></li>
-                <li><a href="/cart">MIS COMPRAS <i class="fa-solid fa-basket-shopping"></i></a></li>
-            </ul>
-        </nav>    
-    </header>
+  <%- include('./partials/header') %>
 
     <div class="title">
         <h1><i class="fa-solid fa-cart-shopping"></i> Mi Carrito</h1>
@@ -215,7 +189,7 @@
           />
         </div>
         <div class="elegirmasproductos">
-          <a href="#">Elegir más productos</a>
+          <a class="mas__productos" href="#">Elegir más productos</a>
         </div>
       </div>
   
@@ -223,11 +197,11 @@
 
 
 </div>
-<div><h2>Pet Paradise crece con tu ayuda, finaliza la compra y haz feliz a un animalito!</h2></div>
+<!-- <div><h2>Pet Paradise crece con tu ayuda, finaliza la compra y haz feliz a un animalito!</h2></div>
 <div>
     <input type="submit" value="Finalizar compra">
     <input type="reset" value="Cancelar Compra">
-</div>
+</div> -->
 
 
 
