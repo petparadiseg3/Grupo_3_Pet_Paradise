@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/head') %>
+  <body>
+    <%- include('./partials/header') %>
+
+    <div class="logIn__conteiner">
+      <div class="frase_motivadora">
+        Comprá mas rápido y llevá el control de tus pedidos, ¡en un solo lugar!
+      </div>
+      <div class="grupo_registro">
+        <label class="elementoA" for="name">NOMBRE</label>
+        <input
+          class="elementoB"
+          type="name"
+          name="name"
+          id="nombre"
+          placeholder="Ejemplo: Lionel Messi"
+        />
+      </div>
+      <div class="grupo_registro">
+        <label class="elementoA" for="email">EMAIL</label>
+        <input
+          class="elementoB"
+          type="email"
+          name="mail"
+          id="mail"
+          placeholder="Ejemplo: liomessi@gmail.com"
+        />
+      </div>
+      <div class="grupo_registro">
+        <label class="elementoA" for="tel">TELEFONO</label>
+        <input
+          class="elementoB"
+          type="tel"
+          name="tel"
+          id="telefono"
+          placeholder="Ejemplo: 1134567890"
+        />
+      </div>
+      <div class="grupo_registro">
+        <label class="elementoA" for="pass">CONTRASEÑA</label>
+        <input class="elementoB" type="password" name="name" id="contraseña" />
+      </div>
+      <div class="grupo_registro">
+        <label class="elementoA" for="pass">CONFIRMAR CONTRASEÑA</label>
+        <input class="elementoB" type="password" name="contraseña" id="pass" />
+      </div>
+      <div class="crear_cuenta">
+        <input type="button" value="CREAR CUENTA" />
+        <p>
+          ¿Ya tenés una cuenta?
+          <a class="inicia_sesion" href="#">Iniciá sesión</a>
+        </p>
+      </div>
+    </div>
+
+    <%- include('./partials/footer') %>
+  </body>
+</html>

@@ -5,7 +5,7 @@
 }
 
 body {
-/*   font-family: "Montserrat", sans-serif; */
+  /*   font-family: "Montserrat", sans-serif; */
   letter-spacing: 0.03rem;
 }
 
@@ -14,7 +14,7 @@ header.main-header {
   padding-bottom: 5px;
 }
 
-.main-header .header-contact{
+.main-header .header-contact {
   display: flex;
   justify-content: space-between;
   padding: 5px 0px;
@@ -22,14 +22,13 @@ header.main-header {
   font-size: 11px;
 }
 
-.main-header .header-contact .phone{
+.main-header .header-contact .phone {
   margin-left: 5px;
   text-decoration: none;
   color: #ffffff;
-  
 }
 
-.main-header .header-contact .whatsapp{
+.main-header .header-contact .whatsapp {
   margin-right: 5px;
   text-decoration: none;
   color: #ffffff;
@@ -43,7 +42,7 @@ header.main-header {
   margin: 0 9px;
 }
 
-.hamburguer-button{
+.hamburguer-button {
   color: #ffffff;
   display: block;
   max-width: 100px;
@@ -55,16 +54,16 @@ header.main-header {
   height: 20%;
 }
 
-.top-header__incons i{
+.top-header__incons i {
   color: #ffffff;
   padding-left: 5px;
 }
 
-.top-header .top-header__incons .ocultar{
+.top-header .top-header__incons .ocultar {
   display: none;
   text-decoration: none;
   color: #ffffff;
-  text-align:justify;
+  text-align: justify;
   font-size: 12px;
 }
 
@@ -106,10 +105,9 @@ header div.container-search {
   height: 40px;
   border-top: 1px solid rgba(62, 64, 65, 0.1);
   border-bottom: 1px solid rgba(62, 64, 65, 0.1);
-  
 }
 
-.main-navbar{
+.main-navbar {
   display: none;
 }
 
@@ -140,7 +138,6 @@ section.banner img {
   justify-content: space-around;
   margin: auto;
   cursor: pointer;
-
 }
 
 .container-pet .card {
@@ -226,8 +223,7 @@ footer div.copyright {
 }
 
 @media (min-width: 768px) {
-
-  .main-header .header-contact{
+  .main-header .header-contact {
     display: flex;
     justify-content: space-between;
     padding: 6px 20px;
@@ -239,7 +235,7 @@ footer div.copyright {
     align-items: center;
   }
 
-  .hamburguer-button{
+  .hamburguer-button {
     font-size: 45px;
     padding-left: 10px;
   }
@@ -252,7 +248,7 @@ footer div.copyright {
     width: 50%;
   }
 
-  .top-header__incons i{
+  .top-header__incons i {
     color: #ffffff;
     padding-right: 10px;
     font-size: 30px;
@@ -299,8 +295,8 @@ footer div.copyright {
     bottom: 8px;
   }
 
-  footer i{
-      font-size: 20px;
+  footer i {
+    font-size: 20px;
   }
 }
 
@@ -314,28 +310,26 @@ footer div.copyright {
     max-width: 1200px;
   }
 
-  .hamburguer-button{
-    
+  .hamburguer-button {
     display: none;
-    
   }
 
   .input_text {
     width: 100%;
   }
 
-  .top-header .top-header__incons{
+  .top-header .top-header__incons {
     display: flex;
     justify-content: center;
     align-items: center;
     order: 1;
   }
 
-  .top-header .top-header__incons .ocultar{
-    display:inline;
+  .top-header .top-header__incons .ocultar {
+    display: inline;
     text-decoration: none;
     color: #ffffff;
-    text-align:left;
+    text-align: left;
     font-size: 12px;
     width: 40%;
   }
@@ -349,13 +343,13 @@ footer div.copyright {
     width: 40%;
   }
 
-  .main-header .header-contact{
+  .main-header .header-contact {
     border-bottom: 0;
-    padding:0;
+    padding: 0;
     font-size: 13px;
     display: none;
   }
-  
+
   .main-navbar {
     display: flex;
     justify-content: center;
@@ -377,7 +371,7 @@ footer div.copyright {
     width: 100%;
   }
 
-  main div.container-pet .card .image_prod{
+  main div.container-pet .card .image_prod {
     width: 100%;
     height: 157.72px;
   }
@@ -734,4 +728,81 @@ body {
     font-size: 1.1rem;
     font-weight: 400;
   }
+}
+
+/* ?--------------------------------------------------------- */
+
+/*!  INICIA EL LOGIN  */
+
+.logIn__conteiner {
+  padding: 30px 15px;
+  background-image: url(./images/SL-100420-36140-29.jpg);
+  width: 95vw;
+  margin: auto;
+  background-size: cover;
+}
+
+.frase_motivadora {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 10px 0;
+  border-radius: 5px;
+  background-color: rgba(235, 34, 34, 0.662);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.grupo_registro {
+  /*     border: 3px solid red; */
+  display: flex;
+  flex-direction: column;
+}
+
+.grupo_registro .elementoA {
+  padding: 10px 0 3px 0;
+  font-size: 0.9rem;
+}
+
+.grupo_registro .elementoB {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.crear_cuenta {
+  margin: auto;
+  text-align: center;
+}
+.crear_cuenta input {
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: yellow;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.crear_cuenta p {
+  padding: 10px 0;
+}
+.crear_cuenta .inicia_sesion {
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: black;
+}
+.crear_cuenta .inicia_sesion :hover {
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: white;
+}
+
+@media (min-width: 768px) {
+.logIn__conteiner{
+  width: 500px;
+}
+
+
 }
