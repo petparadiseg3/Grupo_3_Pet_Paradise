@@ -733,13 +733,16 @@ body {
 /* ?--------------------------------------------------------- */
 
 /*!  INICIA EL LOGIN  */
+.login{
+  background-image: url(./images/SL-100420-36140-29.jpg);
+  background-size: cover;
 
+}
 .logIn__conteiner {
   padding: 30px 15px;
-  background-image: url(./images/SL-100420-36140-29.jpg);
   width: 95vw;
   margin: auto;
-  background-size: cover;
+  background-color: hsla(0, 0%, 100%, 0.664);
 }
 
 .frase_motivadora {
@@ -748,7 +751,7 @@ body {
   font-weight: 500;
   padding: 10px 0;
   border-radius: 5px;
-  background-color: rgba(235, 34, 34, 0.662);
+  background-color: #ff4500;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -803,6 +806,5 @@ body {
 .logIn__conteiner{
   width: 500px;
 }
-
 
 }
