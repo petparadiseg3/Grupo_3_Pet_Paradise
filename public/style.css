@@ -12,23 +12,27 @@ body {
 header.main-header {
   background-color: #ff4500;
   padding-bottom: 5px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.main-header .header-contact {
+section.header-contact {
   display: flex;
   justify-content: space-between;
   padding: 5px 0px;
   border-bottom: 0.5px solid #ffffff;
   font-size: 11px;
+  background-color: #ff4500;
 }
 
-.main-header .header-contact .phone {
+section.header-contact .phone {
   margin-left: 5px;
   text-decoration: none;
   color: #ffffff;
 }
 
-.main-header .header-contact .whatsapp {
+section.header-contact .whatsapp {
   margin-right: 5px;
   text-decoration: none;
   color: #ffffff;
@@ -343,7 +347,7 @@ footer div.copyright {
     width: 40%;
   }
 
-  .main-header .header-contact {
+  section.header-contact {
     border-bottom: 0;
     padding: 0;
     font-size: 13px;
