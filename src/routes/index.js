@@ -6,6 +6,8 @@ router.get("/", indexController.index);
 
 router.get("/cart", indexController.cart);
 
-router.get("/login",indexController.login);
+router.get("/register",indexController.register);
+
+router.get("/login", indexController.login)
 
 module.exports=router;

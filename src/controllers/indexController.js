@@ -9,6 +9,10 @@ const controller = {
     res.render(path.join(__dirname, "../views/cart.ejs"));
   },
 
+  register: (req, res) => {
+    res.render(path.join(__dirname, "../views/register.ejs"));
+  },
+
   login: (req, res) => {
     res.render(path.join(__dirname, "../views/login.ejs"));
   },
