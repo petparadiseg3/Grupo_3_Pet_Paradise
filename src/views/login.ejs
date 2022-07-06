@@ -3,9 +3,8 @@
   <%- include('./partials/head') %>
   <body>
     <%- include('./partials/header') %>
-
-    <div class="logIn__conteiner">
-          
+    <div class="login">
+      <div class="logIn__conteiner">
         <div class="grupo_registro">
           <label class="elementoA" for="email">EMAIL</label>
           <input
@@ -16,21 +15,26 @@
             placeholder="Ejemplo: liomessi@gmail.com"
           />
         </div>
-     
-      <div class="grupo_registro">
-        <label class="elementoA" for="pass">CONTRASEÑA</label>
-        <input class="elementoB" type="password" name="name" id="contraseña" />
-      </div>
-     
-      <div class="crear_cuenta">
-        <input type="button" value="CREAR CUENTA" />
-        <p>
-          ¿No tenés cuenta?
-          <a class="inicia_sesion" href="/register">Crear cuenta</a>
-        </p>
+
+        <div class="grupo_registro">
+          <label class="elementoA" for="pass">CONTRASEÑA</label>
+          <input
+            class="elementoB"
+            type="password"
+            name="name"
+            id="contraseña"
+          />
+        </div>
+
+        <div class="crear_cuenta">
+          <input type="button" value="CREAR CUENTA" />
+          <p>
+            ¿No tenés cuenta?
+            <a class="inicia_sesion" href="/register">Crear cuenta</a>
+          </p>
+        </div>
       </div>
     </div>
-
     <%- include('./partials/footer') %>
   </body>
 </html>
