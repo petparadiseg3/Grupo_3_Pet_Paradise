@@ -53,9 +53,13 @@ section.header-contact .whatsapp {
   font-size: 35px;
 }
 
-.logo {
+.top-header .logo {
   width: 60%;
   height: 20%;
+}
+
+.top-header .logo img{
+  width: 100%;
 }
 
 .top-header__incons i {
@@ -69,11 +73,6 @@ section.header-contact .whatsapp {
   color: #ffffff;
   text-align: justify;
   font-size: 12px;
-}
-
-.logo#cart {
-  width: 35%;
-  height: auto;
 }
 
 header div.container-search {
@@ -305,7 +304,7 @@ footer div.copyright {
 }
 
 @media (min-width: 1200px) {
-  .logo {
+  .top-header .logo {
     width: 30%;
     height: 20%;
   }
