@@ -58,7 +58,7 @@ section.header-contact .whatsapp {
   height: 20%;
 }
 
-.top-header .logo img{
+.top-header .logo img {
   width: 100%;
 }
 
@@ -736,16 +736,17 @@ body {
 /* ?--------------------------------------------------------- */
 
 /*!  INICIA EL LOGIN  */
-.login{
+.login {
   background-image: url(./images/SL-100420-36140-29.jpg);
   background-size: cover;
+    background-blend-mode: darken;
 
 }
 .logIn__conteiner {
   padding: 30px 15px;
   width: 95vw;
   margin: auto;
-  background-color: hsla(0, 0%, 100%, 0.664);
+  background-color: hsla(0, 0%, 100%, 0.85);
 }
 
 .frase_motivadora {
@@ -755,7 +756,8 @@ body {
   padding: 10px 0;
   border-radius: 5px;
   background-color: #ff4500;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .grupo_registro {
@@ -806,8 +808,71 @@ body {
 }
 
 @media (min-width: 768px) {
-.logIn__conteiner{
-  width: 500px;
+  .logIn__conteiner {
+    width: 500px;
+  }
 }
 
+.agregarProducto {
+  margin: 0;
+  font-family: sans-serif;
+  background: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url(./images/SL-100420-36140-29.jpg);
+  background-blend-mode: darken;
+  background-size: cover;
+}
+
+.form-register {
+  width: 95%;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: hsla(0, 0%, 100%, 0.85);
+}
+
+.form__title {
+  margin-top: 0;
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+.form__label,
+.form__input {
+  display: block;
+}
+.form__label {
+  width: 30%;
+}
+.form__input {
+  width: 70%;
+}
+
+.form__file {
+  font-size: 1em;
+  margin: 10px 0;
+  width: 70%;
+}
+
+.container--flex {
+  display: flex;
+  justify-content: space-between;
+  margin: 25px 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.form__submit {
+  width: 100px;
+  background: rgb(54, 206, 193);
+  padding: 10px;
+  border: none;
+  color: white;
+  font-size: 1em;
+  margin-top: 10px;
+  cursor: pointer;
+  align-items: center;
 }
