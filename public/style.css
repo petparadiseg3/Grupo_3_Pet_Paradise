@@ -737,6 +737,7 @@ body {
 
 /*!  INICIA EL LOGIN  */
 .login {
+  background: #ddd;
   background-image: url(./images/SL-100420-36140-29.jpg);
   background-size: cover;
     background-blend-mode: darken;
