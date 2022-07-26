@@ -22,6 +22,10 @@ const controller = {
   },
 
 
+  addProducts: (req, res) => {
+    res.render(path.join(__dirname, "../views/addProduct.ejs"));
+  },
+
 };
 
 module.exports = controller;
