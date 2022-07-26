@@ -14,4 +14,8 @@ router.get("/productos", indexController.productos)
 
 router.get("/addproducts", indexController.addProducts)
 
+router.get("/productDetail1", indexController.productDetail1)
+
+// router.get("/productDetail/2", indexController.productDetail2)
+
 module.exports=router;

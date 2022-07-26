@@ -26,6 +26,10 @@ const controller = {
     res.render(path.join(__dirname, "../views/addProduct.ejs"));
   },
 
+  productDetail1: (req, res) => {
+    res.render(path.join(__dirname, "../views/productDetail1.ejs"));
+  },
+
 };
 
 module.exports = controller;
