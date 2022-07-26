@@ -6,7 +6,7 @@ const path = require("path");
 const routerIndex = require("./routes/index");
 
 app.set("view engine", "ejs");
-
+/* require('../public') */
 app.use(express.static(path.join(__dirname, "../public")));
 
 /* app.use(express.static("public")); */
