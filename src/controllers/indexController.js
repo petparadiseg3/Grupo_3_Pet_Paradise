@@ -17,6 +17,11 @@ const controller = {
     res.render(path.join(__dirname, "../views/login.ejs"));
   },
 
+  productos: (req, res) => {
+    res.render(path.join(__dirname, "../views/productos.ejs"));
+  },
+
+
 };
 
 module.exports = controller;
