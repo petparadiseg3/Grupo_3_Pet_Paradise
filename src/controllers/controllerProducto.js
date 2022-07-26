@@ -1,15 +1,22 @@
 const path = require('path');
 const fs = require('fs');
 
-let alimentos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'..', 'database','productos.json')))
+let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'..', 'database','productos.json')))
 
 
  productos = {
     alimentos: function(req,res){
-        //res.sendFile(path.resolve(__dirname, '..', 'views', 'productos', 'productos.html'));
-        res.render(path.resolve(__dirname, '..', 'views', 'productos', 'productos'),{productos});
+        
+        let alimentos=
+        res.render(path.resolve(__dirname, '..', 'views', 'productos', 'productos'),{alimentos});
+
+    },
+    create:(req,res)=>{
+    
+        let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname,'..', 'database','productos.json')));
+        res.render(path.resolve(__dirname, '../views/admin/create'))
+
     }
 }
 
 module.exports= productos;
-
