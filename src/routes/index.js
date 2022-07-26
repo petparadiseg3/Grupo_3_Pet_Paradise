@@ -12,7 +12,6 @@ router.get("/login", indexController.login)
 
 router.get("/productos", indexController.productos)
 
-
 router.get("/productos/crear", indexController.addProducts)
 
 module.exports=router;
