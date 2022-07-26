@@ -12,7 +12,7 @@ router.get("/login", indexController.login)
 
 router.get("/productos", indexController.productos)
 
-router.get("/addproducts", indexController.addProducts)
+router.get("/productos/crear", indexController.addProducts)
 
 router.get("/productDetail1", indexController.productDetail1)
 
