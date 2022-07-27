@@ -17,14 +17,14 @@ const controller = {
     res.render(path.join(__dirname, "../views/login.ejs"));
   },
 
-  productos: (req, res) => {
+/*   productos: (req, res) => {
     res.render(path.join(__dirname, "../views/productos.ejs"));
-  },
+  }, */
 
 
-  addProducts: (req, res) => {
+/*   addProducts: (req, res) => {
     res.render(path.join(__dirname, "../views/addProduct.ejs"));
-  },
+  }, */
 
   productDetail1: (req, res) => {
     res.render(path.join(__dirname, "../views/productDetail1.ejs"));

@@ -140,7 +140,7 @@ section.banner img {
   flex-wrap: wrap;
   justify-content: space-around;
   margin: auto;
-  cursor: pointer;
+ 
 }
 
 .container-pet .card {
@@ -149,6 +149,7 @@ section.banner img {
   margin: 5px;
   text-align: center;
   width: 45%;
+  cursor: pointer;
 }
 
 .container-pet .card img {
