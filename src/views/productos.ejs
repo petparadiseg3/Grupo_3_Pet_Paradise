@@ -26,11 +26,12 @@
 
                 <% for(let i= 0; i < productos.length; i++){ %>
                 <article class="card">
+                   
                     <img src="images/product/<%= productos[i].picture_product %>" alt="">
                     <div>ENVIO GRATIS</div>
-                    <span class="name_product">
+                    <a href="/administrar/<%= productos[i].id%> "><span class="name_product">
                         <%= productos[i].name_product%>
-                    </span>
+                    </span></a>
                     
                     <span class="detail_product">
                         <p class="price"> <%= productos[i].price%></p>
