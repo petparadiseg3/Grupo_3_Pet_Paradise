@@ -30,12 +30,12 @@
             </thead>
 
             <tbody>
-              <% productos.forEach(prod => { %>
+              <% allProductos.forEach(e => { %>
               <tr>
-                <td><%= prod.id%></td>
-                <td><%= prod.name_product%></td>
+                <td><%= e.id%></td>
+                <td><%= e.name_product%></td>
                 <td>
-                  <a href="/administrar/<%= prod.id%> ">
+                  <a href="/products/<%= e.id%> ">
                     <ion-icon name="eye-outline"></ion-icon
                   ></a>
                 </td>

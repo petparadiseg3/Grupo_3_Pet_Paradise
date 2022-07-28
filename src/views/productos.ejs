@@ -24,18 +24,18 @@
 
             <div class="container-pet">
 
-                <% for(let i= 0; i < productos.length; i++){ %>
+                <% for(let i= 0; i < allProductos.length; i++){ %>
                 <article class="card">
                    
-                    <img src="images/product/<%= productos[i].picture_product %>" alt="">
+                    <img src="images/product/<%= allProductos[i].picture_product %>" alt="">
                     <div>ENVIO GRATIS</div>
-                    <a href="/administrar/<%= productos[i].id%> "><span class="name_product">
-                        <%= productos[i].name_product%>
+                    <a href="/administrar/<%= allProductos[i].id%> "><span class="name_product">
+                        <%= allProductos[i].name_product%>
                     </span></a>
                     
                     <span class="detail_product">
-                        <p class="price"> <%= productos[i].price%></p>
-                        <p class="discount">Hasta 3 cuotas sin interés de <%= productos[i].price  %></p>
+                        <p class="price"> <%= allProductos[i].price%></p>
+                        <p class="discount">Hasta 3 cuotas sin interés de <%= allProductos[i].price  %></p>
                     </span>
                 </article>
 
