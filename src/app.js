@@ -18,6 +18,7 @@ app.use(express.static(path.join(__dirname, "../public")));
 const routerIndex = require("./routes/index");
 const routerProduct = require("./routes/admin")
 const routerCart = require('./routes/cart')
+const routerUser = require("./routes/user")
 
 //Debemos indicar cual es el motor de plantillas que estamos usando EJS
 app.set("view engine", "ejs");
@@ -31,6 +32,7 @@ app.use(methodOverride('_method'));
 app.use('/',routerIndex)
 app.use('/products', routerProduct);
 app.use('/cart', routerCart)
+app.use("/", routerUser)
 
 app.listen(3000, () => {
   console.log("Servidor escuchando en puerto 3000");
