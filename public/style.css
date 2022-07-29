@@ -1,7 +1,8 @@
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+  font-family: 'Spartan', sans-serif;
 }
 
 body {
@@ -43,7 +44,7 @@ section.header-contact .whatsapp {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  margin: 0 9px;
+  margin: 0 9px 0 9px;
 }
 
 .hamburguer-button {
@@ -140,7 +141,7 @@ section.banner img {
   flex-wrap: wrap;
   justify-content: space-around;
   margin: auto;
- 
+  padding: 12px 0px;
 }
 
 .container-pet .card {
@@ -160,7 +161,6 @@ section.banner img {
 
 .container-pet .card h4 {
   font-weight: 600;
-
 }
 
 .container-pet .card p {
@@ -184,10 +184,11 @@ section.banner img {
 footer {
   background-color: #ff4500;
   text-align: center;
+  padding: auto;
 }
 
 footer div.footer-category {
-  padding: 10px 0;
+  padding: 10px ;
 }
 
 footer div ul {
@@ -521,7 +522,7 @@ main .container-pet .card span.detail_product p.price{
 @import url("https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300;400&display=swap");
 
 * {
-  margin: 0;
+  margin: 0px;
   padding: 0;
   box-sizing: border-box;
   font-family: "Signika Negative", sans-serif;
@@ -1007,6 +1008,8 @@ body {
 .horizontal-container {
   display: flex;
   flex-direction: row;
+  align-items: center;
+
 }
 
 /* .product-detail-main-container {
@@ -1022,34 +1025,35 @@ body {
 .product-detail-title {
   font-family: 'Roboto', sans-serif;
   font-size: 1.5em;
+  color: #088178;
+  padding-bottom: 10px;
+  font-weight: 700;
 }
 .product-description-container{
   display:flex;
   flex-direction: column;
   gap: 8px;
+  padding: 30px;
+
 }
 .amount-button{
-  background-color:#f9bb10;
-  width: 18px;
+  background-color:  #fff2e5;
+  padding: 10px ;
+  border: 1px solid #cce7d0;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 9px 8px 6px 8px;
+  text-decoration: none;
 }
-.amount-button-left{
-  border-radius: 50% 0 0 50%;
-  
-}
-.amount-button-right{
-  border-radius: 0 50% 50% 0;
- 
-}
-.button-border{
-  border: 1px solid black;
-}
+
 
 .padding-8{
   padding-left: 8px;
   padding-right: 8px;
 }
 
-.add-cart-button{
-  background-color:#f9bb10;
-}
-
+.horizontal-container .amount-button 
