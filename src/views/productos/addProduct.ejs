@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head') %>
+  <body>
+    <%- include('../partials/header') %>
+
+    <div class="agregarProducto">
+      <form
+        action="/products/create"
+        method="POST"
+        class="form-register"
+        enctype="multipart/form-data"
+      >
+        <h1 class="form__title">Agregar nuevo producto</h1>
+
+        <div class="container--flex">
+          <label for="" class="form__label">Nombre del producto:</label
+          ><input
+            type="text"
+            class="form__input"
+            name="name_product"
+            placeholder="p.ejemplo: Pedigre Premium"
+            required
+          />
+        </div>
+        <div class="container--flex">
+          <label for="" class="form__label">Descripción del producto:</label
+          ><input
+            type="text"
+            class="form__input"
+            name="description"
+            placeholder="p.ejemplo: Alimento para perros a base de pollo"
+            required
+          />
+        </div>
+        <div class="container--flex">
+          <label for="" class="form__label">Marca:</label
+          ><input
+            type="text"
+            class="form__input"
+            name="brand"
+            placeholder="p.ejemplo: Pedigree - Royal Caning"
+            required
+          />
+        </div>
+        <div class="container--flex">
+          <label for="" class="form__label">Categoria:</label
+          ><input
+            type="text"
+            class="form__input"
+            name="category"
+            placeholder="Alimento"
+            required
+          />
+        </div>
+        <div class="container--flex">
+          <label for="" class="form__label">Tamaño:</label
+          ><input
+            type="text"
+            class="form__input"
+            name="size"
+            placeholder="p.ejemplo: 1kg - 3kg - 5kg"
+            required
+          />
+        </div>
+        <div class="container--flex">
+          <label for="" class="form__label">Foto del producto:</label
+          ><input type="file" class="form__file" name="picture_product" />
+        </div>
+        <div class="container--flex">
+          <label for="" class="form__label">Precio:</label
+          ><input
+            type="text"
+            class="form__input"
+            name="price"
+            placeholder="1500"
+            required
+          />
+        </div>
+        <div class="container--flex">
+          <input type="submit" class="form__submit" />
+          <a href="/admin"
+          ><input type="button" class="form__submit" value="Volver"'/></a
+        >
+        </div>
+      </form>
+    </div>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

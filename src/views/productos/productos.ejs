@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head.ejs') %>
+  <body>
+    <%- include('../partials/header.ejs') %>
+
+    <div class="banner-product">
+      <!-- <img src="/images/banner-product(1).png" alt="Banner de productos"> -->
+    </div>
+
+    <main>
+      <div class="productos_alimentos">
+        <h2>ALIMENTOS</h2>
+      </div>
+
+      <div class="filtered_products">
+        <span class="filtered_top"> ORDENAR POR </span>
+        <span class="filtered_bottom"> FILTRAR </span>
+      </div>
+
+      <div class="container-pet">
+        <% for(let i= 0; i < allProductos.length; i++){ %>
+        <article class="card">
+          <img
+            src="images/product/<%= allProductos[i].picture_product %>"
+            alt=""
+          />
+          <div>ENVIO GRATIS</div>
+          <a href="/products/<%= allProductos[i].id%> "
+            ><span class="name_product">
+              <%= allProductos[i].name_product%>
+            </span></a
+          >
+
+          <span class="detail_product">
+            <p class="price"><%= allProductos[i].price%></p>
+            <p class="discount">
+              Hasta 3 cuotas sin interés de <%= allProductos[i].price %>
+            </p>
+          </span>
+        </article>
+
+        <% } %>
+      </div>
+    </main>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

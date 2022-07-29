@@ -21,12 +21,12 @@ const allProductos = json.map(e => {
 const productController = {
     allProductos: (req, res) => {
 
-        res.render(path.join(__dirname, "../views/productos.ejs"), { allProductos });
+        res.render(path.join(__dirname, "../views/productos/productos.ejs"), { allProductos });
     },
 
     create: (req, res) => {
 
-        res.render(path.resolve(__dirname, '../views/addProduct.ejs'), { allProductos })
+        res.render(path.resolve(__dirname, '../views/productos/addProduct.ejs'), { allProductos })
 
     },
     administrador: (req, res) => {
@@ -57,7 +57,7 @@ const allProductos = json.map(e => {
         const product = allProductos.find((e) => e.id == parseInt(id));
 
         if (product) {
-            res.render(path.resolve(__dirname, "../views/productoID"), { product })
+            res.render(path.resolve(__dirname, "../views/productos/productoID.ejs"), { product })
         } else {
             res.send(404)
         }
@@ -68,7 +68,7 @@ const allProductos = json.map(e => {
         const product = allProductos.find((e) => e.id == parseInt(id));
 
         if (product) {
-            res.render(path.resolve(__dirname, "../views/editProduct"), { product })
+            res.render(path.resolve(__dirname, "../views/productos/editProduct.ejs"), { product })
         } else {
             res.send(404)
         }
@@ -137,6 +137,8 @@ const allProductos = json.map(e => {
         res.redirect('/admin')
 
     },
+
+    
 
 }
 module.exports = productController;

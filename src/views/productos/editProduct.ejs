@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('./partials/head') %>
+  <%- include('../partials/head') %>
   <body>
-    <%- include('./partials/header') %>
+    <%- include('../partials/header') %>
 
     <div class="agregarProducto">
-      <form action="/products/create" method="POST" class="form-register" enctype="multipart/form-data">
-        <h1 class="form__title">Agregar nuevo producto</h1>
+      <form
+        action="/products/<%= product.id %>/edit?_method=PUT"
+        method="POST"
+        class="form-register"
+        enctype="multipart/form-data"
+      >
+        <h1 class="form__title">
+          Editar producto <%= product.name_product %>:
+        </h1>
 
+        <div class="container--flex">
+          <label for="" class="form__label">Id del producto:</label
+          ><input
+            type="text"
+            disabled="»disabled»"
+            class="form__input"
+            name="id"
+            placeholder="p.ejemplo: Pedigre Premium"
+            value="<%= product.id %>"
+            required
+            block
+          />
+        </div>
         <div class="container--flex">
           <label for="" class="form__label">Nombre del producto:</label
           ><input
@@ -15,6 +35,7 @@
             class="form__input"
             name="name_product"
             placeholder="p.ejemplo: Pedigre Premium"
+            value="<%= product.name_product %>"
             required
           />
         </div>
@@ -25,6 +46,7 @@
             class="form__input"
             name="description"
             placeholder="p.ejemplo: Alimento para perros a base de pollo"
+            value="<%= product.description %>"
             required
           />
         </div>
@@ -35,6 +57,7 @@
             class="form__input"
             name="brand"
             placeholder="p.ejemplo: Pedigree - Royal Caning"
+            value="<%= product.brand %>"
             required
           />
         </div>
@@ -45,6 +68,7 @@
             class="form__input"
             name="category"
             placeholder="Alimento"
+            value="<%= product.category %>"
             required
           />
         </div>
@@ -55,12 +79,23 @@
             class="form__input"
             name="size"
             placeholder="p.ejemplo: 1kg - 3kg - 5kg"
+            value="<%= product.size %>"
             required
           />
         </div>
+        <input
+          type="hidden"
+          name="oldImagen"
+          value="<%= product.picture_product %>"
+        />
         <div class="container--flex">
           <label for="" class="form__label">Foto del producto:</label
           ><input type="file" class="form__file" name="picture_product" />
+          <img
+            style="width: 100px"
+            src="images/product/<%= product.picture_product %>"
+            alt=""
+          />
         </div>
         <div class="container--flex">
           <label for="" class="form__label">Precio:</label
@@ -69,69 +104,19 @@
             class="form__input"
             name="price"
             placeholder="1500"
+            value="<%= product.price %>"
             required
           />
         </div>
         <div class="container--flex">
-          <input type="submit" class="form__submit" />
+          <input type="submit" class="form__submit" value="Actualizar" />
+          <a href="/admin"
+            ><input type="button" class="form__submit" value="Volver"'/></a
+          >
         </div>
       </form>
     </div>
 
-    <footer>
-      <div class="footer-category">
-        <p><strong>Categorias</strong></p>
-        <ul>
-          <li>
-            <a href="#">Perros <i class="fa-solid fa-dog"></i></a>
-          </li>
-          <li>
-            <a href="#">Gatos <i class="fa-solid fa-cat"></i></a>
-          </li>
-          <li>
-            <a href="#">Alimentos <i class="fa-solid fa-bone"></i></a>
-          </li>
-          <li>
-            <a href="#">Juguetes <i class="fa-solid fa-shield-dog"></i></a>
-          </li>
-          <li>
-            <a href="#">Adopción <i class="fa-solid fa-paw"></i></a>
-          </li>
-        </ul>
-      </div>
-      <div class="footer-fee">
-        <p><strong>Pagá con tarjeta o en efectivo</strong></p>
-        <i class="icons-footer fa-solid fa-credit-card"></i>
-        <i class="fa-brands fa-cc-visa"></i>
-        <i class="fa-brands fa-cc-mastercard"></i>
-        <i class="fa-solid fa-money-bill"></i>
-      </div>
-      <div class="footer-contacts">
-        <p><strong>Contáctanos</strong></p>
-        <ul>
-          <li>
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-brands fa-facebook-messenger"></i></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-          </li>
-          <li>
-            <a
-              href="mailto:moiseszuleta02@hotmail.com;juan.solis.trabajo@gmail.com;valentinlanzillotta@hotmail.com;andrea.aguah@gmail.com"
-              ><i class="fa-solid fa-envelope"></i
-            ></a>
-          </li>
-          <li>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          </li>
-        </ul>
-      </div>
-      <div class="copyright">
-        <p>Copyright © 2022 Petparadise S.R.L.</p>
-      </div>
-    </footer>
+    <%- include('../partials/footer') %>
   </body>
 </html>
