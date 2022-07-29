@@ -44,6 +44,35 @@ const productController = {
             res.send(404)
         }
     },
+    editProductId: (req, res) => {
+
+        const id = req.params.id;
+        const product = allProductos.find((e) => e.id == parseInt(id));
+
+        if (product) {
+            res.render(path.resolve(__dirname, "../views/editProduct"), { product })
+        } else {
+            res.send(404)
+        }
+    },
+    updateProduct: (req, res) => {
+
+        req.body.id=req.params.id;
+        req.body.picture_product = req.file ? req.file.filename : req.body.oldImagen;
+
+        let prodUpdate= allProductos.map((prod)=>{
+            if(prod.id==req.body.id){
+                return prod = req.body;
+            }
+            return prod;
+        })
+        
+        let productoActualizar = JSON.stringify(prodUpdate,null,2)
+        fs.writeFileSync(path.resolve(__dirname,'../database/products.json'), productoActualizar)
+
+        res.redirect('/admin')
+
+    },
 
     postProduct: (req, res) => {
 
@@ -52,7 +81,7 @@ const productController = {
         const newBrand = req.body.brand
         const newCategory = req.body.category
         const newSize = req.body.size
-        const newPictureProduct = req.body.picture_product
+        const newPictureProduct = req.file.filename
         const newPrice=req.body.price
 
         const id = allProductos[allProductos.length-1].id;
@@ -74,6 +103,21 @@ const productController = {
         fs.writeFileSync(path.resolve(__dirname, '../database/products.json'), nuevoProductoGuardar)
 
         res.redirect("/products")
+
+    },
+    deleteProduct: (req, res) => {
+
+        const id = req.params.id;
+        const product = allProductos.find((e) => e.id == parseInt(id));
+        
+        const productFin = allProductos.filter(prod => prod.id != product);
+
+        
+        let productoConArchivoBorrado = JSON.stringify(productFin,null,2)
+
+        fs.writeFileSync(path.resolve(__dirname,'../database/products.json'), productoConArchivoBorrado)
+
+        res.redirect('/admin')
 
     },
 

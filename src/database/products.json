@@ -1,122 +1,153 @@
 [
-    {
-        "id": 1,
-        "name_product": "Crab - Meat",
-        "description": "Congen bowing of femur",
-        "brand": "Nutrescan",
-        "category": "alimento para peces",
-        "size": 8,
-        "picture_product": "alimento1.png",
-        "price": "$3941.47"
-    },
-    {
-        "id": 2,
-        "name_product": "Tray - Foam, Square 4 - S",
-        "description": "Preg w incon fetl viabil",
-        "brand": "X-dog",
-        "category": "alimentos para perro",
-        "size": 30,
-        "picture_product": "alimento2.png",
-        "price": "$9497.34"
-    },
-    {
-        "id": 3,
-        "name_product": "Tequila - Sauza Silver",
-        "description": "Paratyphoid fever c",
-        "brand": "Royal Canin",
-        "category": "alimentos para perro",
-        "size": 0,
-        "picture_product": "alimento3.png",
-        "price": "$5415.10"
-    },
-    {
-        "id": 4,
-        "name_product": "Liqueur - Melon",
-        "description": "Hx-endocr/meta/immun dis",
-        "brand": "Pro Plan",
-        "category": "accesorios",
-        "size": 2,
-        "picture_product": "alimento4.png",
-        "price": "$3446.52"
-    },
-    {
-        "id": 5,
-        "name_product": "Wine - Jackson Triggs Okonagan",
-        "description": "Mal mastocytosis mult",
-        "brand": "Royal Canin",
-        "category": "alimento para gato",
-        "size": 30,
-        "picture_product": "alimento5.png",
-        "price": "$2868.63"
-    },
-    {
-        "id": 6,
-        "name_product": "Lentils - Red, Dry",
-        "description": "Oth spec dis viruses",
-        "brand": "Nutrescan",
-        "category": "alimento para gato",
-        "size": 0,
-        "picture_product": "alimento6.png",
-        "price": "$4391.54"
-    },
-    {
-        "id": 7,
-        "name_product": "White Baguette",
-        "description": "Postgastric surgery synd",
-        "brand": "Nutrescan",
-        "category": "alimento para gato",
-        "size": 10,
-        "picture_product": "alimento7.png",
-        "price": "$5555.59"
-    },
-    {
-        "id": 8,
-        "name_product": "Sour Puss - Tangerine",
-        "description": "Post term preg-unsp",
-        "brand": "X-dog",
-        "category": "alimento para gato",
-        "size": 2,
-        "picture_product": "alimento8.png",
-        "price": "$6034.12"
-    },
-    {
-        "id": 9,
-        "name_product": "Soup - Campbells Asian Noodle",
-        "description": "Lipidoses",
-        "brand": "Nutrescan",
-        "category": "alimento para peces",
-        "size": 4,
-        "picture_product": "alimento9.png",
-        "price": "$4444.17"
-    },
-    {
-        "id": 10,
-        "name_product": "Wine - Jafflin Bourgongone",
-        "description": "Fall-parachutist",
-        "brand": "X-dog",
-        "category": "alimento para gato",
-        "size": 9,
-        "picture_product": "alimento10.png",
-        "price": "$5051.18"
-    },
-    {
-        "id": 11,
-        "name_product": "Clams - Bay",
-        "description": "Palindrom rheum-forearm",
-        "brand": "Nutrescan",
-        "category": "accesorios",
-        "size": 8,
-        "picture_product": "alimento11.png",
-        "price": "$6522.04"
-    },
-    {
-        "id": 12,
-        "name_product": "Worcestershire Sauce",
-        "description": "Trigger finger",
-        "brand": "Royal Canin",
-        "category": "alimento para gato",
-        "size": 8,
-        "picture_product": "alimento12.png",
-        "price": "$5008.67"
-    }
+  {
+    "id": "1",
+    "name_product": "Crab - M",
+    "description": "Congen bowing of femur",
+    "brand": "Nutrescan",
+    "category": "alimento para peces",
+    "size": "8",
+    "picture_product": "alimento1.png",
+    "price": "$3941.47"
+  },
+  {
+    "id": 2,
+    "name_product": "Tray - Foam, Square 4 - S",
+    "description": "Preg w incon fetl viabil",
+    "brand": "X-dog",
+    "category": "alimentos para perro",
+    "size": 30,
+    "picture_product": "alimento2.png",
+    "price": "$9497.34"
+  },
+  {
+    "id": 3,
+    "name_product": "Tequila - Sauza Silver",
+    "description": "Paratyphoid fever c",
+    "brand": "Royal Canin",
+    "category": "alimentos para perro",
+    "size": 0,
+    "picture_product": "alimento3.png",
+    "price": "$5415.10"
+  },
+  {
+    "id": 4,
+    "name_product": "Liqueur - Melon",
+    "description": "Hx-endocr/meta/immun dis",
+    "brand": "Pro Plan",
+    "category": "accesorios",
+    "size": 2,
+    "picture_product": "alimento4.png",
+    "price": "$3446.52"
+  },
+  {
+    "id": 5,
+    "name_product": "Wine - Jackson Triggs Okonagan",
+    "description": "Mal mastocytosis mult",
+    "brand": "Royal Canin",
+    "category": "alimento para gato",
+    "size": 30,
+    "picture_product": "alimento5.png",
+    "price": "$2868.63"
+  },
+  {
+    "id": 6,
+    "name_product": "Lentils - Red, Dry",
+    "description": "Oth spec dis viruses",
+    "brand": "Nutrescan",
+    "category": "alimento para gato",
+    "size": 0,
+    "picture_product": "alimento6.png",
+    "price": "$4391.54"
+  },
+  {
+    "id": 7,
+    "name_product": "White Baguette",
+    "description": "Postgastric surgery synd",
+    "brand": "Nutrescan",
+    "category": "alimento para gato",
+    "size": 10,
+    "picture_product": "alimento7.png",
+    "price": "$5555.59"
+  },
+  {
+    "id": 8,
+    "name_product": "Sour Puss - Tangerine",
+    "description": "Post term preg-unsp",
+    "brand": "X-dog",
+    "category": "alimento para gato",
+    "size": 2,
+    "picture_product": "alimento8.png",
+    "price": "$6034.12"
+  },
+  {
+    "id": 9,
+    "name_product": "Soup - Campbells Asian Noodle",
+    "description": "Lipidoses",
+    "brand": "Nutrescan",
+    "category": "alimento para peces",
+    "size": 4,
+    "picture_product": "alimento9.png",
+    "price": "$4444.17"
+  },
+  {
+    "id": 10,
+    "name_product": "Wine - Jafflin Bourgongone",
+    "description": "Fall-parachutist",
+    "brand": "X-dog",
+    "category": "alimento para gato",
+    "size": 9,
+    "picture_product": "alimento10.png",
+    "price": "$5051.18"
+  },
+  {
+    "id": 11,
+    "name_product": "Clams - Bay",
+    "description": "Palindrom rheum-forearm",
+    "brand": "Nutrescan",
+    "category": "accesorios",
+    "size": 8,
+    "picture_product": "alimento11.png",
+    "price": "$6522.04"
+  },
+  {
+    "id": 12,
+    "name_product": "Worcestershire Sauce",
+    "description": "Trigger finger",
+    "brand": "Royal Canin",
+    "category": "alimento para gato",
+    "size": 8,
+    "picture_product": "alimento12.png",
+    "price": "$5008.67"
+  },
+  {
+    "id": 13,
+    "name_product": "Super Man",
+    "description": "El mejos super heroe",
+    "brand": "galan",
+    "category": "Anti kriptonita",
+    "size": "80kg",
+    "picture_product": "producto-1659057261637.jpg",
+    "price": "$10000"
+  },
+  {
+    "id": 14,
+    "name_product": "Alimentooo",
+    "description": "Alimento para perritooo",
+    "brand": "wow",
+    "category": "Alimento",
+    "size": "63kg",
+    "picture_product": "producto-1659057867613.jpg",
+    "price": "4000"
+  },
+  {
+    "name_product": "Luuuuuuuu",
+    "description": "Solis",
+    "brand": "Biologia",
+    "category": "Estudiante",
+    "size": "49kg",
+    "oldImagen": "producto-1659062296382.jpg",
+    "price": "$1000000",
+    "id": "15",
+    "picture_product": "producto-1659066336823.jpg"
+  }
 ]

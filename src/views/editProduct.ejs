@@ -5,9 +5,29 @@
     <%- include('./partials/header') %>
 
     <div class="agregarProducto">
-      <form action="/products/create" method="POST" class="form-register" enctype="multipart/form-data">
-        <h1 class="form__title">Agregar nuevo producto</h1>
+      <form
+        action="/products/<%= product.id %>/edit?_method=PUT"
+        method="POST"
+        class="form-register"
+        enctype="multipart/form-data"
+      >
+        <h1 class="form__title">
+          Editar producto <%= product.name_product %>:
+        </h1>
 
+        <div class="container--flex">
+          <label for="" class="form__label">Id del producto:</label
+          ><input
+            type="text"
+            disabled="»disabled»"
+            class="form__input"
+            name="id"
+            placeholder="p.ejemplo: Pedigre Premium"
+            value="<%= product.id %>"
+            required
+            block
+          />
+        </div>
         <div class="container--flex">
           <label for="" class="form__label">Nombre del producto:</label
           ><input
@@ -15,6 +35,7 @@
             class="form__input"
             name="name_product"
             placeholder="p.ejemplo: Pedigre Premium"
+            value="<%= product.name_product %>"
             required
           />
         </div>
@@ -25,6 +46,7 @@
             class="form__input"
             name="description"
             placeholder="p.ejemplo: Alimento para perros a base de pollo"
+            value="<%= product.description %>"
             required
           />
         </div>
@@ -35,6 +57,7 @@
             class="form__input"
             name="brand"
             placeholder="p.ejemplo: Pedigree - Royal Caning"
+            value="<%= product.brand %>"
             required
           />
         </div>
@@ -45,6 +68,7 @@
             class="form__input"
             name="category"
             placeholder="Alimento"
+            value="<%= product.category %>"
             required
           />
         </div>
@@ -55,12 +79,23 @@
             class="form__input"
             name="size"
             placeholder="p.ejemplo: 1kg - 3kg - 5kg"
+            value="<%= product.size %>"
             required
           />
         </div>
+        <input
+          type="hidden"
+          name="oldImagen"
+          value="<%= product.picture_product %>"
+        />
         <div class="container--flex">
           <label for="" class="form__label">Foto del producto:</label
           ><input type="file" class="form__file" name="picture_product" />
+          <img
+            style="width: 100px"
+            src="images/product/<%= product.picture_product %>"
+            alt=""
+          />
         </div>
         <div class="container--flex">
           <label for="" class="form__label">Precio:</label
@@ -69,11 +104,15 @@
             class="form__input"
             name="price"
             placeholder="1500"
+            value="<%= product.price %>"
             required
           />
         </div>
         <div class="container--flex">
-          <input type="submit" class="form__submit" />
+          <input type="submit" class="form__submit" value="Actualizar" />
+          <a href="/admin"
+            ><input type="button" class="form__submit" value="Volver"'/></a
+          >
         </div>
       </form>
     </div>
