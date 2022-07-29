@@ -27,8 +27,6 @@ app.use(methodOverride('_method'));
 
 //Para indicarle express la carpeta donde se encuentran los archivos estáticos
 
-
-
 app.use(routerIndex);
 app.use(routerProduct);
 
