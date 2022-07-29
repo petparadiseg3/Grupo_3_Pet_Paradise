@@ -45,7 +45,7 @@
                   ></a>
                 </td>
                 <td>
-                  <form action="/products/<%= e.id%>/delete?_method=DELETE" method="post">
+                  <form action="/products/<%= e.id%>/delete?_method=DELETE" method="post" enctype="multipart/form-data">
                     <button type="submit">
                       <ion-icon name="trash-outline"></ion-icon>
                     </button>

@@ -30,6 +30,24 @@ const productController = {
 
     },
     administrador: (req, res) => {
+
+        const jsonPath = path.resolve(__dirname, "../../src/database/products.json")
+
+const json = JSON.parse(fs.readFileSync(jsonPath, "utf-8"))
+
+const allProductos = json.map(e => {
+    return {
+        id: e.id,
+        name_product: e.name_product,
+        description: e.description,
+        brand: e.brand,
+        category: e.category,
+        size: e.size,
+        picture_product: e.picture_product,
+        price: e.price,
+    }
+});
+
         res.render(path.resolve(__dirname, "../views/admin/administrarcopy.ejs"), { allProductos });
     },
 
@@ -108,13 +126,12 @@ const productController = {
     deleteProduct: (req, res) => {
 
         const id = req.params.id;
-        const product = allProductos.find((e) => e.id == parseInt(id));
         
-        const productFin = allProductos.filter(prod => prod.id != product);
-
+        const productFin = allProductos.filter(prod => prod.id != id);
         
         let productoConArchivoBorrado = JSON.stringify(productFin,null,2)
 
+        console.log(productoConArchivoBorrado);
         fs.writeFileSync(path.resolve(__dirname,'../database/products.json'), productoConArchivoBorrado)
 
         res.redirect('/admin')

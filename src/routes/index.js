@@ -11,6 +11,7 @@ router.get("/register", indexController.register);
 
 router.get("/login", indexController.login)
 
+router.get("/admin", productController.administrador)
 
 
 router.get("/productDetail", indexController.productDetail1)

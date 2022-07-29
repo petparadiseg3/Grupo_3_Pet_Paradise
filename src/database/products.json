@@ -1,15 +1,5 @@
 [
   {
-    "id": "1",
-    "name_product": "Crab - M",
-    "description": "Congen bowing of femur",
-    "brand": "Nutrescan",
-    "category": "alimento para peces",
-    "size": "8",
-    "picture_product": "alimento1.png",
-    "price": "$3941.47"
-  },
-  {
     "id": 2,
     "name_product": "Tray - Foam, Square 4 - S",
     "description": "Preg w incon fetl viabil",
@@ -121,33 +111,12 @@
   },
   {
     "id": 13,
-    "name_product": "Super Man",
-    "description": "El mejos super heroe",
-    "brand": "galan",
-    "category": "Anti kriptonita",
-    "size": "80kg",
-    "picture_product": "producto-1659057261637.jpg",
-    "price": "$10000"
-  },
-  {
-    "id": 14,
     "name_product": "Alimentooo",
-    "description": "Alimento para perritooo",
+    "description": "Sol",
     "brand": "wow",
     "category": "Alimento",
-    "size": "63kg",
-    "picture_product": "producto-1659057867613.jpg",
-    "price": "4000"
-  },
-  {
-    "name_product": "Luuuuuuuu",
-    "description": "Solis",
-    "brand": "Biologia",
-    "category": "Estudiante",
-    "size": "49kg",
-    "oldImagen": "producto-1659062296382.jpg",
-    "price": "$1000000",
-    "id": "15",
-    "picture_product": "producto-1659066336823.jpg"
+    "size": "3kg",
+    "picture_product": "producto-1659108008866.jpg",
+    "price": "$10.000"
   }
 ]

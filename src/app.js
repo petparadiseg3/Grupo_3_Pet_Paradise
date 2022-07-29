@@ -27,8 +27,8 @@ app.use(methodOverride('_method'));
 
 //Para indicarle express la carpeta donde se encuentran los archivos estáticos
 
-app.use(routerIndex);
-app.use(routerProduct);
+app.use('/',routerIndex)
+app.use('/products', routerProduct);
 
 app.listen(3000, () => {
   console.log("Servidor escuchando en puerto 3000");
