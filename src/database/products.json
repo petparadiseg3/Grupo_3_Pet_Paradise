@@ -98,5 +98,15 @@
     "size": "3kg",
     "picture_product": "producto-1659108008866.jpg",
     "price": "$10.000"
+  },
+  {
+    "id": 14,
+    "name_product": "pedigree premiumm",
+    "description": "alimento para mascotas",
+    "brand": "Pedigree",
+    "category": "Alimento",
+    "size": "25kg",
+    "picture_product": "producto-1659155724240.png",
+    "price": "5000"
   }
 ]

@@ -109,7 +109,7 @@ const productController = {
     const newBrand = req.body.brand;
     const newCategory = req.body.category;
     const newSize = req.body.size;
-    const newPictureProduct = req.file.filename;
+    const newPictureProduct = req.file.filename;  //!Se pone req.file Porq los archivos no viaje por el body- filename es el archivo nuevo (multer de la router admin)
     const newPrice = req.body.price;
 
     const id = allProductos[allProductos.length - 1].id;
