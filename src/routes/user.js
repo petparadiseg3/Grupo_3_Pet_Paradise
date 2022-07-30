@@ -15,7 +15,7 @@ var storage = multer.diskStorage({
 });
 
 const upload = multer({ storage });
-
+// Formulario de registro
 router.get("/register", userController.showRegister);
 
 router.get("/login", userController.showLogin)

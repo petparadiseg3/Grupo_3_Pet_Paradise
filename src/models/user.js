@@ -63,6 +63,23 @@ let fileUser = {
       return item[atribute] == value;
     });
   },
+
+  imageUserNew (reqFile){
+    let imageUser = ""
+    if (reqFile == undefined){
+        imageUser = "default-product-image.png";
+    } else {
+        imageUser = reqFile.filename;
+    }
+    return imageUser;
+},
+
+  generateId(){
+    let users = this.readJSON();
+    let lastUser = users[users.length - 1] /* Comentario Util: Se agarra el array, se accede y yendo para -1 obtenes el ultimo */
+    return lastUser.id + 1;
+  }
+
 };
 
 module.exports = fileUser;

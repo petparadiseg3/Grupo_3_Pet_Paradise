@@ -1,20 +1,20 @@
 [
-    {
-        "id": 1,
-        "name": "Clayson",
-        "surname": "Brownstein",
-        "email": "cbrownstein0@elpais.com",
-        "tel": "687-332-8351",
-        "password": "Ej2Tkh",
-        "picture_user": "https://robohash.org/voluptasconsequaturtenetur.png?size=50x50&set=set1"
-    },
-    {
-        "id": 2,
-        "name": "Moises",
-        "surname": "Zuleta",
-        "email": "zuleta@elpaais.com",
-        "tel": "261-332-8351",
-        "password": "Ej2Ttttukh",
-        "picture_user": "https://robohash.org/voluptasconsequaturtenetur.png?size=50x50&set=set1"
-    }
+  {
+    "id": 1,
+    "name": "Clayson",
+    "surname": "Brownstein",
+    "email": "cbrownstein0@elpais.com",
+    "tel": "687-332-8351",
+    "password": "Ej2Tkh",
+    "picture_user": "https://robohash.org/voluptasconsequaturtenetur.png?size=50x50&set=set1"
+  },
+  {
+    "id": 2,
+    "name": "Moises",
+    "surname": "Zuleta",
+    "email": "zuleta@elpaais.com",
+    "tel": "261-332-8351",
+    "password": "Ej2Ttttukh",
+    "picture_user": "https://robohash.org/voluptasconsequaturtenetur.png?size=50x50&set=set1"
+  }
 ]

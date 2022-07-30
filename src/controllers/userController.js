@@ -1,7 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 const { file } = require("../models/user");
-const fileProducts = require("../models/user");
+const fileUser = require("../models/user");
 
 let userController = {
   showRegister: (_req, res) => {
@@ -18,22 +18,16 @@ let userController = {
     const newEmail = req.body.email;
     const newTel = req.body.tel;
     const newPassword = req.body.password;
-    const samePassword = req.body.passwordConfirmacion;
-    const newPictureProduct = req.file.filename;
-    const newPrice = req.body.price;
-
-    const id = allProductos[allProductos.length - 1].id;
-    const newId = id + 1;
 
     const obj = {
-      id: newId,
-      name_product: newName,
-      description: newDescription,
-      brand: newBrand,
-      category: newCategory,
-      size: newSize,
-      picture_product: newPictureProduct,
-      price: newPrice,
+      id: fileUser.generateId(),
+      name: newName,
+      surname: newSurname,
+      email: newEmail,
+      tel: newTel,
+      password: newPassword,
+      picture_product: fileUser.,
+     
     };
     const jsonObj = JSON.stringify();
     allProductos.push(obj);

@@ -32,7 +32,7 @@ app.use(methodOverride('_method'));
 app.use('/',routerIndex)
 app.use('/products', routerProduct);
 app.use('/cart', routerCart)
-app.use("/", routerUser)
+app.use("/user", routerUser)
 
 app.listen(3000, () => {
   console.log("Servidor escuchando en puerto 3000");
