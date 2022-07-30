@@ -3,6 +3,7 @@ const path = require("path");
 const usersFilePath = path.join(__dirname, "../data/users.json");
 
 let fileUser = {
+    
   file: "users.json",
 
   readJSON: function () {

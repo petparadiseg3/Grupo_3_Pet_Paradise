@@ -40,16 +40,6 @@
     "price": "$4391.54"
   },
   {
-    "id": 7,
-    "name_product": "White Baguette",
-    "description": "Postgastric surgery synd",
-    "brand": "Nutrescan",
-    "category": "alimento para gato",
-    "size": 10,
-    "picture_product": "alimento7.png",
-    "price": "$5555.59"
-  },
-  {
     "id": 8,
     "name_product": "Sour Puss - Tangerine",
     "description": "Post term preg-unsp",
