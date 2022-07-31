@@ -1,20 +1,65 @@
 [
-  {
-    "id": 1,
-    "name": "Clayson",
-    "surname": "Brownstein",
-    "email": "cbrownstein0@elpais.com",
-    "tel": "687-332-8351",
-    "password": "Ej2Tkh",
-    "picture_user": "https://robohash.org/voluptasconsequaturtenetur.png?size=50x50&set=set1"
-  },
-  {
-    "id": 2,
-    "name": "Moises",
-    "surname": "Zuleta",
-    "email": "zuleta@elpaais.com",
-    "tel": "261-332-8351",
-    "password": "Ej2Ttttukh",
-    "picture_user": "https://robohash.org/voluptasconsequaturtenetur.png?size=50x50&set=set1"
-  }
+    {
+        "id": 1,
+        "name": "Clayson",
+        "surname": "Brownstein",
+        "email": "cbrownstein0@elpais.com",
+        "tel": "687-332-8351",
+        "password": "Ej2Tkh",
+        "picture_user": "https://robohash.org/voluptasconsequaturtenetur.png?size=50x50&set=set1"
+    },
+    {
+        "id": 4,
+        "name": "Pepe",
+        "surname": "Alvarez",
+        "email": "pepe02@hotail.com",
+        "tel": "4949494",
+        "password": "1234567891011",
+        "picture_product": "default.png"
+    },
+    {
+        "id": 5,
+        "name": "Juan",
+        "surname": "Solis",
+        "email": "Juan@hotmail.com",
+        "tel": "123456789",
+        "password": "1111111111111111111111111",
+        "picture_product": "default.png"
+    },
+    {
+        "id": 6,
+        "name": "moi",
+        "surname": "zule",
+        "email": "m@hotmail.com",
+        "tel": "2617890303",
+        "password": "22222222222222222222222222",
+        "picture_product": "default.png"
+    },
+    {
+        "id": 7,
+        "name": "Javi",
+        "surname": "Monter",
+        "email": "monter@hotmail.com",
+        "tel": "75768390032",
+        "password": "987654321",
+        "picture_product": "default.png"
+    },
+    {
+        "id": 8,
+        "name": "",
+        "surname": "amalkdla",
+        "email": "kfls@hotmail.com",
+        "tel": "97948903",
+        "password": "9673904",
+        "picture_product": "default.png"
+    },
+    {
+        "id": 9,
+        "name": "jaljsdjls",
+        "surname": "qsjkadjkad",
+        "email": "ladaljladsj@hotmail.com",
+        "tel": "7869540386594",
+        "password": "675849094587839209890298",
+        "picture_product": "default.png"
+    }
 ]

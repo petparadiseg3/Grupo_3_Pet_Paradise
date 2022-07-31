@@ -19,25 +19,24 @@ let userController = {
     const newTel = req.body.tel;
     const newPassword = req.body.password;
 
-    const obj = {
+    let newUsers = {
       id: fileUser.generateId(),
       name: newName,
       surname: newSurname,
       email: newEmail,
       tel: newTel,
       password: newPassword,
-      picture_product: fileUser.,
-     
+      picture_product: fileUser.imageUserNew(req.File),
     };
-    const jsonObj = JSON.stringify();
-    allProductos.push(obj);
-    let nuevoProductoGuardar = JSON.stringify(allProductos, null, 2);
-    fs.writeFileSync(
-      path.resolve(__dirname, "../database/products.json"),
-      nuevoProductoGuardar
-    );
-
-    res.redirect("/products");
+    
+    fileUser.saveUser(newUsers)
+    res.redirect("/user/register");
   },
+  // edit:(req, res) =>{
+  //   let id = req.params.id;
+  //   res.render(path.resolve(__dirname, "../views/usuarios/register.ejs"))
+  // }
+
+
 };
 module.exports = userController;

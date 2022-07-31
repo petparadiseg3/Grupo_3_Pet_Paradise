@@ -15,10 +15,8 @@ let fileUser = {
     fs.writeFileSync(usersFilePath, usersJson);
   },
 
-  saveUser: function (user) {
+  saveUser: function(user) {
     let users = this.readJSON();
-    let lastUser = users.pop();
-    user.id = lastUser.id + 1;
     users.push(user);
     this.writeJSON(users);
 
@@ -67,7 +65,7 @@ let fileUser = {
   imageUserNew (reqFile){
     let imageUser = ""
     if (reqFile == undefined){
-        imageUser = "default-product-image.png";
+        imageUser = "default.png";
     } else {
         imageUser = reqFile.filename;
     }
