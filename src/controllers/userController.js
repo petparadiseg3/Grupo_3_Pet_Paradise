@@ -26,7 +26,7 @@ let userController = {
       email: newEmail,
       tel: newTel,
       password: newPassword,
-      picture_product: fileUser.imageUserNew(req.File),
+      picture_user: fileUser.imageUserNew(req.file),
     };
     
     fileUser.saveUser(newUsers)

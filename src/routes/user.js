@@ -8,7 +8,7 @@ const path = require("path");
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, path.resolve(__dirname, "../../public/images-back/usuarios"));
-  }, //"../../public/images/users" Este es la ruta que habia creado Juan- (borrar despues)
+  },
   filename: function (req, file, cb) {
     cb(null, "user-" + Date.now() + path.extname(file.originalname));
   },
@@ -17,10 +17,12 @@ var storage = multer.diskStorage({
 const upload = multer({ storage });
 // Formulario de registro
 router.get("/register", userController.showRegister);
-router.post("/create", upload.single("picture_user"),userController.createUser);
+router.post(
+  "/create",
+  upload.single("picture_user"),
+  userController.createUser
+);
 
-
-router.get("/login", userController.showLogin)
+router.get("/login", userController.showLogin);
 
 module.exports = router;
-
