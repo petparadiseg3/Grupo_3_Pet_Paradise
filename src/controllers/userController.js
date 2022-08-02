@@ -9,7 +9,7 @@ let userController = {
     res.render(path.join(__dirname, "../views/usuarios/register.ejs"));
   },
 
-  createUser: (req, res) => {
+  /* createUser: (req, res) => {
     const newName = req.body.name;
     const newSurname = req.body.surname;
     const newEmail = req.body.email;
@@ -29,7 +29,7 @@ let userController = {
     fileUser.saveUser(newUsers);
     res.redirect("/user/register");
   },
-
+ */
   showLogin: (req, res) => {
     res.render(path.join(__dirname, "../views/usuarios/login.ejs"));
   },
