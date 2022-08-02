@@ -9,15 +9,6 @@
     "picture_user": "https://robohash.org/voluptasconsequaturtenetur.png?size=50x50&set=set1"
   },
   {
-    "id": 2,
-    "name": "Juan",
-    "surname": "Aldao",
-    "email": "juan.solis.trabajo@gmail.com",
-    "tel": "123123123",
-    "password": "12312312312",
-    "picture_user": "user-1659324040675.jpg"
-  },
-  {
     "id": 3,
     "name": "Juan",
     "surname": "Solis",
@@ -25,5 +16,50 @@
     "tel": "+541158274144",
     "password": "32412342314",
     "picture_user": "user-1659324148639.jpg"
+  },
+  {
+    "id": 4,
+    "name": "",
+    "surname": "",
+    "email": "",
+    "tel": "",
+    "password": "",
+    "picture_user": "default.png"
+  },
+  {
+    "id": 5,
+    "name": "",
+    "surname": "",
+    "email": "",
+    "tel": "",
+    "password": "",
+    "picture_user": "default.png"
+  },
+  {
+    "id": 6,
+    "name": "",
+    "surname": "",
+    "email": "",
+    "tel": "",
+    "password": "",
+    "picture_user": "default.png"
+  },
+  {
+    "id": 7,
+    "name": "",
+    "surname": "",
+    "email": "",
+    "tel": "",
+    "password": "",
+    "picture_user": "default.png"
+  },
+  {
+    "id": 8,
+    "name": "Juan",
+    "surname": "Solis",
+    "email": "juan.solis.trabajo@gmail.com",
+    "tel": "+541158274144",
+    "password": "1234455",
+    "picture_user": "user-1659457538807.jpg"
   }
 ]

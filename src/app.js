@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, "../public")));
 const routerIndex = require("./routes/index");
 const routerProduct = require("./routes/admin")
 const routerCart = require('./routes/cart')
-const routerUser = require("./routes/user")
+const routerUser = require("./routes/userRoutes")
 
 //Debemos indicar cual es el motor de plantillas que estamos usando EJS
 app.set("view engine", "ejs");

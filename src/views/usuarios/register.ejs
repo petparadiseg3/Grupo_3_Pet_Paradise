@@ -9,75 +9,103 @@
           Comprá mas rápido y llevá el control de tus pedidos, ¡en un solo
           lugar!
         </div>
-        <form method="POST"  enctype="multipart/form-data" action="/user/create" > 
+        <form method="POST" enctype="multipart/form-data" action="/user/create">
           <div class="grupo_registro">
             <label class="elementoA" for="name">NOMBRE</label>
-            <input
-            class="elementoB"
-            type="text"
-            name="name"
-            id="nombre"
-            placeholder="Ejemplo: Lionel"
-            />
+            <input 
+              class="elementoB is-invalid" 
+              type="text" 
+              name="name"
+              id="nombre" 
+              placeholder="Ejemplo: Lionel" 
+              value=" <%= locals.oldData ? oldData.name : null %> " 
+              />
+              <% if (locals.errors && errors.name) {
+            %>
+            <div class="text-danger"><%= errors.name.msg %></div>
+            <% } %>
           </div>
           <div class="grupo_registro">
             <label class="elementoA" for="surname">APELLIDO</label>
             <input
-            class="elementoB"
-            type="text"
-            name="surname"
-            id="apellido"
-            placeholder="Ejemplo: Messi"
+              type="text"
+              name="surname"
+              id="apellido"
+              placeholder="Ejemplo: Messi"
+              value=" <%= locals.oldData ? oldData.surname : null %> " 
+              class="elementoB <%= locals.errors && errors.surname ? 'is-invalid' : null %>"
             />
+            <% if (locals.errors && errors.surname) { %>
+            <div class="text-danger"><%= errors.surname.msg %></div>
+            <% } %>
           </div>
           <div class="grupo_registro">
             <label class="elementoA" for="email">EMAIL</label>
             <input
-            class="elementoB"
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Ejemplo: liomessi@gmail.com"
+              class="elementoB"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Ejemplo: liomessi@gmail.com"
+              value=" <%= locals.oldData ? oldData.email : null %> " 
+
             />
+            <% if (locals.errors && errors.email) { %>
+            <div class="text-danger"><%= errors.email.msg %></div>
+            <% } %>
           </div>
           <div class="grupo_registro">
             <label class="elementoA" for="tel">TELEFONO</label>
             <input
-            class="elementoB"
-            type="tel"
-            name="tel"
-            id="telefono"
-            placeholder="Ejemplo: 1134567890"
-            />
+              class="elementoB"
+              type="tel"
+              name="tel"
+              id="telefono"
+              placeholder="Ejemplo: 1134567890"
+              value=" <%= locals.oldData ? oldData.tel : null %> " 
+
+            /><% if (locals.errors && errors.tel) { %>
+            <div class="text-danger"><%= errors.tel.msg %></div>
+            <% } %>
           </div>
           <div class="grupo_registro">
             <label class="elementoA" for="pass">CONTRASEÑA</label>
             <input
-            class="elementoB"
-            type="password"
-            name="password"
-            id="contraseña"
+              class="elementoB"
+              type="password"
+              name="password"
+              id="contraseña"
             />
+            <% if (locals.errors && errors.password) { %>
+            <div class="text-danger">
+              <%= errors.password.msg %>
+            </div>
+            <% } %>
           </div>
           <div class="grupo_registro">
             <label class="elementoA" for="pass">Foto de perfil:</label>
             <input
-            class="elementoB"
-            type="file"
-            name="picture_user"
-            id="pass"
-            accept="image/*"
+              class="elementoB"
+              type="file"
+              name="picture_user"
+              id="pass"
+              accept="image/*"
             />
+            <% if (locals.errors && errors.picture_user) { %>
+            <div class="text-danger">
+              <%= errors.picture_user.msg %>
+            </div>
+            <% } %>
           </div>
-        
-        <div class="crear_cuenta">
-          <input type="submit"  value="CREAR CUENTA" />
-      </form>
-          <p>
-            ¿Ya tenés una cuenta?
-            <a class="inicia_sesion" href="/login">Iniciá sesión</a>
-          </p>
-        </div>
+
+          <div class="crear_cuenta">
+            <input type="submit" value="CREAR CUENTA" />
+          </div>
+        </form>
+        <p>
+          ¿Ya tenés una cuenta?
+          <a class="inicia_sesion" href="/login">Iniciá sesión</a>
+        </p>
       </div>
     </div>
     <%- include('../partials/footer') %>

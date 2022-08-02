@@ -1,8 +1,9 @@
-// 1. Guardaral usuario en la DB
-// 2. Buscar al usuario que se quiere loguear por su email
-// 3. Buscar a un usuario por su ID
-// 4. Editar la información de un usuario
-// 5. Eliminar a un usuario de la DB
+//? 1. Guardaral usuario en la DB listo
+//? 2. Buscar al usuario que se quiere loguear por su email
+//? 3. Buscar a un usuario por su ID
+//! 4. Editar la información de un usuario
+//? 5. Eliminar a un usuario de la DB
+
 const fs = require("fs");
 
 const User = {
@@ -37,10 +38,21 @@ const User = {
 
   create: function (userData) {
     let allUser = this.findAll();
-    allUser.push(userData);
+    let newUser={
+      id:this.generateId(),
+      ...userData
+    }
+    allUser.push(newUser);
     fs.writeFileSync(this.filename, JSON.stringify(allUser), null, 2);
     return true;
   },
+
+  delete: function (id){
+    let allUser=this.findAll();
+    let finalUser = allUser.filter(oneUser=>oneUser.id !== id)
+    fs.writeFileSync(this.filename, JSON.stringify(finalUser), null, 2);
+    return true;
+  }
 };
 
-console.log(User.generateId());
+module.exports = Userr;
