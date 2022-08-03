@@ -18,7 +18,7 @@
               name="name"
               id="nombre" 
               placeholder="Ejemplo: Lionel" 
-              value=" <%= locals.oldData ? oldData.name : null %> " 
+              value="<%= locals.oldData ? oldData.name : null %>"
               />
               <% if (locals.errors && errors.name) {
             %>
@@ -32,7 +32,7 @@
               name="surname"
               id="apellido"
               placeholder="Ejemplo: Messi"
-              value=" <%= locals.oldData ? oldData.surname : null %> " 
+              value="<%= locals.oldData ? oldData.surname : null %>" 
               class="elementoB <%= locals.errors && errors.surname ? 'is-invalid' : null %>"
             />
             <% if (locals.errors && errors.surname) { %>
@@ -47,7 +47,7 @@
               name="email"
               id="email"
               placeholder="Ejemplo: liomessi@gmail.com"
-              value=" <%= locals.oldData ? oldData.email : null %> " 
+              value="<%= locals.oldData ? oldData.email : null %>" 
 
             />
             <% if (locals.errors && errors.email) { %>
@@ -62,7 +62,7 @@
               name="tel"
               id="telefono"
               placeholder="Ejemplo: 1134567890"
-              value=" <%= locals.oldData ? oldData.tel : null %> " 
+              value="<%= locals.oldData ? oldData.tel : null %>" 
 
             /><% if (locals.errors && errors.tel) { %>
             <div class="text-danger"><%= errors.tel.msg %></div>

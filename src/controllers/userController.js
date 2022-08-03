@@ -9,27 +9,6 @@ let userController = {
     res.render(path.join(__dirname, "../views/usuarios/register.ejs"));
   },
 
-  /* createUser: (req, res) => {
-    const newName = req.body.name;
-    const newSurname = req.body.surname;
-    const newEmail = req.body.email;
-    const newTel = req.body.tel;
-    const newPassword = req.body.password;
-
-    let newUsers = {
-      id: fileUser.generateId(),
-      name: newName,
-      surname: newSurname,
-      email: newEmail,
-      tel: newTel,
-      password: newPassword,
-      picture_user: fileUser.imageUserNew(req.file),
-    };
-
-    fileUser.saveUser(newUsers);
-    res.redirect("/user/register");
-  },
- */
   showLogin: (req, res) => {
     res.render(path.join(__dirname, "../views/usuarios/login.ejs"));
   },
@@ -39,13 +18,14 @@ let userController = {
 
     if (resultValidation.errors.length > 0) {
       return res.render(
-        res.render(path.join(__dirname, "../views/usuarios/register.ejs"), {
+        path.join(__dirname, "../views/usuarios/register.ejs"),
+        {
           errors: resultValidation.mapped(),
-          oldData: req.body
-        })
+          oldData: req.body,
+        }
       );
     }
-    
+
     //acá
     const newName = req.body.name;
     const newSurname = req.body.surname;
