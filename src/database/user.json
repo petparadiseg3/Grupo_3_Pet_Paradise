@@ -1,1 +1,20 @@
-[{"id":1,"name":"Clayson","surname":"Brownstein","email":"cbrownstein0@elpais.com","tel":"687-332-8351","password":"Ej2Tkh","picture_user":"https://robohash.org/voluptasconsequaturtenetur.png?size=50x50&set=set1"},{"id":3,"name":"Juan","surname":"Solis","email":"juan.solis.trabajo@gmail.com","tel":"+541158274144","password":"32412342314","picture_user":"user-1659324148639.jpg"},{"id":4,"name":"","surname":"","email":"","tel":"","password":"","picture_user":"default.png"},{"id":5,"name":"","surname":"","email":"","tel":"","password":"","picture_user":"default.png"},{"id":6,"name":"","surname":"","email":"","tel":"","password":"","picture_user":"default.png"},{"id":7,"name":"","surname":"","email":"","tel":"","password":"","picture_user":"default.png"},{"id":8,"name":"Juan","surname":"Solis","email":"juan.solis.trabajo@gmail.com","tel":"+541158274144","password":"1234455","picture_user":"user-1659457538807.jpg"},{"id":9,"name":"Juan","surname":"Solis","email":"juansolistrabajo@gmail.com","tel":"+541158274144","password":"123456","picture_user":"user-1659465634411.jpg"},{"id":10,"name":"Juan Pedro","surname":"Fernando a","email":"dsdsf@gmail.com","tel":"32424 324","password":"11111111111111111","picture_user":"user-1659466055415.jpg"},{"id":11,"name":"Juan","surname":"Solis","email":"juansolistrabajo@gmail.com","tel":"+541158274144","password":"1111111111111111111111","picture_user":"user-1659529020403.jpg"}]
+[
+  {
+    "id": 1,
+    "name": "Juan",
+    "surname": "Solis",
+    "email": "juansolistrabajo@gmail.com",
+    "tel": "+541158274144",
+    "password": "1111111111111111",
+    "picture_user": "user-1659567410361.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Juan",
+    "surname": "Solis",
+    "email": "juan.solis.trabajo@gmail.com",
+    "tel": "+541158274144",
+    "password": "1111111111111",
+    "picture_user": "user-1659568455636.jpg"
+  }
+]

@@ -1,83 +1,61 @@
+//? 1. Guardaral usuario en la DB listo
+//? 2. Buscar al usuario que se quiere loguear por su email
+//? 3. Buscar a un usuario por su ID
+//! 4. Editar la información de un usuario
+//? 5. Eliminar a un usuario de la DB
+
 const fs = require("fs");
-const path = require("path");
-const usersFilePath = path.join(__dirname, "../database/user.json");
+const path = require('path');
 
-let fileUser = {
-    
-  file: "users.json",
+const User = {
+  filename: path.resolve(__dirname, "../database/user.json"),
 
-  readJSON: function () {
-    return JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+  getData: function () {
+    return JSON.parse(fs.readFileSync(this.filename, "utf-8"));
   },
 
-  writeJSON: function (users) {
-    let usersJson = JSON.stringify(users);
-    fs.writeFileSync(usersFilePath, usersJson);
-  },
-
-  saveUser: function(user) {
-    let users = this.readJSON();
-    users.push(user);
-    this.writeJSON(users);
-
-    return user;
-  },
-
-  updateUser: function (user) {
-    let users = this.readJSON();
-    let newList = users.map(function (item) {
-      if (item.id == user.id) {
-        user.image = item.image;
-        return (item = user);
-      } else {
-        return item;
-      }
-    });
-    this.writeJSON(newList);
-  },
-
-  deleteUser: function (id) {
-    let users = this.readJSON();
-    users = users.filter(function (item) {
-      return item.id != id;
-    });
-    this.writeJSON(users);
-  },
-
-  getUserById: function (id) {
-    let users = this.readJSON();
-    let user = {};
-    users.forEach(function (item) {
-      if (item.id == id) {
-        user = item;
-      }
-    });
-    return user;
-  },
-
-  filterUser(atribute, value) {
-    let users = this.readJSON();
-    return users.filter(function (item) {
-      return item[atribute] == value;
-    });
-  },
-
-  imageUserNew (reqFile){
-    let imageUser = ""
-    if (reqFile == undefined){
-        imageUser = "default.png";
-    } else {
-        imageUser = reqFile.filename;
+  generateId: function () {
+    let allUser = this.findAll();
+    let lastUser = allUser.pop();
+    if (lastUser) {
+      return lastUser.id + 1;
     }
-    return imageUser;
-},
+    return 1;
+  },
 
-  generateId(){
-    let users = this.readJSON();
-    let lastUser = users[users.length - 1] /* Comentario Util: Se agarra el array, se accede y yendo para -1 obtenes el ultimo */
-    return lastUser.id + 1;
+  findAll: function () {
+    return this.getData()
+  },
+
+  findByPk: function (id) {
+    let allUser = this.findAll();
+    let userFound = allUser.find((oneUser) => oneUser.id === id);
+    return userFound
+  },
+
+  findByField: function (field, text) {
+    let allUser = this.findAll();
+    let userFound = allUser.find((oneUser) => oneUser[field] === text);
+    return userFound
+  },
+
+  create: function (userData) {
+    let allUser = this.findAll();
+    let newUser={
+      id: this.generateId(),
+      ...userData
+    }
+    allUser.push(newUser);
+    fs.writeFileSync(this.filename, JSON.stringify(allUser), null, 2);
+    return true;
+  },
+
+  delete: function (id){
+    let allUser=this.findAll();
+    let finalUser = allUser.filter(oneUser=>oneUser.id !== id)
+    fs.writeFileSync(this.filename, JSON.stringify(finalUser), null, 2);
+    return true;  
   }
-
 };
 
-module.exports = fileUser;
+module.exports = User;
