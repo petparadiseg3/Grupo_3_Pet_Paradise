@@ -33,9 +33,9 @@
           >
 
           <span class="detail_product">
-            <p class="price"><%= allProductos[i].price%></p>
+            <p class="price">$ <%= (allProductos[i].price).toFixed(2) %></p>
             <p class="discount">
-              Hasta 3 cuotas sin interés de <%= allProductos[i].price %>
+              Hasta 3 cuotas sin interés de $ <%= (allProductos[i].price/3).toFixed(2); %>
             </p>
           </span>
         </article>

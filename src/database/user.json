@@ -16,5 +16,14 @@
     "tel": "+541158274144",
     "password": "1111111111111",
     "picture_user": "user-1659568455636.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Juan",
+    "surname": "Solis",
+    "email": "juan.solis.trabajo@gmail.com",
+    "tel": "+541158274144",
+    "password": "111111",
+    "picture_user": "user-1659576979080.jpg"
   }
 ]

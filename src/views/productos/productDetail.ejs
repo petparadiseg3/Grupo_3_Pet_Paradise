@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('./partials/head') %>
+  <%- include('../partials/head') %>
   <body>
-    <%- include('./partials/header') %>
+    <%- include('../partials/header') %>
 
     <section id="prodetails" class="section-p1">
       <div class="single-pro-image">
         <img
-          src="/images/product/alimento1.png"
+          src="/images/product/<%= product.picture_product %>"
           width="100%"
           id="MainImg"
           alt=""
@@ -16,28 +16,18 @@
 
       <div class="single-pro-details">
         <h6>
-          Hasta 4 cuotas sin interés de $2.200,25 con Bancos seleccionados
+          Hasta 4 cuotas sin interés de $ <%= (product.price/4).toFixed(2)  %> con Bancos seleccionados
         </h6>
-        <h4>OLD PRINCE NOVEL CYA ADULTOS MED&LARGE</h4>
-        <h2>$56.00</h2>
+        <h4><%= product.name_product%></h4>
+        <h2>$ <%= (product.price).toFixed(2) %></h2>
         <select>
           <option>Peso:</option>
-          <option>50 KG</option>
-          <option>20 KG</option>
-          <option>10 Kg</option>
-          <option>3 Kg</option>
+          <option><%=product.size%></option>
         </select>
         <input type="number" value="1" />
         <button class="normal">Add To Cart</button>
         <h4>Detalles del Producto</h4>
-        <span
-          >Old Prince Novel es un alimento balanceado y completo para perros
-          adultos de razas medianas y grandes. Completamente natural con: 0% de
-          soja, 0% de tacc y 32% de proteínas compuestas de cordero y arroz
-          integral, minimizando las probabilidades de alergias alimentarias y
-          cutáneas. Sus ingredientes naturales favorece la salud bucal, reduce
-          la intolerancia alimentaria, mejora la piel y el pelo.</span
-        >
+        <span><%= product.description%></span>
       </div>
     </section>
 

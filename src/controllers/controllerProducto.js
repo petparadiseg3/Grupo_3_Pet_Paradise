@@ -61,7 +61,7 @@ const productController = {
     const product = allProductos.find((e) => e.id == parseInt(id));
 
     if (product) {
-      res.render(path.resolve(__dirname, "../views/productos/productoID.ejs"), {
+      res.render(path.resolve(__dirname, "../views/productos/productDetail.ejs"), {
         product,
       });
     } else {

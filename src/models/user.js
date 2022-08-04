@@ -41,7 +41,7 @@ const User = {
 
   create: function (userData) {
     let allUser = this.findAll();
-    let newUser={
+    let newUser = {
       id: this.generateId(),
       ...userData
     }
@@ -50,11 +50,11 @@ const User = {
     return true;
   },
 
-  delete: function (id){
-    let allUser=this.findAll();
-    let finalUser = allUser.filter(oneUser=>oneUser.id !== id)
+  delete: function (id) {
+    let allUser = this.findAll();
+    let finalUser = allUser.filter(oneUser => oneUser.id !== id)
     fs.writeFileSync(this.filename, JSON.stringify(finalUser), null, 2);
-    return true;  
+    return true;
   }
 };
 
