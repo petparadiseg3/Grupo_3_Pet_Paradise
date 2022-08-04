@@ -1,5 +1,9 @@
 {
     "liveServer.settings.port": 5501,
     "terminal.integrated.fontFamily": "Cascadia Code",
-    "terminal.integrated.customGlyphs": false
+    "terminal.integrated.customGlyphs": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    }
 }

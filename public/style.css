@@ -1,13 +1,31 @@
-*{
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
   margin: 0;
   padding: 0;
-  box-sizing:border-box;
-  font-family: 'Spartan', sans-serif;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
 }
 
 body {
   /*   font-family: "Montserrat", sans-serif; */
   letter-spacing: 0.03rem;
+}
+
+.section-p1 {
+  padding: 40px 80px;
+}
+
+button.normal {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 15px 30px;
+  color: #000;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: 0.2s;
 }
 
 header.main-header {
@@ -188,7 +206,7 @@ footer {
 }
 
 footer div.footer-category {
-  padding: 10px ;
+  padding: 10px;
 }
 
 footer div ul {
@@ -229,15 +247,15 @@ footer div.copyright {
 
 /* Vista de Productos */
 
-main div.productos_alimentos{
+main div.productos_alimentos {
   margin: 10px 0px;
 }
 
-div.banner-product{
+div.banner-product {
   background-image: url(/images/banner-product.png);
   width: 100%;
   height: 90px;
-  background-size: 350px 100px ;
+  background-size: 350px 100px;
   /* background-repeat: no-repeat; */
   background-position: center;
   background-color: #ff4500;
@@ -245,39 +263,38 @@ div.banner-product{
 
 main div.productos_alimentos h2 {
   font-weight: 100;
-  letter-spacing:3px;
+  letter-spacing: 3px;
   font-size: 22px;
   color: #4b4b4b;
   text-align: center;
 }
 
-main .container-pet .card{
+main .container-pet .card {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   position: relative;
 }
 
-main .container-pet .card img{
+main .container-pet .card img {
   padding: 0px 15px;
 }
 
-main .container-pet .card div{
-  
-    display: flex;
-    align-items: center;
-    font-size: 8px;
-    width: 40px;
-    height: 40px;
-    background-color:  #39b54a;
-    border-radius: 100%;
-    color: white;
-    position: absolute;
-    bottom: 118px;
-    left: 25px;
+main .container-pet .card div {
+  display: flex;
+  align-items: center;
+  font-size: 8px;
+  width: 40px;
+  height: 40px;
+  background-color: #39b54a;
+  border-radius: 100%;
+  color: white;
+  position: absolute;
+  bottom: 118px;
+  left: 25px;
 }
 
-main .container-pet .card span.name_product{
+main .container-pet .card span.name_product {
   color: #4b4b4b;
   line-height: 15px;
   font-weight: 700;
@@ -285,20 +302,20 @@ main .container-pet .card span.name_product{
   padding: 0px 1px;
 }
 
-main .container-pet .card span.detail_product p.price{
+main .container-pet .card span.detail_product p.price {
   font-size: 15px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 900;
   color: #ff4500;
   padding-top: 18px;
   padding-bottom: 3px;
 }
 
- main .container-pet .card span.detail_product p.discount{
+main .container-pet .card span.detail_product p.discount {
   font-size: 9px;
- }
+}
 
- main div.filtered_products{
+main div.filtered_products {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -307,7 +324,7 @@ main .container-pet .card span.detail_product p.price{
   margin-bottom: 20px;
 }
 
-.filtered_products .filtered_top{
+.filtered_products .filtered_top {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -318,7 +335,7 @@ main .container-pet .card span.detail_product p.price{
   color: #4b4b4b;
 }
 
-.filtered_products .filtered_bottom{
+.filtered_products .filtered_bottom {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -410,8 +427,7 @@ main .container-pet .card span.detail_product p.price{
 
   /* Vista de Productos tablet*/
 
-  div.banner-product{
-  
+  div.banner-product {
     width: 100%;
     height: 80px;
     border-top: #ffffff solid 0.1px;
@@ -419,9 +435,7 @@ main .container-pet .card span.detail_product p.price{
     background-repeat: repeat;
     background-size: 350px 100px;
     background-position: center;
-    
   }
-
 }
 
 @media (min-width: 1200px) {
@@ -512,8 +526,8 @@ main .container-pet .card span.detail_product p.price{
 
   /* Vista de Productos monitor*/
 
-  main div.filtered_products{
-    display: none
+  main div.filtered_products {
+    display: none;
   }
 }
 
@@ -867,8 +881,7 @@ body {
   background: #ddd;
   background-image: url(./images/SL-100420-36140-29.jpg);
   background-size: cover;
-    background-blend-mode: darken;
-
+  background-blend-mode: darken;
 }
 .logIn__conteiner {
   padding: 30px 15px;
@@ -973,6 +986,7 @@ body {
 .form__input {
   display: block;
 }
+
 .form__label {
   width: 30%;
 }
@@ -1006,55 +1020,80 @@ body {
   align-items: center;
 }
 
-.horizontal-container {
+/* Detalle de Productos */
+#prodetails {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-
+  margin-top: 20px;
 }
 
-/* .product-detail-main-container {
+#prodetails .single-pro-image {
+  width: 40%;
+  margin-right: 50px;
+}
+
+.small-img-group {
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
 }
 
-.product-amount-container {
-  display: flex;
-  flex-direction: row;
-} */
-
-.product-detail-title {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.5em;
-  color: #088178;
-  padding-bottom: 10px;
-  font-weight: 700;
-}
-.product-description-container{
-  display:flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 30px;
-
-}
-.amount-button{
-  background-color:  #fff2e5;
-  padding: 10px ;
-  border: 1px solid #cce7d0;
-  background-repeat: no-repeat;
+.small-img-col {
+  flex-basis: 24%;
   cursor: pointer;
-  font-weight: 700;
-  font-size: 20px;
-  cursor: pointer;
-  border-radius: 4px;
-  padding: 9px 8px 6px 8px;
-  text-decoration: none;
 }
 
-
-.padding-8{
-  padding-left: 8px;
-  padding-right: 8px;
+#prodetails .single-pro-details {
+  width: 50%;
+  padding-top: 30px;
 }
 
-/* .horizontal-container .amount-button  */
+#prodetails .single-pro-details h4 {
+  padding: 40px 0 20px 0;
+  color: #088156;
+}
+
+#prodetails .single-pro-details h2 {
+  font-size: 26px;
+}
+
+#prodetails .single-pro-details select {
+  display: block;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+#prodetails .single-pro-details input {
+  width: 50px;
+  height: 47px;
+  padding-left: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+#prodetails .single-pro-details input:focus {
+  outline: none;
+}
+
+#prodetails .single-pro-details button {
+  background: #088156;
+  color: #fff;
+}
+
+#prodetails .single-pro-details span {
+  line-height: 25px;
+}
+
+@media (max-width:477px){
+.section-p1 {
+    padding: 20px;
+}
+#prodetails {
+    flex-direction: column;
+}
+#prodetails .single-pro-image {
+    width: 100%;
+    margin-right: 0px;
+}
+#prodetails .single-pro-details {
+    width: 100%;
+}
+}

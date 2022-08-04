@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('./partials/head') %>
+  <%- include('../partials/head') %>
   <body>
-    <%- include('./partials/header') %>
+    <%- include('../partials/header') %>
 
-    <main class="horizontal-container">
-      <img src="/images/product/alimento1.png" alt="" />
-
-      <div class="product-description-container">
-        <div>ENVIO GRATIS</div>
-        <span class="name_product product-detail-title">
-          OLD PRINCE NOVEL CYA ADULTOS MED&LARGE X 15+3 KG
-        </span>
-
-        <p>Old Prince Novel es un alimento balanceado y completo para perros adultos de razas medianas y grandes. Completamente natural con: 0% de soja, 0% de tacc y 32% de proteínas compuestas de cordero y arroz integral, minimizando las probabilidades de alergias alimentarias y cutáneas. Sus ingredientes naturales favorece la salud bucal, reduce la intolerancia alimentaria, mejora la piel y el pelo.
-        </p>
-
-        <span class="detail_product">
-          <p class="price">$7.620</p>
-          <p class="discount">Hasta 3 cuotas sin interés de $2.540</p>
-        </span>
-
-        <div class="horizontal-container">
-          <div class="horizontal-container">
-            <button class="amount-button" > <a href="#"><i class="fa-solid fa-cart-shopping"></i> Agregar al carrito</button>
-           
-          </div>
-        </div>
+    <section id="prodetails" class="section-p1">
+      <div class="single-pro-image">
+        <img
+          src="/images/product/<%= product.picture_product %>"
+          width="100%"
+          id="MainImg"
+          alt=""
+        />
       </div>
-    </main>
+
+      <div class="single-pro-details">
+        <h6>
+          Hasta 4 cuotas sin interés de $ <%= (product.price/4).toFixed(2)  %> con Bancos seleccionados
+        </h6>
+        <h4><%= product.name_product%></h4>
+        <h2>$ <%= (product.price).toFixed(2) %></h2>
+        <select>
+          <option>Peso:</option>
+          <option><%=product.size%></option>
+        </select>
+        <input type="number" value="1" />
+        <button class="normal">Add To Cart</button>
+        <h4>Detalles del Producto</h4>
+        <span><%= product.description%></span>
+      </div>
+    </section>
 
     <footer>
       <div class="footer-category">

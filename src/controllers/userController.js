@@ -1,54 +1,43 @@
 const path = require("path");
 const fs = require("fs");
-const { file } = require("../models/user");
-const fileUser = require("../models/user");
 const { validationResult } = require("express-validator");
+const User = require('../models/User');
 
 let userController = {
-  register: (_req, res) => {
-    res.render(path.join(__dirname, "../views/usuarios/register.ejs"));
-  },
+	register: (_req, res) => {
+		res.render(path.join(__dirname, "../views/usuarios/register.ejs"));
+	},
 
-  showLogin: (req, res) => {
-    res.render(path.join(__dirname, "../views/usuarios/login.ejs"));
-  },
+	processRegister: (req, res) => {
+		const resultValidation = validationResult(req);
 
-  processRegister: (req, res) => {
-    const resultValidation = validationResult(req);
+		if (resultValidation.errors.length > 0) {
+			return res.render(
+				path.join(__dirname, "../views/usuarios/register.ejs"),
+				{
+					errors: resultValidation.mapped(),
+					oldData: req.body,
+				}
+			);
+		}
+		let userToCreate ={
+			...req.body,
+			picture_user: req.file.filename
+		}
+		User.create(userToCreate);
+		return res.send("Ok, las validaciones se pasaron y no tienes errores")
+	},
 
-    if (resultValidation.errors.length > 0) {
-      return res.render(
-        path.join(__dirname, "../views/usuarios/register.ejs"),
-        {
-          errors: resultValidation.mapped(),
-          oldData: req.body,
-        }
-      );
-    }
+	showLogin: (req, res) => {
+		res.render(path.join(__dirname, "../views/usuarios/login.ejs"));
+	},
 
-    //acá
-    const newName = req.body.name;
-    const newSurname = req.body.surname;
-    const newEmail = req.body.email;
-    const newTel = req.body.tel;
-    const newPassword = req.body.password;
+	profile: (req, res) => {
+		return res.render("userProfile"); //! CREAR VISTA PARA EL PERFIL DEL USUARIO
+	},
 
-    let newUsers = {
-      id: fileUser.generateId(),
-      name: newName,
-      surname: newSurname,
-      email: newEmail,
-      tel: newTel,
-      password: newPassword,
-      picture_user: fileUser.imageUserNew(req.file),
-    };
-
-    fileUser.saveUser(newUsers);
-    return res.redirect("/user/register");
-  },
-
-  //   let id = req.params.id;
-  //   res.render(path.resolve(__dirname, "../views/usuarios/register.ejs"))
-  // }
+	//   let id = req.params.id;
+	//   res.render(path.resolve(__dirname, "../views/usuarios/register.ejs"))
+	// }
 };
 module.exports = userController;
