@@ -1,40 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head') %>
+<%- include('../partials/head') %>
+
   <body>
     <%- include('../partials/header') %>
-    <div class="login">
-      <div class="logIn__conteiner">
-        <div class="grupo_registro">
-          <label class="elementoA" for="email">EMAIL</label>
-          <input
-            class="elementoB"
-            type="email"
-            name="mail"
-            id="mail"
-            placeholder="Ejemplo: liomessi@gmail.com"
-          />
-        </div>
 
-        <div class="grupo_registro">
-          <label class="elementoA" for="pass">CONTRASEÑA</label>
-          <input
-            class="elementoB"
-            type="password"
-            name="name"
-            id="contraseña"
-          />
-        </div>
+      <form action="/user/login" method="POST">
+        <div class="login">
+          <div class="logIn__conteiner">
+            <div class="grupo_registro">
+              <label class="elementoA" for="email">EMAIL</label>
+              <input class="elementoB" type="email" name="email" id="mail" placeholder="Ejemplo: liomessi@gmail.com" />
+              <% if (locals.errors && errors.email) { %>
+                <div class="text-danger">
+                  <%= errors.email.msg %>
+                </div>
+                <% } %>
+            </div>
 
-        <div class="crear_cuenta">
-          <input type="button" value="CREAR CUENTA" />
-          <p>
-            ¿No tenés cuenta?
-            <a class="inicia_sesion" href="/user/register">Crear cuenta</a>
-          </p>
+            <div class="grupo_registro">
+              <label class="elementoA" for="pass">CONTRASEÑA</label>
+              <input class="elementoB" type="password" name="password" id="contraseña" />
+            </div>
+
+            <div class="crear_cuenta">
+              <input type="submit" value="Iniciar sesión" />
+              <p>
+                ¿No tenés cuenta?
+                <a class="inicia_sesion" href="/user/register">Crear cuenta</a>
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <%- include('../partials/footer') %>
+      </form>
+      <%- include('../partials/footer') %>
   </body>
+
 </html>
