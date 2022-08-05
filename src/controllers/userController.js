@@ -12,7 +12,7 @@ let userController = {
     const resultValidation = validationResult(req);
 
     if (resultValidation.errors.length > 0) {
-      return res.render("/usuarios/register", {
+      return res.render("usuarios/register", {
         errors: resultValidation.mapped(),
         oldData: req.body,
       });
@@ -20,7 +20,7 @@ let userController = {
     let userInDB = User.findByField("email", req.body.email);
 
     if (userInDB) {
-      return res.render("/usuarios/register", {
+      return res.render("usuarios/register", {
         errors: {
           email: {
             msg: "Este email ya está registrado",
@@ -35,7 +35,7 @@ let userController = {
       picture_user: req.file.filename,
     };
     let userCreated = User.create(userToCreate);
-    return res.redirect("/user/login");
+    return res.redirect("user/login");
   },
 
   login: (_req, res) => {
@@ -60,7 +60,7 @@ let userController = {
 
         return res.redirect("/user/profile"); //! Deberiamos hacer una vista de usuario
       }
-      return res.render("/usuarios/login.ejs", {
+      return res.render("usuarios/login", {
         errors: {
           email: {
             msg: "Las credenciales son inválidas.",
@@ -68,7 +68,7 @@ let userController = {
         },
       });
     }
-    return res.render("/usuarios/login.ejs", {
+    return res.render("usuarios/login", {
       errors: {
         email: {
           msg: "No se encuentra este email en la base de datos.",
@@ -78,7 +78,7 @@ let userController = {
   },
 
   profile: (req, res) => {
-    return res.render("/usuarios/userProfile", {
+    return res.render("usuarios/userProfile", {
       user: req.session.userLogged,
     });
   },

@@ -25,5 +25,14 @@
         "tel": "1212121211221",
         "password": "$2a$10$jrk53ioSEb0p5Zxlr8ocBuJZAzlN7kI6fUprI6m2OLEG.MWGJ.48u",
         "picture_user": "user-1659700442679.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Hola",
+        "surname": "Hola",
+        "email": "hola@gmail.com",
+        "tel": "12121222",
+        "password": "$2a$10$BpraHAiepWCVq3jPnZJcCOv8ZW/EAuLkmKEOlWi/A97l0KfONMJlK",
+        "picture_user": "user-1659722914712.jpg"
     }
 ]
