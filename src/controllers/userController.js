@@ -1,5 +1,3 @@
-const path = require("path");
-const fs = require("fs");
 const { validationResult } = require("express-validator");
 const User = require("../models/User");
 const bcryptjs = require("bcryptjs");
@@ -7,35 +5,29 @@ const session = require("express-session");
 
 let userController = {
   register: (_req, res) => {
-    res.render(path.join(__dirname, "../views/usuarios/register.ejs"));
+    res.render("/usuarios/register.ejs");
   },
 
   processRegister: (req, res) => {
     const resultValidation = validationResult(req);
 
     if (resultValidation.errors.length > 0) {
-      return res.render(
-        path.join(__dirname, "../views/usuarios/register.ejs"),
-        {
-          errors: resultValidation.mapped(),
-          oldData: req.body,
-        }
-      );
+      return res.render("/usuarios/register.ejs", {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+      });
     }
     let userInDB = User.findByField("email", req.body.email);
 
     if (userInDB) {
-      return res.render(
-        path.join(__dirname, "../views/usuarios/register.ejs"),
-        {
-          errors: {
-            email: {
-              msg: "Este email ya está registrado",
-            },
+      return res.render("/usuarios/register", {
+        errors: {
+          email: {
+            msg: "Este email ya está registrado",
           },
-          oldData: req.body,
-        }
-      );
+        },
+        oldData: req.body,
+      });
     }
     let userToCreate = {
       ...req.body,
@@ -46,8 +38,8 @@ let userController = {
     return res.redirect("/user/login");
   },
 
-  login: (req, res) => {
-    res.render(path.join(__dirname, "../views/usuarios/login.ejs"));
+  login: (_req, res) => {
+    res.render("usuarios/login");
   },
 
   loginProcess: (req, res) => {
@@ -68,7 +60,7 @@ let userController = {
 
         return res.redirect("/user/profile"); //! Deberiamos hacer una vista de usuario
       }
-      return res.render(path.join(__dirname, "../views/usuarios/login.ejs"), {
+      return res.render("/usuarios/login.ejs", {
         errors: {
           email: {
             msg: "Las credenciales son inválidas.",
@@ -76,7 +68,7 @@ let userController = {
         },
       });
     }
-    return res.render(path.join(__dirname, "../views/usuarios/login.ejs"), {
+    return res.render("/usuarios/login.ejs", {
       errors: {
         email: {
           msg: "No se encuentra este email en la base de datos.",
@@ -86,16 +78,12 @@ let userController = {
   },
 
   profile: (req, res) => {
-    console.log(req.cookies.userEmail);
-    //return res.send("Estas en la vista, user profile");
-    return res.render(
-      path.join(__dirname, "../views/usuarios/userProfile.ejs"),{
-        user:req.session.userLogged,
-      } 
-    );
+    return res.render("/usuarios/userProfile", {
+      user: req.session.userLogged,
+    });
   },
   logout: (req, res) => {
-    res.clearCookie('userEmail')
+    res.clearCookie("userEmail");
     req.session.destroy();
     return res.redirect("/");
   },

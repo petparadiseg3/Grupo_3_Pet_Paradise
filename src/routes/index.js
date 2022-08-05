@@ -9,6 +9,4 @@ router.get("/admin", productController.administrador)
 
 router.get("/productDetail", indexController.productDetail1)
 
-// router.get("/productDetail/2", indexController.productDetail2)
-
 module.exports = router;
