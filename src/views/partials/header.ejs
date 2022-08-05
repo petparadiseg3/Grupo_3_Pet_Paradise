@@ -14,8 +14,10 @@
         
         <div class="top-header__incons">
             <a class="register_session" href="/user/login"><i class="fa-solid fa-user"></i> 
-            <a href="/user/login" class="ocultar"><% if (locals.isLogged) { %>
+            <a href="/user/login" class="ocultar">
+                <% if (locals.isLogged) { %>
                 HOLA <%= locals.userLogged.name %>
+                <a href="/user/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
              <% } else { %>
                INICIAR SESION O REGISTRARTE</a></a>
              <% } %>
