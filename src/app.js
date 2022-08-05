@@ -4,14 +4,13 @@ const path = require("path");
 const methodOverride = require("method-override");
 
 //? Aqui requiero los paquetes para trabajar lo referido a session y cookies
-/* const session = require('express-session');
-const cookieParser = require('cookie-parser'); */
+const session = require("express-session");
+//const cookieParser = require('cookie-parser');
 
 //Requerir nuestro middleware - Aplicación
 //Requiero el middleware que controla si el sitio está o no culminado
 //const mantenimiento = require('./middlewares/mantenimiento');
-//Requerir el middleware que controla si el usuario está o no Logueado
-//const acceso = require('./middlewares/acceso');
+//? Requerir el middleware que controla si el usuario está o no Logueado
 
 app.use(express.static(path.join(__dirname, "../public")));
 
@@ -27,7 +26,15 @@ app.use(express.urlencoded({ extended: false }));
 //Middleware de aplicación el cual se encargue de controlar la posibilidad de usar otros métodos diferentes al GET y al POST, en nuestros formularios
 app.use(methodOverride("_method"));
 
-//Para indicarle express la carpeta donde se encuentran los archivos estáticos
+app.use(
+  session({
+    secret: "Shhh, It's a secret",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+
+//? Para indicarle express la carpeta donde se encuentran los archivos estáticos
 
 app.use("/", routerIndex);
 app.use("/products", routerProduct);
