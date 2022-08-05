@@ -5,14 +5,14 @@ const session = require("express-session");
 
 let userController = {
   register: (_req, res) => {
-    res.render("/usuarios/register.ejs");
+    res.render("usuarios/register");
   },
 
   processRegister: (req, res) => {
     const resultValidation = validationResult(req);
 
     if (resultValidation.errors.length > 0) {
-      return res.render("/usuarios/register.ejs", {
+      return res.render("/usuarios/register", {
         errors: resultValidation.mapped(),
         oldData: req.body,
       });
