@@ -5,10 +5,27 @@
   <body>
     <%- include('../partials/header') %>
 
-    
+    <section id="prodetails" class="section-p1">
+      <div class="single-pro-image">
+        <img
+          src="/images-back/usuarios/<%= user.picture_user %>"
+          width="100%"
+          id="MainImg"
+          alt=""
+        />
+      </div>
 
+      <div class="single-pro-details">
+        <h4>Bienvenido <%= user.name+" "+user.surname%>!</h4>
+        <h6>Email: <%= user.email %></h5>
+        <h6>Tel: <%= user.tel %></h5>
 
+        <h4>Gracias por confiar en nosotros</h4>
+
+        <a href=" /"><button class="normal">Volver al home</button> </a>
+      </div>
+    </section>
 
     <%- include('../partials/footer') %>
-</body>
+  </body>
 </html>

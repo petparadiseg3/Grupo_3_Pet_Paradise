@@ -14,7 +14,11 @@
         
         <div class="top-header__incons">
             <a class="register_session" href="/user/login"><i class="fa-solid fa-user"></i> 
-            <a href="/user/login" class="ocultar"> INICIAR SESION O REGISTRARTE</a></a>
+            <a href="/user/login" class="ocultar"><% if (locals.isLogged) { %>
+                HOLA <%= locals.userLogged.name %>
+             <% } else { %>
+               INICIAR SESION O REGISTRARTE</a></a>
+             <% } %>
             <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
         </div>
         
@@ -35,9 +39,14 @@
         </ul>
 
         <ul class="right-navbar">
-            <li><a href="/user/register">CREÁ TU CUENTA <i class="fa-solid fa-credit-card"></i></a></i></li>
-            <li><a href="/user/login">INGRESÁ <i class="fa-solid fa-right-to-bracket"></i></a></li>
-            <li><a href="/cart">MIS COMPRAS <i class="fa-solid fa-basket-shopping"></i></a></li>
+            <% if (locals.isLogged) { %>
+                
+                <li><a href="/user/profile">MI PERFIL<i class="fa-solid fa-right-to-bracket"></i></a></li>
+                <% } else { %>
+                    <li><a href="/user/register">CREÁ TU CUENTA <i class="fa-solid fa-credit-card"></i></a></i></li>
+                    <li><a href="/user/login">INGRESÁ <i class="fa-solid fa-right-to-bracket"></i></a></li>
+                <% } %>
+                <li><a href="/cart">MIS COMPRAS <i class="fa-solid fa-basket-shopping"></i></a></li>
         </ul>
     </nav>    
 </header>

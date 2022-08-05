@@ -7,5 +7,14 @@
         "tel": "+541158274144",
         "password": "$2a$10$UnS3Jysbquz2vM3YYCNt2e0f5NLVleGIW10XX5mXY2DB09ivFe2Za",
         "picture_user": "user-1659650335694.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Juan",
+        "surname": "Solis",
+        "email": "juan.solis@gmail.com",
+        "tel": "+541158274144",
+        "password": "$2a$10$/zHjm7Asvmg8kdVQXJPvLulniXFUI0MgDsuvYJnj7fsflcJZh2vO2",
+        "picture_user": "user-1659662025160.jpg"
     }
 ]

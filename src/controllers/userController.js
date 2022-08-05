@@ -3,6 +3,7 @@ const fs = require("fs");
 const { validationResult } = require("express-validator");
 const User = require("../models/User");
 const bcryptjs = require("bcryptjs");
+const session = require("express-session");
 
 let userController = {
   register: (_req, res) => {
@@ -61,6 +62,10 @@ let userController = {
         delete userToLogin.password;
         req.session.userLogged = userToLogin;
 
+        if (req.body.remember_user) {
+          res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 2 });
+        }
+
         return res.redirect("/user/profile"); //! Deberiamos hacer una vista de usuario
       }
       return res.render(path.join(__dirname, "../views/usuarios/login.ejs"), {
@@ -81,18 +86,18 @@ let userController = {
   },
 
   profile: (req, res) => {
-    
-    return res.send('Estas en la vista, user profile')
-    /* return res.render(
+    console.log(req.cookies.userEmail);
+    //return res.send("Estas en la vista, user profile");
+    return res.render(
       path.join(__dirname, "../views/usuarios/userProfile.ejs"),{
         user:req.session.userLogged,
-        
       } 
-    ); */
+    );
   },
-  logout:(req,res)=>{
+  logout: (req, res) => {
+    res.clearCookie('userEmail')
     req.session.destroy();
-    return res.redirect("/")
-  }
+    return res.redirect("/");
+  },
 };
 module.exports = userController;

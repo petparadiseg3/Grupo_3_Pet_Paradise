@@ -5,8 +5,9 @@ const methodOverride = require("method-override");
 
 //? Aqui requiero los paquetes para trabajar lo referido a session y cookies
 const session = require("express-session");
-//const cookieParser = require('cookie-parser');
+const cookies = require('cookie-parser');
 
+const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 //Requerir nuestro middleware - Aplicación
 //Requiero el middleware que controla si el sitio está o no culminado
 //const mantenimiento = require('./middlewares/mantenimiento');
@@ -32,15 +33,21 @@ app.use(
     resave: false,
     saveUninitialized: false,
   })
-);
+  );
 
-//? Para indicarle express la carpeta donde se encuentran los archivos estáticos
+  app.use(cookies());
+  app.use(userLoggedMiddleware);
+  
 
-app.use("/", routerIndex);
-app.use("/products", routerProduct);
-app.use("/cart", routerCart);
-app.use("/user", routerUser);
 
-app.listen(3000, () => {
-  console.log("Servidor escuchando en puerto 3000");
-});
+  //? Para indicarle express la carpeta donde se encuentran los archivos estáticos
+  
+  app.use("/", routerIndex);
+  app.use("/products", routerProduct);
+  app.use("/cart", routerCart);
+  app.use("/user", routerUser);
+  
+  app.listen(3000, () => {
+    console.log("Servidor escuchando en puerto 3000");
+  });
+  
