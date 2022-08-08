@@ -35,7 +35,7 @@ let userController = {
       picture_user: req.file.filename,
     };
     let userCreated = User.create(userToCreate);
-    return res.redirect("user/login");
+    return res.redirect("/user/login");
   },
 
   login: (_req, res) => {
