@@ -65,7 +65,9 @@ const productController = {
         product,
       });
     } else {
-      res.send(404);
+      res.render(path.resolve(__dirname,"../views/web/error404.ejs"))
+
+      //res.send(404);
     }
   },
   editProductId: (req, res) => {
@@ -78,7 +80,8 @@ const productController = {
         { product }
       );
     } else {
-      res.send(404);
+      //res.send(404);
+      res.render(path.resolve(__dirname,"../views/web/error404.ejs"))
     }
   },
   updateProduct: (req, res) => {
