@@ -1,6 +1,6 @@
 const path = require("path");
 
-const Controller = {
+const controller = {
   index: (req, res) => {
     res.render(path.join(__dirname, "../views/home.ejs"));
   },
