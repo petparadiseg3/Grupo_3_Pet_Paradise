@@ -6,12 +6,12 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true, 
             autoIncrement: true 
         },
+        user_id:{
+            type: dataTypes.INTEGER,
+        },
         total:{
             type: dataTypes.DECIMAL,
         },
-        order_date:{
-           type: dataTypes.DATE
-        }
     },{
         tableName: 'orders',
         timestamps: true
