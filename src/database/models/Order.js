@@ -1,23 +1,21 @@
+//Falta el FK de customer_id.. Eso lo hago con relaciones 
 module.exports = (sequelize, dataTypes) => {  
-    const Product = sequelize.define("Product", {
+    const Order = sequelize.define("Order", {
         id:{
             type: dataTypes.INTEGER, 
             primaryKey: true, 
             autoIncrement: true 
         },
-        name:{
-            type:dataTypes.STRING,
+        total:{
+            type: dataTypes.DECIMAL,
         },
-        description:{
-           type: dataTypes.STRING
-        },
-        image:{
-            type: dataTypes.STRING
+        order_date:{
+           type: dataTypes.DATE
         }
     },{
-        tableName: 'product',
+        tableName: 'orders',
         timestamps: false
     });  //El 1er parametro de define es el nombre de la entidad, el 2do es el objeto de las columnas, el 3er parametro recibe el nombre de la tabla (como sale en la base de dato mysql)y timestamps
 
-    return Product; 
+    return Order; 
 }
