@@ -13,11 +13,9 @@ module.exports = [
         .notEmpty()
         .withMessage("Tienes que escribir tu apellido"),
     body("email")
-        .notEmpty()
-        .withMessage("Tienes que escribir un email")
+        .notEmpty().withMessage("Tienes que escribir un email")
         .bail()
-        .isEmail()
-        .withMessage("Debes escribir un formato de correo válido"),
+        .isEmail().withMessage("Debes escribir un formato de correo válido"),
     body("tel")
         .trim()
         .escape()
