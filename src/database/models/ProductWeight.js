@@ -9,7 +9,7 @@ module.exports = (sequelize, dataTypes) => {
             type:dataTypes.INTEGER,
         },
         weight_id:{
-           type: dataTypes.STRING
+           type: dataTypes.INTEGER
         }
     },{
         tableName: 'product_weight',

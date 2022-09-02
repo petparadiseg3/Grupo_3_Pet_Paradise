@@ -6,6 +6,15 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true, 
             autoIncrement: true 
         },
+        order_id:{
+            type: dataTypes.INTEGER,
+        },
+        product_id:{
+            type:dataTypes.INTEGER,
+        },
+        subtotal:{
+            type: dataTypes.DECIMAL
+        },
         quantity:{
             type:dataTypes.SMALLINT,
         }
