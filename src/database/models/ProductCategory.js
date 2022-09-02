@@ -9,7 +9,7 @@ module.exports = (sequelize, dataTypes) => {
             type:dataTypes.INTEGER,
         },
         category_id:{
-           type: dataTypes.STRING
+           type: dataTypes.INTEGER
         }
     },{
         tableName: 'products_categories',
