@@ -22,22 +22,15 @@
         <% for(let i= 0; i < allProductos.length; i++){ %>
         <article class="card">
           <img
-            src="images/product/<%= allProductos[i].picture_product %>"
+            src="images/product/<%= allProductos[i].image %>"
             alt=""
           />
           <div>ENVIO GRATIS</div>
           <a href="/products/<%= allProductos[i].id%> "
             ><span class="name_product">
-              <%= allProductos[i].name_product%>
+              <%= allProductos[i].name%>
             </span></a
           >
-
-          <span class="detail_product">
-            <p class="price">$ <%= (allProductos[i].price).toFixed(2) %></p>
-            <p class="discount">
-              Hasta 3 cuotas sin interés de $ <%= (allProductos[i].price/3).toFixed(2); %>
-            </p>
-          </span>
         </article>
 
         <% } %>
