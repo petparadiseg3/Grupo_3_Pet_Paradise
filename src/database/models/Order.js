@@ -27,11 +27,11 @@ module.exports = (sequelize, dataTypes) => {
       foreignKey: "user_id",
     });
 
-    Order.hasMany(models.OrderDetail, {
+    /* Order.hasMany(models.OrderDetail, {
       as: "detalle",
       foreignKey: "order_id",
-    });
-  };
+    });*/
+  }; 
 
   return Order;
 };

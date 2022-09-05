@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include('../partials/head') %>
+
   <body>
     <%- include('../partials/header') %>
     <div class="login">
@@ -9,19 +10,22 @@
           Comprá mas rápido y llevá el control de tus pedidos, ¡en un solo
           lugar!
         </div>
-        <form method="POST" enctype="multipart/form-data" action="/user/register">
+        <form
+          method="POST"
+          enctype="multipart/form-data"
+          action="/user/register"
+        >
           <div class="grupo_registro">
             <label class="elementoA" for="name">NOMBRE</label>
-            <input 
-              class="elementoB is-invalid" 
-              type="text" 
+            <input
+              class="elementoB is-invalid"
+              type="text"
               name="name"
-              id="nombre" 
-              placeholder="Ejemplo: Lionel" 
+              id="nombre"
+              placeholder="Ejemplo: Lionel"
               value="<%= locals.oldData ? oldData.name : null %>"
-              />
-              <% if (locals.errors && errors.name) {
-            %>
+            />
+            <% if (locals.errors && errors.name) { %>
             <div class="text-danger"><%= errors.name.msg %></div>
             <% } %>
           </div>
@@ -32,7 +36,7 @@
               name="surname"
               id="apellido"
               placeholder="Ejemplo: Messi"
-              value="<%= locals.oldData ? oldData.surname : null %>" 
+              value="<%= locals.oldData ? oldData.surname : null %>"
               class="elementoB <%= locals.errors && errors.surname ? 'is-invalid' : null %>"
             />
             <% if (locals.errors && errors.surname) { %>
@@ -46,25 +50,10 @@
               name="email"
               id="email"
               placeholder="Ejemplo: liomessi@gmail.com"
-              value="<%= locals.oldData ? oldData.email : null %>" 
-
+              value="<%= locals.oldData ? oldData.email : null %>"
             />
             <% if (locals.errors && errors.email) { %>
             <div class="text-danger"><%= errors.email.msg %></div>
-            <% } %>
-          </div>
-          <div class="grupo_registro">
-            <label class="elementoA" for="tel">TELEFONO</label>
-            <input
-              class="elementoB"
-              type="tel"
-              name="tel"
-              id="telefono"
-              placeholder="Ejemplo: 1134567890"
-              value="<%= locals.oldData ? oldData.tel : null %>" 
-
-            /><% if (locals.errors && errors.tel) { %>
-            <div class="text-danger"><%= errors.tel.msg %></div>
             <% } %>
           </div>
           <div class="grupo_registro">
@@ -76,13 +65,53 @@
               id="contraseña"
             />
             <% if (locals.errors && errors.password) { %>
-            <div class="text-danger">
-              <%= errors.password.msg %>
-            </div>
+            <div class="text-danger"><%= errors.password.msg %></div>
             <% } %>
           </div>
           <div class="grupo_registro">
-            <label class="elementoA" for="pass">Foto de perfil:</label>
+            <label class="elementoA" for="tel">DIRECCIÓN::</label>
+            <input
+              class="elementoB"
+              type="text"
+              name="address"
+              id="address"
+              placeholder="Ejemplo: Avenida Siempre Viva 1045"
+              value="<%= locals.oldData ? oldData.address : null %>"
+            />
+            <% if (locals.errors && errors.address) { %>
+            <div class="text-danger"><%= errors.address.msg %></div>
+            <% } %>
+          </div>
+          <div class="grupo_registro">
+            <label class="elementoA" for="country">PAIS:</label>
+            <input
+              class="elementoB"
+              type="text"
+              name="country"
+              id="country"
+              placeholder="Ejemplo: Argentina"
+              value="<%= locals.oldData ? oldData.country : null %>"
+            />
+            <% if (locals.errors && errors.country) { %>
+            <div class="text-danger"><%= errors.country.msg %></div>
+            <% } %>
+          </div>
+          <div class="grupo_registro">
+            <label class="elementoA" for="tel">TELEFONO:</label>
+            <input
+              class="elementoB"
+              type="tel"
+              name="phone"
+              id="telefono"
+              placeholder="Ejemplo: 1134567890"
+              value="<%= locals.oldData ? oldData.tel : null %>"
+            />
+            <% if (locals.errors && errors.tel) { %>
+            <div class="text-danger"><%= errors.tel.msg %></div>
+            <% } %>
+          </div>
+          <div class="grupo_registro">
+            <label class="elementoA" for="pass">FOTO DE PERFIL:</label>
             <input
               class="elementoB"
               type="file"
@@ -91,9 +120,21 @@
               accept="image/*"
             />
             <% if (locals.errors && errors.picture_user) { %>
-            <div class="text-danger">
-              <%= errors.picture_user.msg %>
-            </div>
+            <div class="text-danger"><%= errors.picture_user.msg %></div>
+            <% } %>
+          </div>
+          <div class="grupo_registro">
+            <label class="elementoA" for="date">FECHA DE NACIMIENTO:</label>
+            <input
+              class="elementoB"
+              type="date"
+              name="date"
+              id="date"
+              placeholder=""
+              value="<%= locals.oldData ? oldData.date : null %>"
+            />
+            <% if (locals.errors && errors.date) { %>
+            <div class="text-danger"><%= errors.date.msg %></div>
             <% } %>
           </div>
 
