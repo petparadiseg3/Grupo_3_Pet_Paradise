@@ -14,7 +14,7 @@ const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 app.use(express.static(path.join(__dirname, "../public")));
 
 const routerIndex = require("./routes/index");
-const routerProduct = require("./routes/admin");
+const routerProduct = require("./routes/productRoutes");
 const routerCart = require("./routes/cart");
 const routerUser = require("./routes/userRoutes");
 
