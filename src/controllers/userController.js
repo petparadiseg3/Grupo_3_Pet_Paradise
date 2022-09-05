@@ -46,6 +46,7 @@ let controllerUser = {
         phone: req.body.phone,
         date: req.body.date,
         picture_user: req.file.filename,
+        role: 0,
       });
 
       res.redirect("/user/login");

@@ -33,7 +33,10 @@ module.exports = (sequelize, dataTypes) => {
       },
       picture_user: {
         type: dataTypes.STRING,
-      },
+      },  
+      role:{
+        type: dataTypes.BOOLEAN  
+      }
     },
     {
       tableName: "user",
