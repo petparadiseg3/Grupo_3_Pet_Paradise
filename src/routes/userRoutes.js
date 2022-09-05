@@ -3,7 +3,7 @@ const router = express.Router();
 const path = require("path");
 
 //? Controller
-const userController = require("../controllers/userController");
+const controllerUser = require("../controllers/controllerUser");
 
 //? Middlewares
 const uploadProfileFile = require('../middlewares/multerMiddleware');
@@ -13,21 +13,21 @@ const authMiddleware = require("../middlewares/authMiddleware")
 
 
 //? Formulario de registro
-router.get("/register", guestMiddleware ,userController.register);
+router.get("/register", guestMiddleware, controllerUser.viewRegister);
 
 //? Procesar el registro
-router.post("/register", uploadProfileFile.single("picture_user"), validations, userController.processRegister);
+router.post("/register", uploadProfileFile.single("picture_user"), validations, controllerUser.createUser);
 
 //? Formulario de login
-router.get("/login", guestMiddleware, userController.login);
+router.get("/login", guestMiddleware, controllerUser.login);
 
 //? Procesar el login
-router.post("/login", userController.loginProcess);
+router.post("/login", controllerUser.loginProcess);
 
 //? Perfil de usuario
-router.get("/profile", authMiddleware, userController.profile);
+router.get("/profile", authMiddleware, controllerUser.profile);
 
 //? Perfil de usuario
-router.get("/logout",  userController.logout);
+router.get("/logout",  controllerUser.logout);
 
 module.exports = router;

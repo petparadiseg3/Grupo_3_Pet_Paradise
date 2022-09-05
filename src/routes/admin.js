@@ -1,4 +1,4 @@
-const express = require("express");
+/* const express = require("express");
 //const productController = require("../controllers/controllerProducto");
 const controller =require("../controllers/productsControllersDb")
 const router = express.Router();
@@ -29,3 +29,4 @@ router.get("/:id", controller.detail);
 
 
 module.exports = router;
+ */

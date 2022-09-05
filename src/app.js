@@ -13,9 +13,9 @@ const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 
 app.use(express.static(path.join(__dirname, "../public")));
 
-const routerIndex = require("./routes/index");
+/* const routerIndex = require("./routes/index");
 const routerProduct = require("./routes/admin");
-const routerCart = require("./routes/cart");
+const routerCart = require("./routes/cart"); */
 const routerUser = require("./routes/userRoutes");
 
 //Debemos indicar cual es el motor de plantillas que estamos usando EJS
@@ -40,9 +40,9 @@ app.use(userLoggedMiddleware);
 
 //? Para indicarle express la carpeta donde se encuentran los archivos estáticos
 
-app.use("/", routerIndex);
+/* app.use("/", routerIndex);
 app.use("/products", routerProduct);
-app.use("/cart", routerCart);
+app.use("/cart", routerCart); */
 app.use("/user", routerUser);
 
 app.listen(3000, () => {

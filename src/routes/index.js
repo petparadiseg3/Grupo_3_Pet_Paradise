@@ -1,4 +1,4 @@
-const express = require("express");
+/* const express = require("express");
 const indexController = require("../controllers/indexController");
 const productController = require("../controllers/controllerProducto")
 const router = express.Router();
@@ -9,4 +9,4 @@ router.get("/admin", productController.administrador)
 
 router.get("/productDetail", indexController.productDetail1)
 
-module.exports = router;
+module.exports = router; */
