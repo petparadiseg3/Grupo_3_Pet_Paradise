@@ -2,8 +2,6 @@ const { validationResult } = require("express-validator");
 const bcryptjs = require("bcryptjs");
 const db = require("../database/models");
 const sequelize = db.sequelize;
-const { Op } = require("sequelize");
-const moment = require("moment");
 const session = require("express-session");
 
 const User = db.User;
@@ -66,15 +64,11 @@ let controllerUser = {
           email: req.body.email,
         },
       });
-/* 			console.log(userToLogin); */
       if (userToLogin) {
         let isOkThePassword = bcryptjs.compareSync(
           req.body.password,
           userToLogin.password
         );
-				console.log(userToLogin.password);
-				console.log(req.body.password);
-				console.log(isOkThePassword);
         if (isOkThePassword) {
           delete userToLogin.password;
           req.session.userLogged = userToLogin;
