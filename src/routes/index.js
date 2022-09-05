@@ -1,12 +1,11 @@
 const express = require("express");
 const indexController = require("../controllers/indexController");
-const productController = require("../controllers/controllerProducto")
+//const productController = require("../controllers/controllerProducto")
+const controller = require("../controllers/administratorControllerDb")
 const router = express.Router();
 
 router.get("/", indexController.index);
-
-router.get("/admin", productController.administrador)
-
-router.get("/productDetail", indexController.productDetail1)
+router.get("/admin", controller.administrador)
+//router.get("/admin", productController.administrador)
 
 module.exports = router;

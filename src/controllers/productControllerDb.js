@@ -6,7 +6,7 @@ let productController = {
     db.Product.findAll()
       .then(function (name) {
         return res.render("productos/addProduct.ejs", {name})
-      })
+      });
   },
 
   guardado: function (req, res) {
@@ -23,7 +23,7 @@ let productController = {
     db.Product.findAll()
     .then(function(allProductos){
       res.render("productos/productos.ejs",{allProductos})
-    })
+    });
   },
 
   detalle: function (req, res) {
@@ -31,18 +31,41 @@ let productController = {
     db.Product.findByPk(req.params.id)
       .then(function (product) {
         res.render("productos/productDetail.ejs", {product})
-      })
+      });
   },
 
-  editar: function(req, res) {
-    let pedidoProducto = db.Product.findByPk(req.params.id);
+  editar: function (req, res) {
 
-    let pedidoNombre = db.Product.findAll()
+    db.Product.findByPk(req.params.id)
+      .then(function (product) {
+      res.render("productos/editProduct.ejs", {product})
+    });
+  },
 
+  actualizar: function (req, res) {
+    db.Product.update({
+      name: req.body.name,
+      descriptions: req.body.descriptions,
+      image: req.file.filename
 
+    }, {
+        where: {
+          id: req.params.id
+        }
+    });
+    res.redirect("/products/" + req.params.id);
+  },
+
+  borrar: function (req, res) {
+    db.Product.destroy({
+      where: {
+        id: req.params.id
+      }
+    });
+    res.redirect("/admin");
   }
         
-}
+};
 
 module.exports = productController;
 
