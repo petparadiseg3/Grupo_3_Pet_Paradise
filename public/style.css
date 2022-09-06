@@ -1002,10 +1002,9 @@ body {
 
 .container--flex {
   display: flex;
-  justify-content: space-between;
   margin: 25px 0;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .form__submit {

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head') %>
+
+  <body>
+    <%- include('../partials/header') %>
+
+    <div class="agregarProducto">
+      <form
+        action="/user/edit?_method=PUT"
+        method="POST"
+        class="form-register"
+        enctype="multipart/form-data"
+      >
+        <h1 class="form__title">
+          Editar usuario <%= user.name + " " + user.surname %>:
+        </h1>
+
+        <div class="container--flex">
+          <label for="" class="form__label">Nombre:</label
+          ><input
+            class="form__input"
+            type="text"
+            name="name"
+            placeholder="Ejemplo: Lionel"
+            value="<%= user.name %>"
+            required
+          />
+        </div>
+        <div class="container--flex">
+          <label for="" class="form__label">Apellido:</label
+          ><input
+            class="form__input"
+            type="text"
+            name="surname"
+            placeholder="Ejemplo: Lionel"
+            value="<%= user.surname %>"
+            required
+            block
+          />
+        </div>
+        <div class="container--flex">
+          <label for="" class="form__label">Email:</label
+          ><input
+            disabled="»disabled»"
+            class="form__input"
+            type="email"
+            name="email"
+            placeholder="Ejemplo: lio@messi.com"
+            value="<%= user.email %>"
+            required
+            block
+          />
+        </div>
+        <div class="container--flex">
+          <label for="" class="form__label">Direccion:</label
+          ><input
+            class="form__input"
+            type="text"
+            name="address"
+            placeholder="Ejemplo: Avenida Siempre Viva 1045"
+            value="<%= user.address %>"
+            required
+            block
+          />
+        </div>
+        <div class="container--flex">
+          <label for="" class="form__label">Pais:</label
+          ><input
+            class="form__input"
+            type="text"
+            name="country"
+            placeholder="Ejemplo: Argentina"
+            value="<%= user.country %>"
+            required
+            block
+          />
+        </div>
+        <div class="container--flex">
+          <label for="" class="form__label">Telefono:</label
+          ><input
+            class="form__input"
+            type="tel"
+            name="phone"
+            placeholder="Ejemplo: 1134567890"
+            value="<%= user.phone %>"
+            required
+            block
+          />
+        </div>
+        <div class="container--flex">
+          <label for="date" class="form__label">Direccion:</label
+          ><input
+            class="form__input"
+            type="date"
+            name="date"
+            id="date"
+            value="<%=user.date%>"
+          />
+        </div>
+
+        <input
+          type="hidden"
+          name="oldImagen"
+          value="<%= user.picture_user %>"
+        />
+        <div class="container--flex">
+          <label for="" class="form__label">Foto del usuario:</label
+          ><input type="file" class="form__file" name="picture_user" />
+          <img
+            style="width: 100px"
+            src="/images-back/usuarios/<%=user.picture_user%>"
+            alt=""
+          />
+        </div>
+
+        <div class="container--flex">
+          <input type="submit" class="form__submit" value="Actualizar" onclick="myFunction()" />
+          <a href="/user/profile"
+            ><input type="button" class="form__submit" value="Volver"'/></a
+          >
+        </div>
+      </form>
+    </div>
+    <script>
+      function myFunction() {
+        alert("Para poder visualizar los nuevos datos debe cerrar sesion e iniciar nuevamente!");
+      }
+      </script>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

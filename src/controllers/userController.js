@@ -107,6 +107,36 @@ let controllerUser = {
 			user: req.session.userLogged,
 		});
 	},
+  editProfile:(req, res) => {
+		return res.render("usuarios/editUser", {
+			user: req.session.userLogged,
+		});
+	},
+  updateProfile: async function (req, res) {
+    let user = await req.session.userLogged
+    
+    newPicture = req.file ? req.file.filename : req.body.oldImagen;
+    try {
+      User.update({
+        name: req.body.name,
+        surname: req.body.surname,
+        address: req.body.address,
+        country: req.body.country,
+        phone: req.body.phone,
+        date: req.body.date,
+        picture_user: newPicture,
+        role: 0,
+      }, {
+          where: {
+            id: user.id
+          },
+        });
+        return res.redirect("/user/profile")
+    } catch (error) {
+			console.log(error);
+      res.render("../views/web/error404.ejs");
+		}
+  },
 	logout: (req, res) => {
 		res.clearCookie("userEmail");
 		req.session.destroy();
