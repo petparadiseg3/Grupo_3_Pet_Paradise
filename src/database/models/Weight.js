@@ -7,9 +7,6 @@ module.exports = (sequelize, dataTypes) => {
         primaryKey: true,
         autoIncrement: true,
       },
-      product_id: {
-        type: dataTypes.INTEGER,
-      },
       stock: {
         type: dataTypes.INTEGER,
       },
@@ -29,7 +26,7 @@ module.exports = (sequelize, dataTypes) => {
 /*   Weight.associate = function (models) {
     Weight.belongsTo(models.Product, {
       as: "tamaño",
-      foreignKey: "product_id",
+      foreignKey: "weight_id",
     });
   }; */
 

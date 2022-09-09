@@ -7,6 +7,9 @@ module.exports = (sequelize, dataTypes) => {
         primaryKey: true,
         autoIncrement: true,
       },
+      weight_id: {
+        type: dataTypes.INTEGER,
+      },
       name: {
         type: dataTypes.STRING,
       },
