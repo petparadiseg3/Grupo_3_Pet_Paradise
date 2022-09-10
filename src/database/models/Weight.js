@@ -14,7 +14,7 @@ module.exports = (sequelize, dataTypes) => {
         type: dataTypes.STRING,
       },
       price: {
-        type: dataTypes.DECIMAL,
+        type: dataTypes.INTEGER,
       },
     },
     {
@@ -25,7 +25,7 @@ module.exports = (sequelize, dataTypes) => {
 
   Weight.associate = function (models) {
     Weight.belongsTo(models.Product, {
-      as: "tamaño",
+      as: "tamano",
       foreignKey: "weight_id",
     });
   };

@@ -7,19 +7,17 @@ let productController = {
     });
   },
 
-  guardado: function (req, res) {
-    db.Product.create(
+  guardado: async function (req, res) {
+    const { name, descriptions, size, stock, price } = req.body;
+
+    let productSize = await db.Weight.create({ size, stock, price });
+
+    await db.Product.create(
       {
-        name: req.body.name,
-        descriptions: req.body.descriptions,
+        name,
+        descriptions: descriptions,
         image: req.file.filename,
-        weight_id: 1,
-        weight: [
-          { size: req.body.size, stock: req.body.stock, price: req.body.price },
-        ],
-      },
-      {
-        include: [{ association: "tamanos" }],
+        weight_id: productSize.id,
       }
     );
     res.redirect("/products");
