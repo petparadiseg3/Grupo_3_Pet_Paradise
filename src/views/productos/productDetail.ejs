@@ -7,7 +7,7 @@
     <section id="prodetails" class="section-p1">
       <div class="single-pro-image">
         <img
-        src="/images/product/<%= product.image %>"  
+          src="/images/product/<%= product.image %>"
           width="100%"
           id="MainImg"
           alt=""
@@ -15,17 +15,26 @@
       </div>
 
       <div class="single-pro-details">
-        
         <h4><%= product.name%></h4>
-        
+        <% pesos.forEach(p=>{ %>
+        <h2>$<%= p.price%> </h2>
+        <% }) %>
+
+
         <select>
-          <option>Peso:</option>
-          <option><%=product.size%></option>
+          <option value="" disabled selected>- Seleccione el peso -</option>
+          <% pesos.forEach(p=>{ %>
+          <option value="<%= p.id %>"><%= p.size%></option>
+          <% }) %>
         </select>
-        <input type="number" value="1" />
+
+        <input type="number" value=""/>
+        
+
         <button class="normal">Add To Cart</button>
         <h4>Detalles del Producto</h4>
         <span><%= product.descriptions%></span>
+
       </div>
     </section>
 

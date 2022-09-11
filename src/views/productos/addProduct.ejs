@@ -33,55 +33,49 @@
             required
           />
         </div>
-        <!-- <div class="container--flex">
-          <label for="" class="form__label">Marca:</label
-          ><input
-            type="text"
-            class="form__input"
-            name="brand"
-            placeholder="p.ejemplo: Pedigree - Royal Caning"
-            required
-          />
-        </div> -->
-        <div class="container--flex">
+<!--         <div class="container--flex">
           <label for="" class="form__label">Categoria:</label
           ><input
             type="text"
             class="form__input"
             name="category"
             placeholder="Alimento"
-            required
           />
+        </div> -->
+        <div class="container--flex">
+          <label for="" class="form__label">Tamaños disponibles:</label>
+          <ul>
+            <li>
+              <label>Tamaño:</label>
+              <input type="text" name="size"/>
+            </li>
+            <li><label>Stock:</label> <input type="number" name="stock"/></li>
+            <li><label>Precio:</label> <input type="number" name="price" /></li>
+          </ul>
         </div>
         <div class="container--flex">
-          <label for="" class="form__label">Tamaño:</label
-          ><input
-            type="text"
-            class="form__input"
-            name="size"
-            placeholder="p.ejemplo: 1kg - 3kg - 5kg"
-            required
-          />
+          <label for="" class="form__label">Tamaños disponibles:</label>
+          <ul>
+            <li>
+              <label>Tamaño:</label>
+              <input type="text" name="size2"/>
+            </li>
+            <li><label>Stock:</label> <input type="number" name="stock2"/></li>
+            <li><label>Precio:</label> <input type="number" name="price2" /></li>
+          </ul>
         </div>
+        <a href="">Agregar nuevo tamaño</a>
+        
         <div class="container--flex">
           <label for="" class="form__label">Foto del producto:</label
           ><input type="file" class="form__file" name="image" />
         </div>
-        <div class="container--flex">
-          <label for="" class="form__label">Precio:</label
-          ><input
-            type="text"
-            class="form__input"
-            name="price"
-            placeholder="1500"
-            required
-          />
-        </div>
+
         <div class="container--flex">
           <input type="submit" class="form__submit" />
           <a href="/admin"
-          ><input type="button" class="form__submit" value="Volver"/></a
-        >
+            ><input type="button" class="form__submit" value="Volver"
+          /></a>
         </div>
       </form>
     </div>
