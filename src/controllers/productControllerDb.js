@@ -1,4 +1,5 @@
 const db = require("../database/models/index");
+const Weight = db.Weight;
 
 let productController = {
   crear: function (req, res) {
@@ -8,19 +9,35 @@ let productController = {
   },
 
   guardado: async function (req, res) {
-    const { name, descriptions, size, stock, price } = req.body;
+    const { name, descriptions, size, stock, price, size2, stock2, price2 } =
+      req.body;
+    //const { size2, stock2, price2 } = req.body;
 
-    let productSize = await db.Weight.create({ size, stock, price });
-
-    await db.Product.create(
-      {
+    try {
+      let product = await db.Product.create({
         name,
-        descriptions: descriptions,
+        descriptions,
         image: req.file.filename,
-        weight_id: productSize.id,
-      }
-    );
-    res.redirect("/products");
+      });
+
+      await db.Weight.create({
+        size,
+        stock,
+        price,
+        product_id: product.id,
+      });
+
+      await db.Weight.create({
+        size: size2,
+        stock: stock2,
+        price: price2,
+        product_id: product.id,
+      });
+
+      res.redirect("/products");
+    } catch (error) {
+      console.log(error);
+    }
   },
 
   listado: function (req, res) {
@@ -29,9 +46,13 @@ let productController = {
     });
   },
 
-  detalle: function (req, res) {
-    db.Product.findByPk(req.params.id).then(function (product) {
-      res.render("productos/productDetail.ejs", { product });
+  detalle: async function (req, res) {
+    let pesos = await Weight.findAll({
+      where: { product_id: req.params.id },
+    });
+
+    await db.Product.findByPk(req.params.id).then(function (product) {
+      res.render("productos/productDetail.ejs", { product, pesos });
     });
   },
 

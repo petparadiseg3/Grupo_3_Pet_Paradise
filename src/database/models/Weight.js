@@ -16,6 +16,9 @@ module.exports = (sequelize, dataTypes) => {
       price: {
         type: dataTypes.INTEGER,
       },
+      product_id: {
+        type: dataTypes.INTEGER,
+      }
     },
     {
       tableName: "weight",
@@ -26,7 +29,7 @@ module.exports = (sequelize, dataTypes) => {
   Weight.associate = function (models) {
     Weight.belongsTo(models.Product, {
       as: "tamano",
-      foreignKey: "weight_id",
+      foreignKey: "product_id",
     });
   };
 

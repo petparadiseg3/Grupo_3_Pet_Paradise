@@ -7,9 +7,6 @@ module.exports = (sequelize, dataTypes) => {
         primaryKey: true,
         autoIncrement: true,
       },
-      weight_id: {
-        type: dataTypes.INTEGER,
-      },
       name: {
         type: dataTypes.STRING,
       },
@@ -34,7 +31,7 @@ module.exports = (sequelize, dataTypes) => {
 
   Product.hasMany(models.Weight, {
     as: "tamanos",
-    foreignKey: "weight_id",
+    foreignKey: "product_id",
   });
 
   //     Product.belongsToMany(models.Category, {
