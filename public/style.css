@@ -1231,6 +1231,10 @@ div.container_category {
 
 @media (min-width: 990px) {
 
+  .category_list .category_item{
+    width: 25%;
+  }
+
   div.container_category h1{
     font-size: 25px;
     text-align: left;
