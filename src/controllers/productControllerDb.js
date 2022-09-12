@@ -2,22 +2,44 @@ const db = require("../database/models/index");
 const Weight = db.Weight;
 
 let productController = {
-  crear: function (req, res) {
-    db.Product.findAll().then(function (name) {
-      return res.render("productos/addProduct.ejs", { name });
+  crear: async function (req, res) {
+    let alllBrands = db.Brand.findAll();
+    let alllProducts = db.Product.findAll();
+
+    Promise.all([alllBrands, alllProducts]).then(([allBrands, allProducts]) => {
+      return res.render("productos/addProduct.ejs", { allBrands, allProducts });
     });
   },
 
+  marca: async function (req, res) {
+    await db.Product.findAll();
+    await db.Brand.findAll().then(function (name, brand) {
+      return res.render("productos/addBrand.ejs", { name, brand });
+    });
+  },
+  crearMarca: async function (req, res) {
+    try {
+      await db.Brand.create({
+        name: req.body.nameBrand,
+        picture_brand: req.file.filename,
+      });
+      res.redirect("/products/create");
+    } catch (error) {
+      console.log(error);
+    }
+  },
   guardado: async function (req, res) {
     const { name, descriptions, size, stock, price, size2, stock2, price2 } =
       req.body;
-    //const { size2, stock2, price2 } = req.body;
 
+      console.log(req.body)
+    //const { size2, stock2, price2 } = req.body;
     try {
       let product = await db.Product.create({
         name,
         descriptions,
         image: req.file.filename,
+        brand_id: req.body.brand,
       });
 
       await db.Weight.create({
