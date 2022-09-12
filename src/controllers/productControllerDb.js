@@ -88,6 +88,12 @@ let productController = {
   },
 };
 
+
+// Product Weight Controller - Generar campo para poder poblar las tablas con 10 productos y 10 usuarios con Mookaro para ver si la tabla esta fucionando para los datos o no, asociar precios y persos a diferentes productos - Cruce de tablas
+// Escribir codigo de sql para cargarlas de datos. 
+
+
+
 module.exports = productController;
 
 //!No borrar
