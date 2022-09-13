@@ -10,12 +10,7 @@
 
     <main>
       <div class="productos_alimentos">
-        <% if(allBrands!=null){ %> 
-        <h2>Alimentos de <%= allBrands.name %> </h2>
-        <% }else{ %> 
-          <h2>Todos los alimentos</h2>
-          <% } %>
-
+        <h2>MARCAS</h2>
       </div>
 
       <div class="filtered_products">
@@ -24,16 +19,16 @@
       </div>
 
       <div class="container-pet">
-        <% for(let i= 0; i < allProductos.length; i++){ %>
+        <% for(let i= 0; i < allBrands.length; i++){ %>
         <article class="card">
           <img
-            src="/images-back/productos/<%= allProductos[i].image %>"
+            src="/images-back/marcas/<%= allBrands[i].picture_brand %> %>"
             alt=""
           />
           <div>ENVIO GRATIS</div>
-          <a href="/products/<%= allProductos[i].id%> "
+          <a href="/products/buscar/?marca=<%= allBrands[i].id%> "
             ><span class="name_product">
-              <%= allProductos[i].name%>
+              <%= allBrands[i].name%>
             </span></a
           >
         </article>

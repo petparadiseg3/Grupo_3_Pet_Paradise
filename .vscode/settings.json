@@ -1,7 +1,6 @@
 {
-<<<<<<< HEAD
     "liveServer.settings.port": 5501,
-    "terminal.integrated.fontFamily": "monospace",
+    "terminal.integrated.fontFamily": "Cascadia Code",
     "terminal.integrated.customGlyphs": false,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "[javascript]": {
@@ -14,19 +13,3 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     }
 }
-=======
-  "liveServer.settings.port": 5501,
-  "terminal.integrated.fontFamily": "monospace",
-  "terminal.integrated.customGlyphs": false,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
-}
->>>>>>> 7bc66ee4815631d5762857d847392e1842d9ed33

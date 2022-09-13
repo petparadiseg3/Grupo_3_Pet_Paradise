@@ -16,6 +16,13 @@ module.exports = (sequelize, dataTypes) => {
       image: {
         type: dataTypes.STRING,
       },
+      brand_id: {
+        type: dataTypes.INTEGER,
+        reference: {
+          model: "Brand",
+          key: "id",
+        },
+      },
     },
     {
       tableName: "product",
@@ -23,24 +30,29 @@ module.exports = (sequelize, dataTypes) => {
     }
   ); //El 1er parametro de define es el nombre de la entidad, el 2do es el objeto de las columnas, el 3er parametro recibe el nombre de la tabla (como sale en la base de dato mysql)y timestamps
 
-    Product.associate = function (models) {
-  //     Product.hasMany(models.OrderDetail, {
-  //       as: "producto",
-  //       foreignKey: "product_id",
-  //     });
+  Product.associate = function (models) {
+    //     Product.hasMany(models.OrderDetail, {
+    //       as: "producto",
+    //       foreignKey: "product_id",
+    //     });
 
-  Product.hasMany(models.Weight, {
-    as: "tamanos",
-    foreignKey: "product_id",
-  });
+    Product.hasMany(models.Weight, {
+      as: "tamanos",
+      foreignKey: "product_id",
+    });
 
-  //     Product.belongsToMany(models.Category, {
-  //       as: "categorias",
-  //       throw: "product_categories",
-  //       foreignKey: "product_id",
-  //       otherKey: "category_id",
-  //       timestamps: false,
-  //     });
+    Product.belongsTo(models.Brand, {
+      as: "marca",
+      foreignKey: "brand_id",
+    });
+
+    //     Product.belongsToMany(models.Category, {
+    //       as: "categorias",
+    //       throw: "product_categories",
+    //       foreignKey: "product_id",
+    //       otherKey: "category_id",
+    //       timestamps: false,
+    //     });
   };
 
   return Product;

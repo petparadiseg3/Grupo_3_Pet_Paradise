@@ -17,6 +17,7 @@ const routerIndex = require("./routes/index");
 const routerProduct = require("./routes/productRoutes");
 const routerCart = require("./routes/cart");
 const routerUser = require("./routes/userRoutes");
+const routerBrand = require("./routes/brandRoutes");
 
 //Debemos indicar cual es el motor de plantillas que estamos usando EJS
 app.set("view engine", "ejs");
@@ -44,6 +45,7 @@ app.use("/", routerIndex);
 app.use("/products", routerProduct);
 app.use("/cart", routerCart);
 app.use("/user", routerUser);
+app.use("/brand", routerBrand);
 
 app.listen(3000, () => {
   console.log("Servidor escuchando en puerto 3000");
