@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('../partials/head') %>
+  <body>
+    <%- include('../partials/header') %>
+
+    <div class="agregarProducto">
+    <form
+          action="/category/create"
+          method="post"
+          class="form-register"
+          enctype="multipart/form-data"
+        >
+          <div class="container--flex">
+            <label for="" class="form__label">Categoria:</label>
+            <ul>
+              <li>
+                <label>Nombre:</label>
+                <input type="text" name="nameCategory" />
+              </li>
+              <li>
+                <label>Imagen:</label>
+                <input type="file" class="form__file" name="picture_category" />
+              </li>
+            </ul>
+            <input type="submit" class="form__submit" />
+          </div>
+        </form>
+        </div>
+
+    </div>
+
+    <%- include('../partials/footer') %>
+  </body>
+</html>

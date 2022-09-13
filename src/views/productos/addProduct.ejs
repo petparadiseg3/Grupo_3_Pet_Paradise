@@ -66,10 +66,21 @@
           </select>
 
         </div>
+        <div class="container--flex">
+          <label for="" class="form__label">Categoria:</label>
+          
+          <select name="category">
+            <option value="" disabled selected>- Seleccione la categoria -</option>
+            <% allCategories.forEach(cat=>{ %>
+            <option value="<%= cat.id %>"><%= cat.name%></option>
+            <% }) %>
+          </select>
+
+        </div>
 
 
         
-        <div class="container--flex">
+        <!-- <div class="container--flex">
           <label for="" class="form__label">Tamaños disponibles:</label>
           <ul>
             <li>
@@ -81,7 +92,7 @@
               <label>Precio:</label> <input type="number" name="price2" />
             </li>
           </ul>
-        </div>
+        </div> -->
         <a href="">Agregar nuevo tamaño</a>
 
         <div class="container--flex">

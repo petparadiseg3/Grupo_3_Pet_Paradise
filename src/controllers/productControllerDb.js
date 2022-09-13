@@ -2,18 +2,19 @@ const db = require("../database/models/index");
 const Weight = db.Weight;
 const Brand = db.Brand;
 const Product = db.Product;
-
+const Category = db.Category;
 let productController = {
   crear: async function (req, res) {
     let alllBrands = db.Brand.findAll();
     let alllProducts = db.Product.findAll();
+    let alllCategories = db.Category.findAll();
 
-    Promise.all([alllBrands, alllProducts]).then(([allBrands, allProducts]) => {
-      return res.render("productos/addProduct.ejs", { allBrands, allProducts });
+    Promise.all([alllBrands, alllProducts, alllCategories]).then(([allBrands, allProducts, allCategories]) => {
+      return res.render("productos/addProduct.ejs", { allBrands, allProducts, allCategories });
     });
   },
 
-  marca: async function (req, res) {
+  /* marca: async function (req, res) {
     await db.Product.findAll();
     await db.Brand.findAll().then(function (name, brand) {
       return res.render("productos/addBrand.ejs", { name, brand });
@@ -29,10 +30,15 @@ let productController = {
     } catch (error) {
       console.log(error);
     }
-  },
+  }, */
   guardado: async function (req, res) {
-    const { name, descriptions, size, stock, price, size2, stock2, price2 } =
-      req.body;
+    const {
+      name,
+      descriptions,
+      size,
+      stock,
+      price /* , size2, stock2, price2 */,
+    } = req.body;
 
     console.log(req.body);
     //const { size2, stock2, price2 } = req.body;
@@ -42,6 +48,7 @@ let productController = {
         descriptions,
         image: req.file.filename,
         brand_id: req.body.brand,
+        category_id: req.body.category
       });
 
       await db.Weight.create({
@@ -51,12 +58,12 @@ let productController = {
         product_id: product.id,
       });
 
-      await db.Weight.create({
+      /*       await db.Weight.create({
         size: size2,
         stock: stock2,
         price: price2,
         product_id: product.id,
-      });
+      }); */
 
       res.redirect("/products");
     } catch (error) {
@@ -64,8 +71,8 @@ let productController = {
     }
   },
 
-  listado: function (req, res) {
-    let allBrands=null;
+  listado: function (_req, res) {
+    let allBrands = null;
     db.Product.findAll().then(function (allProductos) {
       res.render("productos/productos.ejs", { allProductos, allBrands });
     });
@@ -73,6 +80,7 @@ let productController = {
   buscarPorMarca: async function (req, res) {
     try {
       let brandId = req.query.marca;
+/*       let categoryId = req.query.categoria; */
       let alllBrands = Brand.findOne({
         where: {
           id: brandId,
@@ -83,6 +91,11 @@ let productController = {
           brand_Id: brandId,
         },
       });
+/*       let allCategories = Category.findAll({
+        where: {
+          categoryId: categoryId,
+        },
+      }); */
 
       Promise.all([alllBrands, alllProducts]).then(
         ([allBrands, allProductos]) => {

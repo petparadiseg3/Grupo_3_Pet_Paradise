@@ -23,7 +23,15 @@ module.exports = (sequelize, dataTypes) => {
           key: "id",
         },
       },
+      category_id: {
+        type: dataTypes.INTEGER,
+        reference: {
+          model: "Category",
+          key: "id",
+        },
+      },
     },
+
     {
       tableName: "product",
       timestamps: false,

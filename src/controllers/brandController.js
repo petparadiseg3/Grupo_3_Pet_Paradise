@@ -1,6 +1,7 @@
 const db = require("../database/models/index");
 const Product = db.Product;
 const Brand = db.Brand;
+
 let brandController = {
   marca: async function (req, res) {
     await Product.findAll();

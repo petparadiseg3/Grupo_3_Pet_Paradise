@@ -10,7 +10,6 @@ router.post(
   brandController.crearMarca
 );
 router.get("/", brandController.todasLasMarcas);
-/* router.get("/buscar", brandController.buscarPorMarca);
- */
+
 
 module.exports = router;
