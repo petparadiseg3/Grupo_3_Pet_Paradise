@@ -10,7 +10,12 @@
 
     <main>
       <div class="productos_alimentos">
-        <h2>ALIMENTOS</h2>
+        <% if(allBrands!=null){ %> 
+        <h2>Alimentos de <%= allBrands.name %> </h2>
+        <% }else{ %> 
+          <h2>Todos los alimentos</h2>
+          <% } %>
+
       </div>
 
       <div class="filtered_products">

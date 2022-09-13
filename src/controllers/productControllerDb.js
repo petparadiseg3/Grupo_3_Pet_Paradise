@@ -1,5 +1,7 @@
 const db = require("../database/models/index");
 const Weight = db.Weight;
+const Brand = db.Brand;
+const Product = db.Product;
 
 let productController = {
   crear: async function (req, res) {
@@ -32,7 +34,7 @@ let productController = {
     const { name, descriptions, size, stock, price, size2, stock2, price2 } =
       req.body;
 
-      console.log(req.body)
+    console.log(req.body);
     //const { size2, stock2, price2 } = req.body;
     try {
       let product = await db.Product.create({
@@ -63,9 +65,36 @@ let productController = {
   },
 
   listado: function (req, res) {
+    let allBrands=null;
     db.Product.findAll().then(function (allProductos) {
-      res.render("productos/productos.ejs", { allProductos });
+      res.render("productos/productos.ejs", { allProductos, allBrands });
     });
+  },
+  buscarPorMarca: async function (req, res) {
+    try {
+      let brandId = req.query.marca;
+      let alllBrands = Brand.findOne({
+        where: {
+          id: brandId,
+        },
+      });
+      let alllProducts = Product.findAll({
+        where: {
+          brand_Id: brandId,
+        },
+      });
+
+      Promise.all([alllBrands, alllProducts]).then(
+        ([allBrands, allProductos]) => {
+          return res.render("productos/productos.ejs", {
+            allBrands,
+            allProductos,
+          });
+        }
+      );
+    } catch (error) {
+      console.log(error);
+    }
   },
 
   detalle: async function (req, res) {
@@ -110,11 +139,8 @@ let productController = {
   },
 };
 
-
 // Product Weight Controller - Generar campo para poder poblar las tablas con 10 productos y 10 usuarios con Mookaro para ver si la tabla esta fucionando para los datos o no, asociar precios y persos a diferentes productos - Cruce de tablas
-// Escribir codigo de sql para cargarlas de datos. 
-
-
+// Escribir codigo de sql para cargarlas de datos.
 
 module.exports = productController;
 
