@@ -30,31 +30,6 @@ let brandController = {
       console.log(error);
     }
   },
-  buscarPorMarca: async function (req, res) {
-    try {
-      let alllBrands = Brand.findAll({
-        where: {
-          id: req.params.brandId,
-        },
-      });
-      let alllProducts = Product.findAll({
-        where: {
-          brand_Id: req.params.brandId,
-        },
-      });
-
-      Promise.all([alllBrands, alllProducts]).then(
-        ([allBrands, allProductos]) => {
-          return res.render("productos/productos.ejs", {
-            allBrands,
-            allProductos,
-          });
-        }
-      );
-    } catch (error) {
-      console.log(error);
-    }
-  },
 };
 
 module.exports = brandController;
