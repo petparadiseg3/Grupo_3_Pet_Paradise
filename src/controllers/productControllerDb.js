@@ -66,7 +66,7 @@ let productController = {
   listado: function (_req, res) {
     let term = null;
     db.Product.findAll().then(function (result) {
-      res.render("productos/productos.ejs", { result, term});
+      res.render("productos/productos.ejs", { result, term });
     });
   },
   buscarPorMarca: async function (req, res) {
@@ -101,21 +101,25 @@ let productController = {
       console.log(error);
     }
   },
-  buscador: (req, res) => {
+  buscador: async (req, res) => {
     const { term } = req.query;
+    let where = {};
 
-    Product.findAll({
-      where: {
+    if (term) {
+      where = {
         name: { [Op.like]: "%" + term + "%" },
-      },
-    })
-      .then((result) => {
+      };
+    }
+    try {
+      await Product.findAll({
+        where,
+      }).then((result) => {
         console.log(result);
         res.render("productos/productos.ejs", { result, term });
-      })
-      .catch((err) => {
-        console.log(err);
       });
+    } catch (error) {
+      console.log(error);
+    }
   },
   detalle: async function (req, res) {
     let pesos = await Weight.findAll({
