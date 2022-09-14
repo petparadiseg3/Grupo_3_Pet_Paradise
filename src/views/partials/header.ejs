@@ -1,54 +1,87 @@
 <section class="header-contact">
-    <a target="_blank" href="tel:" class="phone" rel="noopener"><span class="phone"><i class="fa-solid fa-phone"></i> 0810-000-6288</span></a>
-    <a target="_blank" href="https://wa.me/2615677965" class="whatsapp"><i class="fa-brands fa-whatsapp"></i> 2615677965</span></a>
+  <a target="_blank" href="tel:" class="phone" rel="noopener"
+    ><span class="phone"
+      ><i class="fa-solid fa-phone"></i> 0810-000-6288</span
+    ></a
+  >
+  <a target="_blank" href="https://wa.me/2615677965" class="whatsapp"
+    ><span class="phone"
+      ><i class="fa-brands fa-whatsapp"></i> 2615677965</span
+    ></a
+  >
 </section>
 <header class="main-header">
-    <div class="top-header">
-        <a href="#" class="hamburguer-button">
-            <i class="fa-solid fa-bars"></i>
-        </a>
-        
-        <a class="logo" href="/">
-            <img src="/images/logoPep3.png" alt="logo">
-        </a>
-        
-        <div class="top-header__incons">
-            <a class="register_session" href="/user/login"><i class="fa-solid fa-user"></i> 
-            <a href="/user/login" class="ocultar">
-                <% if (locals.isLogged) { %>
-                HOLA <%= locals.userLogged.name %>
-                <a href="/user/logout"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
-             <% } else { %>
-               INICIAR SESION O REGISTRARTE</a></a>
-             <% } %>
-            <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
-        </div>
-        
-        <div class="container-search">
-            <input type="search" class="input_text" placeholder="  Buscar...">
-            <a href="" class="lupa">
-            <i class="posicion-lupa fa-solid fa-magnifying-glass"></i>
-            </a>
-        </div>
-        
-    </div>
-    <nav class="main-navbar">
-        <ul class="left-navbar">
-            <li><a href="#">QUIÉNES SOMOS</a></li>
-            <li><a href="/products">PRODUCTOS</a></li>
-            <li><a href="#">DONATIVOS</a></li>
-            <li><a href="#">ADOPCIÓN</a></li>
-        </ul>
+  <div class="top-header">
+    <a href="#" class="hamburguer-button">
+      <i class="fa-solid fa-bars"></i>
+    </a>
 
-        <ul class="right-navbar">
-            <% if (locals.isLogged) { %>
-                
-                <li><a href="/user/profile">MI PERFIL<i class="fa-solid fa-right-to-bracket"></i></a></li>
-                <% } else { %>
-                    <li><a href="/user/register">CREÁ TU CUENTA <i class="fa-solid fa-credit-card"></i></a></i></li>
-                    <li><a href="/user/login">INGRESÁ <i class="fa-solid fa-right-to-bracket"></i></a></li>
-                <% } %>
-                <li><a href="/cart">MIS COMPRAS <i class="fa-solid fa-basket-shopping"></i></a></li>
-        </ul>
-    </nav>    
+    <a class="logo" href="/">
+      <img src="/images/logoPep3.png" alt="logo" />
+    </a>
+
+    <div class="top-header__incons">
+      <a class="register_session" href="/user/login"
+        ><i class="fa-solid fa-user"></i>
+        <a href="/user/login" class="ocultar">
+          <% if (locals.isLogged) { %> HOLA <%= locals.userLogged.name %>
+          <a href="/user/logout"
+            ><i class="fa-solid fa-arrow-right-from-bracket"></i
+          ></a>
+          <% } else { %> INICIAR SESION O REGISTRARTE</a
+        ></a
+      >
+      <% } %>
+      <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+    </div>
+
+    <!--     <div class="container-search">
+      <input type="search" class="input_text" placeholder="  Buscar..." />
+      <a href="" class="lupa">
+        <i class="posicion-lupa fa-solid fa-magnifying-glass"></i>
+      </a>
+    </div> -->
+
+    <form action="/products/buscar" method="get" class="form-horizontal">
+      <i class="fa fa-search fa-"> </i>
+      <input type="search" name="term" placeholder="Buscar" />
+      <input type="submit" value="Buscar" />
+    </form>
+
+  </div>
+  <nav class="main-navbar">
+    <ul class="left-navbar">
+      <li><a href="#">QUIÉNES SOMOS</a></li>
+      <li><a href="/products">PRODUCTOS</a></li>
+      <li><a href="#">DONATIVOS</a></li>
+      <li><a href="#">ADOPCIÓN</a></li>
+    </ul>
+
+    <ul class="right-navbar">
+      <% if (locals.isLogged) { %>
+
+      <li>
+        <a href="/user/profile"
+          >MI PERFIL<i class="fa-solid fa-right-to-bracket"></i
+        ></a>
+      </li>
+      <% } else { %>
+      <li>
+        <a href="/user/register"
+          >CREÁ TU CUENTA <i class="fa-solid fa-credit-card"></i
+        ></a>
+      </li>
+      <li>
+        <a href="/user/login"
+          >INGRESÁ <i class="fa-solid fa-right-to-bracket"></i
+        ></a>
+      </li>
+      <% } %>
+      <li>
+        <a href="/cart"
+          >MIS COMPRAS <i class="fa-solid fa-basket-shopping"></i
+        ></a>
+      </li>
+    </ul>
+  </nav>
 </header>

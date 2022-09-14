@@ -3,34 +3,26 @@ const Weight = db.Weight;
 const Brand = db.Brand;
 const Product = db.Product;
 const Category = db.Category;
+const Sequelize = require("sequelize");
+const Op = Sequelize.Op;
+
 let productController = {
   crear: async function (req, res) {
     let alllBrands = db.Brand.findAll();
     let alllProducts = db.Product.findAll();
     let alllCategories = db.Category.findAll();
 
-    Promise.all([alllBrands, alllProducts, alllCategories]).then(([allBrands, allProducts, allCategories]) => {
-      return res.render("productos/addProduct.ejs", { allBrands, allProducts, allCategories });
-    });
+    Promise.all([alllBrands, alllProducts, alllCategories]).then(
+      ([allBrands, allProducts, allCategories]) => {
+        return res.render("productos/addProduct.ejs", {
+          allBrands,
+          allProducts,
+          allCategories,
+        });
+      }
+    );
   },
 
-  /* marca: async function (req, res) {
-    await db.Product.findAll();
-    await db.Brand.findAll().then(function (name, brand) {
-      return res.render("productos/addBrand.ejs", { name, brand });
-    });
-  },
-  crearMarca: async function (req, res) {
-    try {
-      await db.Brand.create({
-        name: req.body.nameBrand,
-        picture_brand: req.file.filename,
-      });
-      res.redirect("/products/create");
-    } catch (error) {
-      console.log(error);
-    }
-  }, */
   guardado: async function (req, res) {
     const {
       name,
@@ -48,7 +40,7 @@ let productController = {
         descriptions,
         image: req.file.filename,
         brand_id: req.body.brand,
-        category_id: req.body.category
+        category_id: req.body.category,
       });
 
       await db.Weight.create({
@@ -72,15 +64,15 @@ let productController = {
   },
 
   listado: function (_req, res) {
-    let allBrands = null;
-    db.Product.findAll().then(function (allProductos) {
-      res.render("productos/productos.ejs", { allProductos, allBrands });
+    let term = null;
+    db.Product.findAll().then(function (result) {
+      res.render("productos/productos.ejs", { result, term});
     });
   },
   buscarPorMarca: async function (req, res) {
     try {
       let brandId = req.query.marca;
-/*       let categoryId = req.query.categoria; */
+      /*       let categoryId = req.query.categoria; */
       let alllBrands = Brand.findOne({
         where: {
           id: brandId,
@@ -91,7 +83,7 @@ let productController = {
           brand_Id: brandId,
         },
       });
-/*       let allCategories = Category.findAll({
+      /*       let allCategories = Category.findAll({
         where: {
           categoryId: categoryId,
         },
@@ -109,7 +101,22 @@ let productController = {
       console.log(error);
     }
   },
+  buscador: (req, res) => {
+    const { term } = req.query;
 
+    Product.findAll({
+      where: {
+        name: { [Op.like]: "%" + term + "%" },
+      },
+    })
+      .then((result) => {
+        console.log(result);
+        res.render("productos/productos.ejs", { result, term });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  },
   detalle: async function (req, res) {
     let pesos = await Weight.findAll({
       where: { product_id: req.params.id },
