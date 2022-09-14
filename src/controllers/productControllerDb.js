@@ -102,19 +102,28 @@ let productController = {
     }
   },
   buscador: async (req, res) => {
-    const { term } = req.query;
+    const { term, categoria, marca } = req.query;
     let where = {};
 
     if (term) {
       where = {
         name: { [Op.like]: "%" + term + "%" },
       };
+    } else if (categoria && marca) {
+      where = {
+        category_id: categoria,
+        brand_id: marca,
+      };
+    } else if (categoria) {
+      where = {
+        category_id: categoria,
+      };
     }
+
     try {
       await Product.findAll({
         where,
       }).then((result) => {
-        console.log(result);
         res.render("productos/productos.ejs", { result, term });
       });
     } catch (error) {
