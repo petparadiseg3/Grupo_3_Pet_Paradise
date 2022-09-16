@@ -15,7 +15,7 @@ router.post(
   uploadProductPicture.single("image"),
   controller.guardado
 );
-//router.get("/buscar", controller.buscarPorMarca);
+
 router.get("/buscar", controller.buscador);
 
 

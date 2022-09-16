@@ -50,12 +50,12 @@ let productController = {
         product_id: product.id,
       });
 
-      /*       await db.Weight.create({
+      await db.Weight.create({
         size: size2,
         stock: stock2,
         price: price2,
         product_id: product.id,
-      }); */
+      });
 
       res.redirect("/products");
     } catch (error) {
@@ -63,44 +63,13 @@ let productController = {
     }
   },
 
-  listado: function (_req, res) {
+  listado: async function (_req, res) {
     let term = null;
-    db.Product.findAll().then(function (result) {
-      res.render("productos/productos.ejs", { result, term });
-    });
+    let marcas = await Brand.findAll();
+    let result = await Product.findAll();
+    res.render("productos/productos.ejs", { result, term, marcas });
   },
-  buscarPorMarca: async function (req, res) {
-    try {
-      let brandId = req.query.marca;
-      /*       let categoryId = req.query.categoria; */
-      let alllBrands = Brand.findOne({
-        where: {
-          id: brandId,
-        },
-      });
-      let alllProducts = Product.findAll({
-        where: {
-          brand_Id: brandId,
-        },
-      });
-      /*       let allCategories = Category.findAll({
-        where: {
-          categoryId: categoryId,
-        },
-      }); */
 
-      Promise.all([alllBrands, alllProducts]).then(
-        ([allBrands, allProductos]) => {
-          return res.render("productos/productos.ejs", {
-            allBrands,
-            allProductos,
-          });
-        }
-      );
-    } catch (error) {
-      console.log(error);
-    }
-  },
   buscador: async (req, res) => {
     const { term, categoria, marca } = req.query;
     let where = {};
@@ -118,31 +87,42 @@ let productController = {
       where = {
         category_id: categoria,
       };
+    } else if (marca) {
+      where = {
+        brand_id: marca,
+      };
     }
 
     try {
-      await Product.findAll({
+      let result = await Product.findAll({
         where,
-      }).then((result) => {
-        res.render("productos/productos.ejs", { result, term });
       });
+      let marcas = await Brand.findAll();
+
+      res.render("productos/productos.ejs", { result, term, marcas });
     } catch (error) {
       console.log(error);
     }
   },
+
   detalle: async function (req, res) {
     let pesos = await Weight.findAll({
       where: { product_id: req.params.id },
     });
-
-    await db.Product.findByPk(req.params.id).then(function (product) {
-      res.render("productos/productDetail.ejs", { product, pesos });
-    });
+    let product = await Product.findByPk(req.params.id);
+    res.render("productos/productDetail.ejs", { product, pesos });
   },
 
-  editar: function (req, res) {
-    db.Product.findByPk(req.params.id).then(function (product) {
-      res.render("productos/editProduct.ejs", { product });
+  editar: async function (req, res) {
+    let allCategories = await Category.findAll();
+    let allBrands = await Brand.findAll();
+    let allWeights = await Weight.findAll();
+    let product = await Product.findByPk(req.params.id);
+    res.render("productos/editProduct.ejs", {
+      product,
+      allCategories,
+      allBrands,
+      allWeights,
     });
   },
 
