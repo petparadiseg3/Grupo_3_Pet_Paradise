@@ -126,52 +126,56 @@ let productController = {
     });
   },
 
-  actualizar: function (req, res) {
-    db.Product.update(
-      {
-        name: req.body.name,
-        descriptions: req.body.descriptions,
-        image: req.file.filename,
-      },
-      {
-        where: {
-          id: req.params.id,
+  actualizar: async function (req, res) {
+    const { name, descriptions, size, stock, price } = req.body;
+
+    try {
+      let product = await db.Product.update(
+        {
+          name,
+          descriptions,
+          image: req.file.filename,
+          brand_id: req.body.brand,
+          category_id: req.body.category,
         },
-      }
-    );
-    res.redirect("/products/" + req.params.id);
+        {
+          where: { id: req.params.id },
+        }
+      );
+
+      await db.Weight.update(
+        {
+          size,
+          stock,
+          price,
+          product_id: product.id,
+        },
+        {
+          where: { product_id: req.params.id },
+        }
+      );
+
+      res.redirect("/products/" + req.params.id);
+    } catch (error) {
+      console.log(error);
+    }
   },
 
-  borrar: function (req, res) {
-    db.Product.destroy({
-      where: {
-        id: req.params.id,
-      },
-    });
-    res.redirect("/admin");
+  borrar: async function (req, res) {
+    try {
+      await db.Weight.destroy({
+        where: { product_id: req.params.id },
+      });
+
+      await db.Product.destroy({
+        where: { id: req.params.id },
+      });
+
+      res.redirect("/admin");
+    } catch (error) {
+      console.log(error);
+    }
   },
 };
 
-// Product Weight Controller - Generar campo para poder poblar las tablas con 10 productos y 10 usuarios con Mookaro para ver si la tabla esta fucionando para los datos o no, asociar precios y persos a diferentes productos - Cruce de tablas
-// Escribir codigo de sql para cargarlas de datos.
-
 module.exports = productController;
-
-//!No borrar
-// const list = (req, res) => {
-//   db.Product.findAll()
-//     .then(allProductos => {   //promesa con .then
-//       res.render("productos/productos.ejs",{allProductos})
-//   })
-// };
-
-// const detail = async (req, res) => {  //promesa con async
-
-//     const {id} = req.params;
-//     const product =  await db.Product.findByPk(id)
-//     res.render("productos/productDetail", {product})
-// };
-
-// module.exports = {
-//   list, detail
-// }
