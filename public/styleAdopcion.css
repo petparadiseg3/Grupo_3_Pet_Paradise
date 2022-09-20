@@ -28,6 +28,11 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 10px 0 0 0;
+}
+.logo img{
+    width: 500px;
+    margin-top: 50px;
 }
 
 .align__left{
@@ -56,7 +61,7 @@ a{text-decoration: none;}
 
 ul li{list-style: none;}
 
-/* LANDING AREA =============*/
+/* Landing Area */
 #landing__area{
     width: 100%;
     height: 70vh;
@@ -72,9 +77,6 @@ ul li{list-style: none;}
 
 nav .logo{
     color: var(--orange);
- 
-    
-
 }
 
 nav a{
@@ -126,7 +128,7 @@ nav a:hover{color: var(--orange);}
     background-repeat: no-repeat;
 }
 
-/* HELP SECTION =========*/
+/* Adoption Section*/
 #help{
     width: 80vw;
     max-width: 1200px;
@@ -202,7 +204,7 @@ nav a:hover{color: var(--orange);}
 }
 
 
-/* GALLERY =============*/
+/* Gallery*/
 #gallery{
     width: 100%;
     height: 70vh;
@@ -230,14 +232,14 @@ nav a:hover{color: var(--orange);}
 #img-8{grid-column: 4/6; grid-row:1/2;}
 #img-9{grid-column: 5/6; grid-row:2/3;}
 
-/* CONTACT FORM */
+/* Adoption Form */
 form{
     width: 60vw;
     max-width: 800px;
     margin: 2rem auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 10px;
+    grid-gap: 20px;
 }
 
 form .form__row{
@@ -252,7 +254,9 @@ form .form__row{
     border-bottom: solid 1px var(--light-blue);
     outline: none;
 }
-/* hide arrows form input number */
+
+
+/* Hide arrows form input number */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button{
     -webkit-appearance: none;
@@ -260,6 +264,15 @@ input::-webkit-inner-spin-button{
 
 
 .form__row label{
+    position: absolute;
+    bottom: 2px;
+    left: 2px;
+    color: var(--red);
+    font-size: 14px;
+    transition: 0.5s;
+}
+
+.form__row span{
     position: absolute;
     bottom: 2px;
     left: 2px;
@@ -285,6 +298,16 @@ textarea{
     resize: none;
 }
 
+label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+textarea::placeholder{
+    color: var(--dark-blue);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 textarea::placeholder{
     color: var(--dark-blue);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -306,7 +329,7 @@ form button:active{
     transform: scale(0.99);
 }
 
-/* FOOTER */
+/* Footer */
 footer{
     background-color: var(--orange);
 }
@@ -325,3 +348,6 @@ footer{
     font-size: 20px;
     margin: 0 10px;
 }
+
+
+/* Media Queries */
