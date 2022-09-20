@@ -51,26 +51,27 @@
           />
         </div>
         <div class="container--flex">
-          <label for="" class="form__label">Marca:</label
-          ><input
-            type="text"
-            class="form__input"
-            name="brand"
-            placeholder="p.ejemplo: Pedigree - Royal Caning"
-            value="<%= product.brand %>"
-            required
-          />
+          
         </div>
         <div class="container--flex">
-          <label for="" class="form__label">Categoria:</label
-          ><input
-            type="text"
-            class="form__input"
-            name="category"
-            placeholder="Alimento"
-            value="<%= product.category %>"
-            required
-          />
+          <label for="" class="form__label">Marca del producto:</label>
+          
+          <select name="brand">
+            <option value="" disabled selected>- Seleccione la Marca -</option>
+            <% allBrands.forEach(bra=>{ %>
+            <option value="<%= bra.id %>"><%= bra.name%></option>
+            <% }) %>
+          </select>
+
+        </div>
+        <div class="container--flex">
+          
+          <select name="category">
+            <option value="" disabled selected>- Seleccione la categoria -</option>
+            <% allCategories.forEach(cat=>{ %>
+            <option value="<%= cat.id %>"><%= cat.name%></option>
+            <% }) %>
+          </select>
         </div>
         <div class="container--flex">
           <label for="" class="form__label">Tamaño:</label

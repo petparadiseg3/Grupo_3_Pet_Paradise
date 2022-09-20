@@ -15,14 +15,14 @@ router.post(
   uploadProductPicture.single("image"),
   controller.guardado
 );
-//router.get("/buscar", controller.buscarPorMarca);
+
 router.get("/buscar", controller.buscador);
 
 
 
 router.get("/:id", controller.detalle);
 router.get("/:id/edit", controller.editar);
-//router.put("/:id/edit", uploadProductPicture.single("image"), controller.actualizar);
+router.put("/:id/edit", uploadProductPicture.single("image"), controller.actualizar);
 router.delete("/:id/delete", controller.borrar);
 
 module.exports = router;
