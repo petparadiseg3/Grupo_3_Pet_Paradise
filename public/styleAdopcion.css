@@ -302,6 +302,10 @@ form .form__row {
   outline: none;
 }
 
+.form__raw span {
+color: var(--red);
+}
+
 /* Hide arrows form input number */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
