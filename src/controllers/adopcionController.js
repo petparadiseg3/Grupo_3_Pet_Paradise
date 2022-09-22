@@ -1,8 +1,6 @@
-const path = require("path");
-
-const adopcionController = {
+let adopcionController = {
   adopcion: (req, res) => {
-    res.render(path.join(__dirname, "../views/adopciones/adopcion.ejs"));
+    res.render("adopciones/adopcion.ejs");
   },
 };
 

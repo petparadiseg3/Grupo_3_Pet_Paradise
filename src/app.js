@@ -49,7 +49,7 @@ app.use("/cart", routerCart);
 app.use("/user", routerUser);
 app.use("/brand", routerBrand);
 app.use("/category", routerCategory);
-app.use("/adopciones", routerAdopcion);
+app.use("/adopcion", routerAdopcion);
 
 app.listen(3000, () => {
   console.log("Servidor escuchando en puerto 3000");
