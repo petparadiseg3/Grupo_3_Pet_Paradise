@@ -1,6 +1,6 @@
 let adopcionController = {
   adopcion: (req, res) => {
-    res.render("adopciones/adopcion.ejs");
+    res.render("adopciones/adopcionform.ejs");
   },
 };
 
