@@ -27,7 +27,7 @@ body {
 .center__row {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: normal;
   margin: 10px 0 0 0;
 }
 .logo img {
@@ -173,7 +173,7 @@ nav a:hover {
 
 .help__card span {
   position: absolute;
-  top: 5%;
+  top: 3%;
   left: 0;
   background: white;
   padding: 5px;
@@ -182,12 +182,15 @@ nav a:hover {
 
 .help__card:first-of-type span {
   color: var(--red);
+  font-size: 140%;
 }
 .help__card:nth-of-type(2) span {
   color: var(--orange);
+  font-size: 140%;
 }
 .help__card:nth-of-type(3) span {
   color: var(--light-blue);
+  font-size: 140%;
 }
 
 .help__card .card__link {
@@ -206,16 +209,6 @@ nav a:hover {
   animation: showLink;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
-}
-@keyframes showLink {
-  0% {
-    opacity: 0;
-    height: 0;
-  }
-  100% {
-    opacity: 1;
-    height: 100%;
-  }
 }
 
 .card__link a {
@@ -303,7 +296,7 @@ form .form__row {
 }
 
 .form__raw span {
-color: var(--red);
+  color: var(--red);
 }
 
 /* Hide arrows form input number */
@@ -402,7 +395,7 @@ footer {
 
 @media (max-width: 768px) {
   body {
-    width: 110%;
+    width: 100%;
   }
 
   h1 {
@@ -453,5 +446,37 @@ footer {
 
   #help .help__card {
     margin: 10px;
+  }
+
+  form {
+    display: block;
+    width: 80vw;
+  }
+
+  .form__row input {
+    height: 60px;
+  }
+
+  .form__raw span {
+    font-size: 18px;
+  }
+  #text {
+    font-size: 18px;
+  }
+
+  label {
+    display: inline-block;
+    margin: 1rem 0rem 1rem 0rem;
+    font-size: 18px;
+  }
+
+  .form__row label {
+    bottom: 3px;
+    left: 5px;
+    font-size: 20px;
+  }
+
+  div.form_raw {
+    font-size: 18px;
   }
 }
