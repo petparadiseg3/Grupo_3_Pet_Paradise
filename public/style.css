@@ -1136,16 +1136,16 @@ body {
     grid-gap: 10px;
     grid-auto-rows: minmax(100px, auto);
   }
-  .label_404-arriba{
+  .label_404-arriba {
     grid-column: 1/5;
     grid-row: 1;
     text-align: center;
   }
-  .conteiner--ph{
+  .conteiner--ph {
     grid-column: 1/3;
     grid-row: 2;
   }
-  .label_404-abajo{
+  .label_404-abajo {
     grid-column: 3/5;
     grid-row: 2;
     height: 60px;
@@ -1153,12 +1153,11 @@ body {
     display: flex;
     align-items: center;
   }
-  
 }
 
 /*Para la busqueda por categoria >>>>>>>>>>>>>>>>>>>>>>>>>>>>*/
 
-div.container_category h1{
+div.container_category h1 {
   color: #ffffff;
   margin-bottom: 15px;
 }
@@ -1172,14 +1171,14 @@ div.container_category {
   margin-bottom: 5px;
 }
 
-.container_category .category_list{
+.container_category .category_list {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
-.category_list .category_item{
+.category_list .category_item {
   width: 30%;
   background-color: #ffffff;
   padding: 10px;
@@ -1191,11 +1190,11 @@ div.container_category {
   justify-content: center;
 }
 
-.category_list .category_item img{
+.category_list .category_item img {
   width: 80%;
 }
 
-.category_list .category_item h3{
+.category_list .category_item h3 {
   width: 100%;
   font-size: 14px;
   color: #ff4500;
@@ -1209,44 +1208,39 @@ div.container_category {
   text-decoration: none;
   border: solid #ff4500 2px;
   padding: 10px 1px;
-  
 }
 
 @media (min-width: 720px) {
-  
-  .container_category .category_list{
+  .container_category .category_list {
     justify-content: center;
     padding: 0px 40px;
   }
 
-  .category_list .category_item img{
+  .category_list .category_item img {
     width: 60%;
   }
 
   .category_list .category_item a {
     width: 60%;
   }
-
 }
 
 @media (min-width: 990px) {
-
-  .category_list .category_item{
+  .category_list .category_item {
     width: 25%;
   }
 
-  div.container_category h1{
+  div.container_category h1 {
     font-size: 25px;
     text-align: left;
     padding-left: 30px;
   }
 
-  .category_list .category_item img{
+  .category_list .category_item img {
     width: 40%;
   }
 
   .category_list .category_item a {
     width: 40%;
   }
-
 }

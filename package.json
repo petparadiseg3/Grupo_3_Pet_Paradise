@@ -32,5 +32,8 @@
     "nodemon": "^2.0.19",
     "sequelize": "^6.21.4",
     "start": "^5.1.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1"
   }
 }

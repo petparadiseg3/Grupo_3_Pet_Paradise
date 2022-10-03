@@ -402,20 +402,25 @@ footer {
   margin: 0 10px;
 }
 
+footer .social{
+  display: flex;
+  align-items: center;
+}
+
 /* Adopcion Perros  */
 
-#product1{
+#product1 {
   text-align: center;
 }
 
-#product1 .pro-container{
+#product1 .pro-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-top: 20px;
+  padding: 20px;
 }
 
-#product1 .pro{
+#product1 .pro {
   width: 23%;
   min-width: 250px;
   padding: 10px 12px;
@@ -428,23 +433,24 @@ footer {
   position: relative;
 }
 
-#product1 .pro:hover{
+#product1 .pro:hover {
   box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.1);
 }
 
-#product1 .pro img{
+#product1 .pro img {
   width: 100%;
+  height: 62%;
   border-radius: 20px;
 }
-#product1 .pro .des{
+#product1 .pro .des {
   text-align: start;
   padding: 10px 0;
 }
-#product1 .pro .des span{
- color: #606063;
- font-size: 12px;
+#product1 .pro .des span {
+  color: #606063;
+  font-size: 12px;
 }
-#product1 .pro .des h5{
+#product1 .pro .des h5 {
   padding-top: 7px;
   color: #1a1a1a;
   font-size: 14 px;
@@ -453,11 +459,12 @@ footer {
 #product1 .pro:hover .des h5 {
   color: #088156;
 }
-#product1 .pro .des i{
+#product1 .pro .des i {
   font-size: 15px;
-  color: rgb(243, 181, 25);   
+  color: rgb(243, 181, 25);
 }
-#product1 .pro .des h4{
+
+#product1 .pro .des h4 {
   padding-top: 7px;
   font-size: 15px;
   font-weight: 700;
@@ -490,10 +497,6 @@ footer {
   justify-content: space-between;
   padding-top: 20px;
 }
-
-
-
-
 
 /* Media Queries */
 
@@ -584,13 +587,15 @@ footer {
     font-size: 18px;
   }
 
-
-
   #product1 .pro-container {
     justify-content: center;
-}
-#product1 .pro {
-    margin: 15px;
-}
+  }
 
+  #product1 .pro {
+    margin: 15px;
+  }
+
+  footer .social{
+    padding-bottom: 10px;
+}
 }
