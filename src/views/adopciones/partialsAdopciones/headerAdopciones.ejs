@@ -1,0 +1,37 @@
+<section class="loginAdopciones">
+  <div class="top-header__incons">
+    <a class="register_session" href="/user/login"
+      ><i class="fas fa-solid fa-user"></i>
+      <a href="/user/login" class="ocultar">
+        <% if (locals.isLogged) { %> HOLA <%= locals.userLogged.name %>
+        <a href="/user/logout"
+          ><i class="fas fa-solid fa-arrow-right-from-bracket"></i
+        ></a>
+        <% } else { %> INICIAR SESION O REGISTRARTE</a
+      ></a
+    >
+    <% } %>
+    <a href="/cart"><i class="fas fa-solid fa-cart-shopping"></i></a>
+  </div>
+</section>
+<section id="landing__area" class="container__center">
+  <nav class="center__row">
+    <h1 class="logo"><img src="/imagesAdopcion/logoPep3.png" /></h1>
+    <ul class="center__row"></ul>
+  </nav>
+
+  <div class="landing__content center__row">
+    <div class="landing__info align__left">
+      <h1>
+        Ayudando Peludos. <br />
+        Salvando Vidas.
+      </h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error aut ea
+        fuga cum? Odit, sed culpa harum laborum excepturi quibusdam!
+      </p>
+      <button><a href="#/">Quiero Adoptar</a></button>
+    </div>
+    <div class="image__pet"></div>
+  </div>
+</section>
