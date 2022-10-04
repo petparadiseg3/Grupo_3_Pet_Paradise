@@ -11,6 +11,7 @@
           lugar!
         </div>
         <form
+          class=".was-validated"
           method="POST"
           enctype="multipart/form-data"
           action="/user/register"
@@ -18,7 +19,7 @@
           <div class="grupo_registro">
             <label class="elementoA" for="name">NOMBRE</label>
             <input
-              class="elementoB is-invalid"
+              class="elementoB form-control <%= locals.errors && errors.name ? 'is-invalid' : 'is-valid' %>"
               type="text"
               name="name"
               id="nombre"
@@ -37,7 +38,7 @@
               id="apellido"
               placeholder="Ejemplo: Messi"
               value="<%= locals.oldData ? oldData.surname : null %>"
-              class="elementoB <%= locals.errors && errors.surname ? 'is-invalid' : null %>"
+              class="elementoB form-control <%= locals.errors && errors.surname ? ':invalid is-invalid' : null %>"
             />
             <% if (locals.errors && errors.surname) { %>
             <div class="text-danger"><%= errors.surname.msg %></div>
@@ -148,6 +149,7 @@
         </p>
       </div>
     </div>
+    <script src="/js/registerJs.js"></script>
     <%- include('../partials/footer') %>
   </body>
 </html>

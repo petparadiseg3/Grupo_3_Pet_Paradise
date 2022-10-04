@@ -10,7 +10,7 @@
           <div class="logIn__conteiner">
             <div class="grupo_registro">
               <label class="elementoA" for="email">EMAIL</label>
-              <input class="elementoB" type="email" name="email" id="mail" placeholder="Ejemplo: liomessi@gmail.com" />
+              <input class="elementoB form-control" type="email" name="email" id="mail" placeholder="Ejemplo: liomessi@gmail.com" />
               <% if (locals.errors && errors.email) { %>
                 <div class="text-danger">
                   <%= errors.email.msg %>
@@ -20,7 +20,7 @@
 
             <div class="grupo_registro">
               <label class="elementoA" for="pass">CONTRASEÑA</label>
-              <input class="elementoB" type="password" name="password" id="contraseña" />
+              <input class="elementoB form-control" type="password" name="password" id="contraseña" />
             </div>
             
             <div class="grupo_registro">
