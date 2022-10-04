@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("./partialsAdopciones/headAdopciones.ejs") %>
+  <body>
+    <%- include("./partialsAdopciones/headerAdopciones.ejs") %>
+
+    <form>
+      <div class="form__row">
+        <input type="text" id="name" />
+        <label for="name">Nombre de la Mascota</label>
+      </div>
+
+      <div class="form__row">
+        <input type="email" id="email" />
+        <label for="email">Contacto</label>
+      </div>
+      <div class="form__row">
+        <input type="number" id="phone" />
+        <label for="phone">Telefono</label>
+      </div>
+      <div class="form__row">
+        <input type="number" id="edad" />
+        <label for="phone">Edad</label>
+      </div>
+      <div class="form__row">
+        <input type="number" id="Ciudad" />
+        <label for="phone">Ciudad</label>
+      </div>
+
+      <div class="form__row">
+        <input type="number" id="cp" />
+        <label for="phone">CP</label>
+      </div>
+
+      <div class="form__raw">
+        <span>Tipo de Mascota</span><br />
+        <label>
+          <input
+            type="radio"
+            id="inp_pref_perro"
+            name="Preferencia"
+            value="perro" />
+          Perro
+        </label>
+        <label>
+          <input
+            type="radio"
+            id="inp_pref_gato"
+            name="Preferencia"
+            value="gato" />
+          Gato
+        </label>
+        <label>
+          <input
+            type="radio"
+            id="inp_pref_gato"
+            name="Preferencia"
+            value="otroAnimal
+          " />
+          Otro
+        </label>
+      </div>
+
+      <div class="form__raw">
+        <span>Tamaño</span><br />
+        <label>
+          <input
+            type="radio"
+            id="inp_pref_perro"
+            name="Preferencia"
+            value="perro" />
+          Pequeño
+        </label>
+        <label>
+          <input
+            type="radio"
+            id="inp_pref_gato"
+            name="Preferencia"
+            value="gato" />
+          Mediano
+        </label>
+        <label>
+          <input
+            type="radio"
+            id="inp_pref_gato"
+            name="Preferencia"
+            value="gato" />
+          Grande
+        </label>
+      </div>
+
+      <div class="form__raw">
+        <span>Sexo de la Mascota</span><br />
+        <label>
+          <input
+            type="radio"
+            id="inp_pref_perro"
+            name="Preferencia"
+            value="perro" />
+          Hembra
+        </label>
+        <label>
+          <input
+            type="radio"
+            id="inp_pref_gato"
+            name="Preferencia"
+            value="gato" />
+          Macho
+        </label>
+      </div>
+
+      <div class="form__raw">
+        <span>¿La Mascota esta vacunada?</span><br />
+        <label>
+          <input
+            type="radio"
+            id="inp_pref_perro"
+            name="Preferencia"
+            value="perro" />
+          Si
+        </label>
+        <label>
+          <input
+            type="radio"
+            id="inp_pref_gato"
+            name="Preferencia"
+            value="gato" />
+          No
+        </label>
+      </div>
+
+      <div class="form__raw">
+        <span>¿La Mascota esta castrada?</span><br />
+        <label>
+          <input
+            type="radio"
+            id="inp_pref_perro"
+            name="Preferencia"
+            value="perro" />
+          Si
+        </label>
+        <label>
+          <input
+            type="radio"
+            id="inp_pref_gato"
+            name="Preferencia"
+            value="gato" />
+          No
+        </label>
+      </div>
+
+      <div class="form__raw">
+        Descripcion de la personalidad de la mascota
+        <textarea
+          id="textarea"
+          cols="30"
+          rows="10"
+          placeholder="Completar aqui"></textarea>
+      </div>
+
+      <div class="form__raw">
+        <span>¿Era la Mascota habitante de calle?</span><br />
+        <label>
+          <input
+            type="radio"
+            id="inp_pref_perro"
+            name="Preferencia"
+            value="perro" />
+          Si
+        </label>
+        <label>
+          <input
+            type="radio"
+            id="inp_pref_gato"
+            name="Preferencia"
+            value="gato" />
+          No
+        </label>
+      </div>
+
+      <button type="submit">Enviar Formulario</button>
+    </form>
+
+    <%- include("./partialsAdopciones/galleryAdopciones.ejs") %> <%-
+    include("./partialsAdopciones/footerAdopciones.ejs") %>
+  </body>
+</html>

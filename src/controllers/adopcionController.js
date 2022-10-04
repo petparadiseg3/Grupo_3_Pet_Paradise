@@ -13,6 +13,9 @@ let adopcionController = {
   adopcionOtrosAnimales: (req, res) => {
     res.render("adopciones/adopcionOtros.ejs");
   },
+  adopcionAddPet: (req, res) => {
+    res.render("adopciones/adopcionAddPet.ejs");
+  },
 };
 
 module.exports = adopcionController;
