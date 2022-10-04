@@ -16,6 +16,13 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.loginAdopciones {
+  display: flex;
+  justify-content: flex-end;
+  background: #f6ae2d;
+  padding: 10px;
+}
+
 /* align container */
 .container__center {
   display: flex;
@@ -402,7 +409,7 @@ footer {
   margin: 0 10px;
 }
 
-footer .social{
+footer .social {
   display: flex;
   align-items: center;
 }
@@ -595,7 +602,7 @@ footer .social{
     margin: 15px;
   }
 
-  footer .social{
+  footer .social {
     padding-bottom: 10px;
-}
+  }
 }
