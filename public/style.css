@@ -78,7 +78,7 @@ section.header-contact .whatsapp {
 }
 
 .top-header .logo img {
-  width: 100%;
+  width: 90%;
 }
 
 .top-header__incons i {
@@ -347,6 +347,19 @@ main div.filtered_products {
 }
 
 @media (min-width: 768px) {
+
+  .main-navbar {
+    display: flex;
+    justify-content: center;
+}
+
+.main-navbar ul {
+    display: flex;
+}
+
+.main-navbar a {
+    padding: 0px 10px;
+}
   .main-header .header-contact {
     display: flex;
     justify-content: space-between;
