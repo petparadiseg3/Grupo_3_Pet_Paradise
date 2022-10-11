@@ -5,16 +5,18 @@ const router = express.Router();
 const path = require("path");
 
 const uploadProductPicture = require("../middlewares/uploadPictureProduct");
-
+const validations = require('../middlewares/validationsMiddlewareProduct')
 //Como podemos indicar para subir el archivo nombre y donde guardarlo
 
 router.get("/", controller.listado);
 router.get("/create", controller.crear);
 router.post(
   "/create",
-  uploadProductPicture.single("image"),
+  uploadProductPicture.single("image"),validations,
   controller.guardado
 );
+
+
 
 router.get("/buscar", controller.buscador);
 
