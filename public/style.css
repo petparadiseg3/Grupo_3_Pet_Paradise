@@ -347,19 +347,18 @@ main div.filtered_products {
 }
 
 @media (min-width: 768px) {
-
   .main-navbar {
     display: flex;
     justify-content: center;
-}
+  }
 
-.main-navbar ul {
+  .main-navbar ul {
     display: flex;
-}
+  }
 
-.main-navbar a {
+  .main-navbar a {
     padding: 0px 10px;
-}
+  }
   .main-header .header-contact {
     display: flex;
     justify-content: space-between;
@@ -1256,4 +1255,13 @@ div.container_category {
   .category_list .category_item a {
     width: 40%;
   }
+}
+
+/*?  CODIGO DE LA VALIDACIÓN   */
+
+.validacion-js {
+  display: block;
+}
+.hidden {
+  display: none;
 }
