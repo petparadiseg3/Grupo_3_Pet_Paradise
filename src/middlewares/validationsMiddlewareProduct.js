@@ -5,11 +5,12 @@ module.exports = [
     body("name")
         .notEmpty().withMessage("Tienes que escribir un nombre")
         .bail()
-        .isLength({ min: 5 }).withMessage("Debe tener al menos 5 caracteres de largo"),
+        .isLength({ min: 5 }).withMessage(" tener aDebel menos 5 caracteres de largo"),
 
     body("descriptions")
-        .notEmpty().withMessage("Debe tener al menos 20 caracteres de largo"),
-    
+        .notEmpty().withMessage("Tienes que escribir una descripción")
+        .bail()
+        .isLength({ min: 5 }).withMessage(" tener aDebel menos 20 caracteres de largo"),
     body("image").custom((value, { req }) => {
         let file = req.file;
         let acceptedExtensions = [".jpg", ".png", ".gif",".jpeg"];
