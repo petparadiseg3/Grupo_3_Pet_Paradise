@@ -10,7 +10,7 @@ module.exports = [
     body("descriptions")
         .notEmpty().withMessage("Tienes que escribir una descripción")
         .bail()
-        .isLength({ min: 5 }).withMessage(" tener aDebel menos 20 caracteres de largo"),
+        .isLength({ min: 20 }).withMessage(" tener aDebel menos 20 caracteres de largo"),
     body("image").custom((value, { req }) => {
         let file = req.file;
         let acceptedExtensions = [".jpg", ".png", ".gif",".jpeg"];
