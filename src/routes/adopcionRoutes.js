@@ -7,5 +7,7 @@ router.get("/perros", adopcionController.adopcionPerros);
 router.get("/gatos", adopcionController.adopcionGatos);
 router.get("/otrosAnimales", adopcionController.adopcionOtrosAnimales);
 router.get("/addpet", adopcionController.adopcionAddPet);
+router.post("/addpet", adopcionController.adopcionAddPet);
+
 
 module.exports = router;

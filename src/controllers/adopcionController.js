@@ -16,6 +16,10 @@ let adopcionController = {
   adopcionAddPet: (req, res) => {
     res.render("adopciones/adopcionAddPet.ejs");
   },
+  
+// Hacer el paso a paso de la base de datos con el Jason para poder hacer el target de post con la form 
+  // Falta la image para el fomulario de add pet 
+
 };
 
 module.exports = adopcionController;
