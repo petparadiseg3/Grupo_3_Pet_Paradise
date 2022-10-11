@@ -13,19 +13,26 @@
         <form
           class=".was-validated"
           method="POST"
+          id="formulario"
           enctype="multipart/form-data"
           action="/user/register"
         >
           <div class="grupo_registro">
             <label class="elementoA" for="name">NOMBRE</label>
             <input
-              class="elementoB form-control <%= locals.errors && errors.name ? 'is-invalid' : 'is-valid' %>"
+              class="elementoB form-control <%= locals.errors && errors.name ? 'is-invalid' : '' %>"
               type="text"
               name="name"
               id="nombre"
               placeholder="Ejemplo: Lionel"
-              value="<%= locals.oldData ? oldData.name : null %>"
+              value="<%= locals.oldData ? oldData.name : '' %>"
             />
+            <div class="text-danger hidden" id="nombre-vacio">
+              El nombre no puede estar vacio
+            </div>
+            <div class="text-danger hidden" id="nombre-2">
+              El nombre debe tener al menos dos caracteres
+            </div>
             <% if (locals.errors && errors.name) { %>
             <div class="text-danger"><%= errors.name.msg %></div>
             <% } %>
@@ -38,8 +45,14 @@
               id="apellido"
               placeholder="Ejemplo: Messi"
               value="<%= locals.oldData ? oldData.surname : null %>"
-              class="elementoB form-control <%= locals.errors && errors.surname ? ':invalid is-invalid' : null %>"
+              class="elementoB form-control <%= locals.errors && errors.surname ? 'is-invalid' : '' %>"
             />
+            <div class="text-danger hidden" id="apellido-vacio">
+              El apellido no puede estar vacio.
+            </div>
+            <div class="text-danger hidden" id="apellido-2">
+              El apellido debe tener al menos dos caracteres.
+            </div>
             <% if (locals.errors && errors.surname) { %>
             <div class="text-danger"><%= errors.surname.msg %></div>
             <% } %>
@@ -47,12 +60,18 @@
           <div class="grupo_registro">
             <label class="elementoA" for="email">EMAIL</label>
             <input
-              class="elementoB"
+              class="elementoB form-control"
               name="email"
               id="email"
               placeholder="Ejemplo: liomessi@gmail.com"
               value="<%= locals.oldData ? oldData.email : null %>"
             />
+            <div class="text-danger hidden" id="email-vacio">
+              El mail no puede estar vacio.
+            </div>
+            <div class="text-danger hidden" id="email-valido">
+              El mail debe ser valido.
+            </div>
             <% if (locals.errors && errors.email) { %>
             <div class="text-danger"><%= errors.email.msg %></div>
             <% } %>
@@ -60,11 +79,23 @@
           <div class="grupo_registro">
             <label class="elementoA" for="pass">CONTRASEÑA</label>
             <input
-              class="elementoB"
+              class="elementoB form-control"
               type="password"
               name="password"
               id="contraseña"
             />
+            <div class="text-danger hidden" id="pass-vacia">
+              La contraseña no puede estar vacia.
+            </div>
+            <div class="text-secondary" id="pass-valida">
+              <ul>
+                <li id="mayuscula-ok">Mínimo 1 letra mayúscula.</li>
+                <li id="minuscula-ok">Mínimo 1 letra minúscula.</li>
+                <li id="especial-ok">Mínimo 1 carácter especial.</li>
+                <li id="1-numero">Deberá tener un número como mínimo.</li>
+                <li id="min-8-ok">Mínimo 8 caracteres.</li>
+              </ul>
+            </div>
             <% if (locals.errors && errors.password) { %>
             <div class="text-danger"><%= errors.password.msg %></div>
             <% } %>
@@ -72,13 +103,19 @@
           <div class="grupo_registro">
             <label class="elementoA" for="tel">DIRECCIÓN::</label>
             <input
-              class="elementoB"
+              class="elementoB form-control"
               type="text"
               name="address"
               id="address"
               placeholder="Ejemplo: Avenida Siempre Viva 1045"
               value="<%= locals.oldData ? oldData.address : null %>"
             />
+            <div class="text-danger hidden" id="address-vacia">
+              La dirección no puede estar vacia
+            </div>
+            <div class="text-danger hidden" id="address-2">
+              La dirección debe tener al menos dos caracteres
+            </div>
             <% if (locals.errors && errors.address) { %>
             <div class="text-danger"><%= errors.address.msg %></div>
             <% } %>
@@ -86,13 +123,19 @@
           <div class="grupo_registro">
             <label class="elementoA" for="country">PAIS:</label>
             <input
-              class="elementoB"
+              class="elementoB form-control"
               type="text"
               name="country"
               id="country"
               placeholder="Ejemplo: Argentina"
               value="<%= locals.oldData ? oldData.country : null %>"
             />
+            <div class="text-danger hidden" id="country-vacio">
+              La dirección no puede estar vacia
+            </div>
+            <div class="text-danger hidden" id="country-2">
+              La dirección debe tener al menos dos caracteres
+            </div>
             <% if (locals.errors && errors.country) { %>
             <div class="text-danger"><%= errors.country.msg %></div>
             <% } %>
@@ -100,13 +143,19 @@
           <div class="grupo_registro">
             <label class="elementoA" for="tel">TELEFONO:</label>
             <input
-              class="elementoB"
+              class="elementoB form-control"
               type="tel"
               name="phone"
               id="telefono"
               placeholder="Ejemplo: 1134567890"
               value="<%= locals.oldData ? oldData.phone : null %>"
             />
+            <div class="text-danger hidden" id="tel-vacio">
+              El telefono no puede estar vacia
+            </div>
+            <div class="text-danger hidden" id="tel-2">
+              El telefono debe tener al menos dos caracteres
+            </div>
             <% if (locals.errors && errors.tel) { %>
             <div class="text-danger"><%= errors.tel.msg %></div>
             <% } %>
@@ -114,12 +163,16 @@
           <div class="grupo_registro">
             <label class="elementoA" for="pass">FOTO DE PERFIL:</label>
             <input
-              class="elementoB"
+              class="elementoB form-control"
               type="file"
               name="picture_user"
-              id="pass"
+              id="picture"
               accept="image/*"
             />
+            <div class="text-danger hidden" id="ext">
+              Las extensiones permitidas son .jpg, .png, .gif,.jpeg.
+            </div>
+             
             <% if (locals.errors && errors.picture_user) { %>
             <div class="text-danger"><%= errors.picture_user.msg %></div>
             <% } %>
@@ -127,7 +180,7 @@
           <div class="grupo_registro">
             <label class="elementoA" for="date">FECHA DE NACIMIENTO:</label>
             <input
-              class="elementoB"
+              class="elementoB form-control"
               type="date"
               name="date"
               id="date"
@@ -150,6 +203,7 @@
       </div>
     </div>
     <script src="/js/registerJs.js"></script>
+
     <%- include('../partials/footer') %>
   </body>
 </html>
