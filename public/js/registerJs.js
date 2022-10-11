@@ -94,23 +94,31 @@ window.addEventListener("load", function () {
 
   //! Validando contraseña
   const passField = document.querySelector("#contraseña");
-  passField.addEventListener("focus", function () {
-    passValida = document.getElementById("pass-valida");
-    passValida.classList.remove("text-secondary");
-    passValida.classList.add("text-danger");
-    passField.classList.add("is-invalid");
-  });
+  let vuelta = 0;
+  if (vuelta == 0) {
+    passField.addEventListener("focus", function () {
+      passValida = document.getElementById("pass-valida");
+      passValida.classList.remove("text-secondary");
+      passValida.classList.add("text-danger");
+      passField.classList.add("is-invalid");
+    });
+    vuelta = 1;
+  }
 
-  passField.addEventListener("blur", function () {
+  passField.addEventListener("blur", function (e) {
     const fieldValue = e.target.value;
 
     const passVacia = document.getElementById("pass-vacia");
 
     if (fieldValue === "") {
       passVacia.classList.remove("hidden");
+      passField.classList.remove("is-valid");
+      passField.classList.add("is-invalid");
     }
     if (fieldValue !== "") {
       passVacia.classList.add("hidden");
+      passField.classList.remove("is-invalid");
+      passField.classList.add("is-valid");
     }
   });
 
@@ -321,6 +329,36 @@ window.addEventListener("load", function () {
     } else {
       dateField.classList.remove("is-valid");
       dateField.classList.add("is-invalid");
+    }
+  });
+
+  const form = document.querySelector("#formulario");
+
+  form.addEventListener("submit", function (e) {
+    const nombreC = userNameField.classList.contains("is-valid");
+    const apellidoC = userSurnameField.classList.contains("is-valid");
+    const emailC = emailField.classList.contains("is-valid");
+    const passwordC = passField.classList.contains("is-valid");
+    const direccionC = addressField.classList.contains("is-valid");
+    const paisC = countryField.classList.contains("is-valid");
+    const telC = telField.classList.contains("is-valid");
+    const fotoC = fileField.classList.contains("is-valid");
+    const dateC = dateField.classList.contains("is-valid");
+
+    if (
+      !(
+        nombreC &&
+        apellidoC &&
+        emailC &&
+        passwordC &&
+        direccionC &&
+        paisC &&
+        telC &&
+        fotoC &&
+        dateC
+      )
+    ) {
+      e.preventDefault();
     }
   });
 });
