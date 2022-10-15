@@ -1,7 +1,8 @@
-let adopcionController = {
+const adopcionController = {
   adopcion: (req, res) => {
     res.render("adopciones/adopcion.ejs");
   },
+  
   adopcionPerros: (req, res) => {
     res.render("adopciones/adopcionPerros.ejs");
   },
@@ -15,6 +16,8 @@ let adopcionController = {
   },
   adopcionAddPet: (req, res) => {
     res.render("adopciones/adopcionAddPet.ejs");
+
+  
   },
   
 // Hacer el paso a paso de la base de datos con el Jason para poder hacer el target de post con la form 

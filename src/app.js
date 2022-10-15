@@ -26,8 +26,10 @@ app.set("view engine", "ejs");
 
 //? Le indicamos al app, que nos paramos en views para no llamar en cada render al path.resolve o path.join
 app.set("views", path.join(__dirname, "./views"));
+
 //URL encode  - Para que nos pueda llegar la información desde el formulario al req.body
 app.use(express.urlencoded({ extended: false }));
+
 //Middleware de aplicación el cual se encargue de controlar la posibilidad de usar otros métodos diferentes al GET y al POST, en nuestros formularios
 app.use(methodOverride("_method"));
 app.use(
