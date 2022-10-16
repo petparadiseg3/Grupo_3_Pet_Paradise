@@ -17,6 +17,8 @@ const adopcionController = {
   adopcionAddPet: (req, res) => {
     res.render("adopciones/adopcionAddPet.ejs");
 
+  // adopcionAddPetSave: (req, res) => {
+  //   res.render("src/databaseJson/addPetSave.json");
   
   },
   

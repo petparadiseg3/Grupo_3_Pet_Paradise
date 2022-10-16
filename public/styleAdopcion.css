@@ -23,7 +23,7 @@ body {
   padding: 10px;
 }
 
-/* align container */
+/* Align container */
 .container__center {
   display: flex;
   flex-direction: column;
