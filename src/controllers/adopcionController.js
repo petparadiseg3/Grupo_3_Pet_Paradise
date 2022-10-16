@@ -8,7 +8,9 @@ const adopcionController = {
   // Landing Page
 
   adopcion: (req, res) => {
-    res.render("adopciones/adopcion.ejs");
+    res.render(path.join(__dirname, "../views/adopciones/adopcion.ejs"), {
+      adopcionPet,
+    });
   },
 
   // Listado de productos/Mascotas

@@ -7,10 +7,10 @@
 
     <section id="product1" class="section-p1">
       <div class="pro-container">
-        <% for(let i = 0; i < adopcionPet.length ; i++){ %>
+        <% for(let i=0; i < adopcionPet.length ; i++){ %>
         <div class="pro">
           <img
-            src="/images-back/imagenesAdopcion/perros/<%=adopcionPet[i].picturePet %>"
+            src="/images-back/imagenesAdopcion/<%=adopcionPet[i].picturePet %>"
             alt="" />
           <div class="des">
             <h5><%= adopcionPet[i].namePet %></h5>
