@@ -6,7 +6,12 @@ router.get("/", adopcionController.adopcion);
 router.get("/perros", adopcionController.adopcionPerros);
 router.get("/gatos", adopcionController.adopcionGatos);
 router.get("/otrosAnimales", adopcionController.adopcionOtrosAnimales);
-router.get("/addpet", adopcionController.adopcionAddPet);
-// router.post("/addpet/save", adopcionController.adopcionAddPetSave);
+router.get("/addpet", adopcionController.adopcionAddPet); 
+router.get("/detailPet", adopcionController.adopcionDetailPet); 
+// pet/create
+router.post("/addpet/save", adopcionController.adopcionSavePet);
+
+
+
 
 module.exports = router;

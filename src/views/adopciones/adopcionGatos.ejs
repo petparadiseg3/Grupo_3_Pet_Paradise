@@ -7,116 +7,25 @@
 
     <section id="product1" class="section-p1">
       <div class="pro-container">
+        <% for(let i = 8; i < adopcionPet.length ; i++){ %>
         <div class="pro">
-          <img src="/imagesAdopcion/adopcionGatos/poluxCat.png" alt="" />
+          <img
+            src="/images-back/imagenesAdopcion/gatos/<%=adopcionPet[i].picturePet %>"
+            alt="" />
           <div class="des">
-            <h5>Polux</h5>
-            <span>Tamaño</span>
-
-            <div class="star">
-              <i class="fas fa-solid fa-cat"></i>
-              <i class="fas fa-solid fa-cat"></i>
-            </div>
-            <h4>4 Años - Macho</h4>
-          </div>
-          <a href="#"><i class="fa-regular fa-house-heart house"></i></a>
-        </div>
-        <div class="pro">
-          <img src="/imagesAdopcion/adopcionGatos/rumiCat.png.jpg" alt="" />
-          <div class="des">
-            <h5>Rumi</h5>
-            <span>Tamaño</span>
+            <h5><%= adopcionPet[i].namePet %></h5>
+            <span><%= adopcionPet[i].sizeNewPet %></span>
 
             <div class="star">
               <i class="fas fa-solid fa-cat"></i>
             </div>
-            <h4>2 Meses - Macho</h4>
+            <h4>
+              <%= adopcionPet[i].edadPet %> - <%= adopcionPet[i].gender %>
+            </h4>
           </div>
-          <a href="#"><i class="fa-regular fa-house-heart house"></i></a>
+          <a class="house" href="#"><i class="fa-solid fa-house"></i></a>
         </div>
-        <div class="pro">
-          <img src="/imagesAdopcion/adopcionGatos/sonsoCat.png" alt="" />
-          <div class="des">
-            <h5>Sonso</h5>
-            <span>Tamaño</span>
-
-            <div class="star">
-              <i class="fas fa-solid fa-cat"></i>
-            </div>
-            <h4>3 Meses - Macho</h4>
-          </div>
-          <a href="#"><i class="fa-regular fa-house-heart house"></i></a>
-        </div>
-        <div class="pro">
-          <img src="/imagesAdopcion/adopcionGatos/tuliCat.png" alt="" />
-          <div class="des">
-            <h5>Tuli</h5>
-            <span>Tamaño</span>
-
-            <div class="star">
-              <i class="fas fa-solid fa-cat"></i>
-              <i class="fas fa-solid fa-cat"></i>
-              <i class="fas fa-solid fa-cat"></i>
-            </div>
-            <h4>3 Años - Macho</h4>
-          </div>
-          <a href="#"><i class="fa-regular fa-house-heart house"></i></a>
-        </div>
-        <div class="pro">
-          <img src="/imagesAdopcion/adopcionGatos/poluxCat.png" alt="" />
-          <div class="des">
-            <h5>Polux</h5>
-            <span>Tamaño</span>
-
-            <div class="star">
-              <i class="fas fa-solid fa-cat"></i>
-              <i class="fas fa-solid fa-cat"></i>
-            </div>
-            <h4>4 Años - Macho</h4>
-          </div>
-          <a href="#"><i class="fa-regular fa-house-heart house"></i></a>
-        </div>
-        <div class="pro">
-          <img src="/imagesAdopcion/adopcionGatos/rumiCat.png.jpg" alt="" />
-          <div class="des">
-            <h5>Rumi</h5>
-            <span>Tamaño</span>
-
-            <div class="star">
-              <i class="fas fa-solid fa-cat"></i>
-            </div>
-            <h4>2 Meses - Macho</h4>
-          </div>
-          <a href="#"><i class="fa-regular fa-house-heart house"></i></a>
-        </div>
-        <div class="pro">
-          <img src="/imagesAdopcion/adopcionGatos/sonsoCat.png" alt="" />
-          <div class="des">
-            <h5>Sonso</h5>
-            <span>Tamaño</span>
-
-            <div class="star">
-              <i class="fas fa-solid fa-cat"></i>
-            </div>
-            <h4>3 Meses - Macho</h4>
-          </div>
-          <a href="#"><i class="fa-regular fa-house-heart house"></i></a>
-        </div>
-        <div class="pro">
-          <img src="/imagesAdopcion/adopcionGatos/tuliCat.png" alt="" />
-          <div class="des">
-            <h5>Tuli</h5>
-            <span>Tamaño</span>
-
-            <div class="star">
-              <i class="fas fa-solid fa-cat"></i>
-              <i class="fas fa-solid fa-cat"></i>
-              <i class="fas fa-solid fa-cat"></i>
-            </div>
-            <h4>3 Años - Macho</h4>
-          </div>
-          <a href="#"><i class="fa-regular fa-house-heart house"></i></a>
-        </div>
+        <%}%>
       </div>
     </section>
 

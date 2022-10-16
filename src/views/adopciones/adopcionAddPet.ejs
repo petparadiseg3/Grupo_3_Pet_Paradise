@@ -7,47 +7,51 @@
 
     <form action="/addPet/save" method="post" enctype="multipart/form-data">
       <div class="form__row">
-        <input type="text" id="namePet" required />
+        <input type="text" id="namePet" name="namePet" required />
         <label for="namePet">Nombre de la Mascota</label>
       </div>
 
       <div class="form__row">
-        <input type="email" id="emailPet" required />
+        <input type="email" id="emailPet" name="emailPet" required />
         <label for="emailPet">Email Contacto</label>
       </div>
       <div class="form__row">
-        <input type="number" id="phonePet" required />
+        <input type="number" id="phonePet" name="phonePet" required />
         <label for="phonePet">Telefono</label>
       </div>
       <div class="form__row">
-        <input type="number" id="edadPet" required />
+        <input type="number" id="edadPet" name="edadPet" required />
         <label for="edadPet">Edad</label>
       </div>
       <div class="form__row">
-        <input type="text" id="ciudadPet" required />
+        <input type="text" id="ciudadPet" name="cityPet" required />
         <label for="ciudadPet">Ciudad</label>
       </div>
 
       <div class="form__row">
-        <input type="number" id="cpPet" required />
+        <input type="number" id="cpPet" name="cpPet" required />
         <label for="cpPet">CP</label>
       </div>
 
       <div class="form__raw">
         <span>Tipo de Mascota</span><br />
         <label>
-          <input type="radio" id="newPetPerro" name="newPet" value="perro" />
+          <input
+            type="radio"
+            id="newPetPerro"
+            name="newPetType"
+            value="perro" />
           Perro
         </label>
         <label>
-          <input type="radio" id="newPetGato" name="newPet" value="gato" />
+          <input type="radio" id="newPetGato" name="newPetType" value="gato" />
           Gato
         </label>
         <label>
           <input
             type="radio"
             id="newPetOtro"
-            name="newPet"
+            name="newPetType"
             value="otroAnimal" />
           Otro
         </label>
@@ -144,6 +148,7 @@
         Descripcion de la personalidad de la mascota
         <textarea
           id="textarea"
+          name="descriptions"
           cols="30"
           rows="10"
           placeholder="Completar aqui"
@@ -170,6 +175,16 @@
             required />
           No
         </label>
+
+        <div class="form__raw">
+          <label class="elementoA" for="pass">Foto de la Mascota:</label>
+          <input
+            class="elementoB form-control"
+            type="file"
+            name="picturePet"
+            id="picturePet"
+            accept="image/*" />
+        </div>
       </div>
 
       <button type="submit">Registrar Mascota</button>
