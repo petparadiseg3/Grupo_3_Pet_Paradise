@@ -17,14 +17,9 @@ module.exports = [
     .isLength({ min: 2 })
     .withMessage("El apellido debe contener 2 caracteres"),
   body("email")
-    .trim()
-    .isEmpty()
-    .withMessage("Tienes que escribir un email")
-    .bail()
-    .escape()
     .normalizeEmail()
     .isEmail()
-    .withMessage("Debes escribir un formato de correo válido"),
+    .withMessage("Debes escribir un formato de correo válidoooo"),
   body("phone")
     .trim()
     .escape()
