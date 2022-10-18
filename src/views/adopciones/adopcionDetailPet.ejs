@@ -5,7 +5,7 @@
     <%- include("./partialsAdopciones/headerAdopciones.ejs") %>
 
     <section id="prodetails" class="section-p1">
-      <% for(let i=0; i < adopcionPet[i].id ; i++){ %>
+      <%= adopcionPet[i].id %>
       <div class="single-pro-image">
         <img
           src="/images-back/imagenesAdopcion/<%=adopcionPet[i].picturePet %>"
@@ -29,7 +29,7 @@
         <h4>Detalles de la Mascota</h4>
         <span><%= adopcionPet[i].descriptions %></span>
       </div>
-      <%}%>
+      %>
     </section>
 
     <%- include("./partialsAdopciones/galleryAdopciones.ejs") %> <%-
@@ -37,3 +37,47 @@
     include("./partialsAdopciones/footerAdopciones.ejs") %>
   </body>
 </html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <%- include("./partialsAdopciones/headAdopciones.ejs") %>
+  <body>
+    <%- include("./partialsAdopciones/headerAdopciones.ejs") %>
+
+    <section id="prodetails" class="section-p1">
+      <div class="single-pro-image">
+        <img
+          src="/images-back/imagenesAdopcion/gatos/poluxCat.png"
+          width="100%"
+          id="MainImg"
+          alt="" />
+      </div>
+
+      <div class="single-pro-details">
+        <div class="des">
+          <h1>Coco</h1>
+          <span>Tamaño</span>
+
+          <div class="star">
+            <i class="fas fa-solid fa-cat"></i>
+          </div>
+          <h4>7 Años - Hembra</h4>
+        </div>
+        <button class="normal">Adoptar</button>
+
+        <h4>Detalles de la Mascota</h4>
+        <span
+          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+          nobis praesentium architecto cupiditate. Ratione aspernatur tempora,
+          doloremque doloribus quasi assumenda asperiores nemo at animi esse in
+          distinctio fuga commodi a?</span
+        >
+      </div>
+    </section>
+
+    <%- include("./partialsAdopciones/galleryAdopciones.ejs") %> <%-
+    include("./partialsAdopciones/formAdopciones.ejs") %> <%-
+    include("./partialsAdopciones/footerAdopciones.ejs") %>
+  </body>
+</html> -->
