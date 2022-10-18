@@ -33,10 +33,12 @@ const adopcionController = {
   },
 
   adopcionDetailPet: (req, res) => {
-    res.render(path.join(__dirname, "../views/adopciones/adopcionDetailPet.ejs"), {
-      adopcionPet,
-    });
-    
+    res.render(
+      path.join(__dirname, "../views/adopciones/adopcionDetailPet.ejs"),
+      {
+        adopcionPet,
+      }
+    );
   },
   // Formulario de creación de productos/Mascotas view
   adopcionAddPet: (req, res) => {
