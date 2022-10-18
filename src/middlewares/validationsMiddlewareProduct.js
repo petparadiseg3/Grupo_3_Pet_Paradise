@@ -7,6 +7,12 @@ module.exports = [
         .bail()
         .isLength({ min: 5 }).withMessage(" tener aDebel menos 5 caracteres de largo"),
 
+    body("brand")
+        .notEmpty().withMessage("Tienes que seleccionar una marca"),
+
+    body("category")
+        .notEmpty().withMessage("Tienes que seleccionar una categoria"),
+
     body("descriptions")
         .notEmpty().withMessage("Tienes que escribir una descripción")
         .bail()

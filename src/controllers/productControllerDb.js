@@ -13,34 +13,27 @@ let productController = {
     let allProducts = await db.Product.findAll();
     let allCategories = await db.Category.findAll();
 
-    // res.json(
-    //   allCategories
-    // )
-
     return res.render("productos/addProduct.ejs", {
-            'allBrands':allBrands,
-            'allProducts':allProducts,
-            'allCategories':allCategories,
-          }
-    )
+          allBrands:allBrands,
+          allProducts:allProducts,
+          allCategories:allCategories,
+    });
 
-    // Promise.all([alllBrands, alllProducts, alllCategories]).then(
-    //   ([allBrands, allProducts, allCategories]) => {
-    //     return res.render("productos/addProduct.ejs", {
-    //       allBrands,
-    //       allProducts,
-    //       allCategories,
-    //     });
-    //   }
-    // ); BOORRAR EL PROMISE.ALL
   },
 
   guardado: async function (req, res) {
+
+    allBrands = await db.Brand.findAll();
+    allCategories = await db.Category.findAll();
+    
+
     const resultValidation = validationResult(req);
     if (resultValidation.errors.length > 0) {
       return res.render("productos/addProduct", {
         errors: resultValidation.mapped(),
         oldData: req.body,
+        allBrands,
+        allCategories
       });
     }
     

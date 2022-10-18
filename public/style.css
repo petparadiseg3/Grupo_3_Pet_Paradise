@@ -1015,6 +1015,7 @@ body {
 
 .container--flex {
   display: flex;
+  flex-wrap: wrap;
   margin: 25px 0;
   align-items: center;
   justify-content: space-evenly;
