@@ -12,7 +12,7 @@
         "gender": "Female",
         "vacuna": false,
         "castrada": false,
-        "descriptions": null,
+        "descriptions": "lorem ipsum dolor sit amet, consectetur adipisicing    elit, sed do eiusmod tempor incididunt ut",
         "origenStreet": true,
         "picturePet": "coco.jpg"
     },
@@ -29,7 +29,7 @@
         "gender": "Male",
         "vacuna": false,
         "castrada": true,
-        "descriptions": null,
+        "descriptions": "lorem ipsum dolor sit amet, consectetur adipisicing    elit, sed do eiusmod tempor incididunt ut",
         "origenStreet": false,
         "picturePet": "thor.jpg"
     },
@@ -46,7 +46,7 @@
         "gender": "Female",
         "vacuna": false,
         "castrada": true,
-        "descriptions": null,
+        "descriptions": "lorem ipsum dolor sit amet, consectetur adipisicing    elit, sed do eiusmod tempor incididunt ut",
         "origenStreet": false,
         "picturePet": "rocky.jpg"
     },
@@ -63,7 +63,7 @@
         "gender": "Male",
         "vacuna": true,
         "castrada": true,
-        "descriptions": null,
+        "descriptions": "lorem ipsum dolor sit amet, consectetur adipisicing    elit, sed do eiusmod tempor incididunt ut",
         "origenStreet": false,
         "picturePet": "bruno.jpg"
     },
@@ -80,7 +80,7 @@
         "gender": "Male",
         "vacuna": true,
         "castrada": false,
-        "descriptions": null,
+        "descriptions": "lorem ipsum dolor sit amet, consectetur adipisicing    elit, sed do eiusmod tempor incididunt ut",
         "origenStreet": false,
         "picturePet": "bruno.jpg"
     },

@@ -5,34 +5,31 @@
     <%- include("./partialsAdopciones/headerAdopciones.ejs") %>
 
     <section id="prodetails" class="section-p1">
+      <% for(let i=0; i < adopcionPet[i].id ; i++){ %>
       <div class="single-pro-image">
         <img
-          src="/images-back/imagenesAdopcion/gatos/poluxCat.png"
+          src="/images-back/imagenesAdopcion/<%=adopcionPet[i].picturePet %>"
           width="100%"
-          id="MainImg"
+          id="<%= adopcionPet[i].id %>"
           alt="" />
       </div>
 
       <div class="single-pro-details">
         <div class="des">
-          <h1>Coco</h1>
-          <span>Tamaño</span>
+          <h1><%= adopcionPet[i].namePet %></h1>
+          <span><%= adopcionPet[i].sizeNewPet %></span>
 
           <div class="star">
             <i class="fas fa-solid fa-cat"></i>
           </div>
-          <h4>7 Años - Hembra</h4>
+          <h4><%= adopcionPet[i].edadPet %> - <%= adopcionPet[i].gender %></h4>
         </div>
         <button class="normal">Adoptar</button>
 
         <h4>Detalles de la Mascota</h4>
-        <span
-          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-          nobis praesentium architecto cupiditate. Ratione aspernatur tempora,
-          doloremque doloribus quasi assumenda asperiores nemo at animi esse in
-          distinctio fuga commodi a?</span
-        >
+        <span><%= adopcionPet[i].descriptions %></span>
       </div>
+      <%}%>
     </section>
 
     <%- include("./partialsAdopciones/galleryAdopciones.ejs") %> <%-
