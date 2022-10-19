@@ -45,8 +45,32 @@
       </div>
     </section>
 
-    <%- include("./partialsAdopciones/galleryAdopciones.ejs") %> <%-
-    include("./partialsAdopciones/formAdopciones.ejs") %> <%-
-    include("./partialsAdopciones/footerAdopciones.ejs") %>
+    <section id="product1" class="section-p1">
+      <div class="pro-container">
+        <% for(let i=0; i < adopcionPet.length ; i++){ %>
+        <div class="pro">
+          <img
+            src="/images-back/imagenesAdopcion/<%=adopcionPet[i].picturePet %>"
+            alt="" />
+          <div class="des">
+            <h5><%= adopcionPet[i].namePet %></h5>
+            <span><%= adopcionPet[i].sizeNewPet %></span>
+
+            <div class="star">
+              <i class="fas fa-solid fa-dog"></i>
+            </div>
+            <h4>
+              <%= adopcionPet[i].edadPet %> - <%= adopcionPet[i].gender %>
+            </h4>
+          </div>
+          <a class="house" href="#"><i class="fa-solid fa-house"></i></a>
+        </div>
+        <%}%>
+      </div>
+    </section>
+
+    <%- include("./partialsAdopciones/galleryAdopciones.ejs") %>
+    <%-include("./partialsAdopciones/formAdopciones.ejs") %>
+    <%-include("./partialsAdopciones/footerAdopciones.ejs") %>
   </body>
 </html>

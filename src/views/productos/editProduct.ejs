@@ -9,8 +9,7 @@
         action="/products/<%= product.id %>/edit?_method=PUT"
         method="POST"
         class="form-register"
-        enctype="multipart/form-data"
-      >
+        enctype="multipart/form-data">
         <h1 class="form__title">
           Editar producto <%= product.name_product %>:
         </h1>
@@ -25,8 +24,7 @@
             placeholder="p.ejemplo: Pedigre Premium"
             value="<%= product.id %>"
             required
-            block
-          />
+            block />
         </div>
         <div class="container--flex">
           <label for="" class="form__label">Nombre del producto:</label
@@ -36,8 +34,7 @@
             name="name"
             placeholder="p.ejemplo: Pedigre Premium"
             value="<%= product.name %>"
-            required
-          />
+            required />
         </div>
         <div class="container--flex">
           <label for="" class="form__label">Descripción del producto:</label
@@ -47,27 +44,24 @@
             name="descriptions"
             placeholder="p.ejemplo: Alimento para perros a base de pollo"
             value="<%= product.descriptions %>"
-            required
-          />
+            required />
         </div>
-        <div class="container--flex">
-          
-        </div>
+        <div class="container--flex"></div>
         <div class="container--flex">
           <label for="" class="form__label">Marca del producto:</label>
-          
+
           <select name="brand">
             <option value="" disabled selected>- Seleccione la Marca -</option>
             <% allBrands.forEach(bra=>{ %>
             <option value="<%= bra.id %>"><%= bra.name%></option>
             <% }) %>
           </select>
-
         </div>
         <div class="container--flex">
-          
           <select name="category">
-            <option value="" disabled selected>- Seleccione la categoria -</option>
+            <option value="" disabled selected>
+              - Seleccione la categoria -
+            </option>
             <% allCategories.forEach(cat=>{ %>
             <option value="<%= cat.id %>"><%= cat.name%></option>
             <% }) %>
@@ -81,22 +75,16 @@
             name="size"
             placeholder="p.ejemplo: 1kg - 3kg - 5kg"
             value="<%= product.size %>"
-            required
-          />
+            required />
         </div>
-        <input
-          type="hidden"
-          name="oldImagen"
-          value="<%= product.image %>"
-        />
+        <input type="hidden" name="oldImagen" value="<%= product.image %>" />
         <div class="container--flex">
           <label for="" class="form__label">Foto del producto:</label
           ><input type="file" class="form__file" name="image" />
           <img
             style="width: 100px"
             src="images/product/<%= product.image %>"
-            alt=""
-          />
+            alt="" />
         </div>
         <div class="container--flex">
           <label for="" class="form__label">Precio:</label
@@ -106,8 +94,7 @@
             name="price"
             placeholder="1500"
             value="<%= product.price %>"
-            required
-          />
+            required />
         </div>
         <div class="container--flex">
           <input type="submit" class="form__submit" value="Actualizar" />

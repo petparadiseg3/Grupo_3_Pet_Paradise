@@ -7,128 +7,25 @@
 
     <section id="product1" class="section-p1">
       <div class="pro-container">
-        <div class="pro">
-          <img src="/images/pet/imagen11a-1200x800.jpg" alt="" />
-          <div class="des">
-            <h5>Coco</h5>
-            <span>Tamaño</span>
-
-            <div class="star">
-              <i class="fas fa-solid fa-dog"></i>
-              <i class="fas fa-solid fa-dog"></i>
-            </div>
-            <h4>7 Años - Hembra</h4>
-          </div>
-          <a href="#"><i class="fa-regular fa-house-heart house"></i></a>
-        </div>
-        <div class="pro">
-          <img src="/images/pet/imagen14a-1200x800.jpg" alt="" />
-          <div class="des">
-            <h5>Thor</h5>
-            <span>Tamaño</span>
-
-            <div class="star">
-              <i class="fas fa-solid fa-dog"></i>
-              <i class="fas fa-solid fa-dog"></i>
-              <i class="fas fa-solid fa-dog"></i>
-            </div>
-            <h4>6 Años</h4>
-          </div>
-          <a href="#"><i class="fa-regular fa-house-heart house"></i></a>
-        </div>
-        <div class="pro">
-          <img src="/images/pet/imagen16a-1200x800.jpg" alt="" />
-          <div class="des">
-            <h5>Rocky</h5>
-            <span>Tamaño</span>
-
-            <div class="star">
-              <i class="fas fa-solid fa-dog"></i>
-            </div>
-            <h4>2 Años</h4>
-          </div>
-          <a href="#"><i class="fa-regular fa-house-heart house"></i></a>
-        </div>
-        <div class="pro">
-          <img src="/images/pet/imagen20a-1200x800.jpg" alt="" />
-          <div class="des">
-            <h5>Bruno</h5>
-            <span>Tamaño</span>
-
-            <div class="star">
-              <i class="fas fa-solid fa-dog"></i>
-            </div>
-            <h4>1 Año</h4>
-          </div>
-          <a href="#"><i class="fa-regular fa-house-heart house"></i></a>
-        </div>
+        <% for(let i=0; i < adopcionPet.length ; i++){ %>
         <div class="pro">
           <img
-            src="https://media.npr.org/assets/img/2020/03/27/dogs-coronavirus-7ddabfde75121f5020c307e134cb60dfa746fe1c-s800-c85.jpg"
+            src="/images-back/imagenesAdopcion/<%=adopcionPet[i].picturePet %>"
             alt="" />
           <div class="des">
-            <h5>Floki</h5>
-            <span>Tamaño</span>
+            <h5><%= adopcionPet[i].namePet %></h5>
+            <span><%= adopcionPet[i].sizeNewPet %></span>
 
             <div class="star">
               <i class="fas fa-solid fa-dog"></i>
-              <i class="fas fa-solid fa-dog"></i>
             </div>
-            <h4>5 Años - Macho</h4>
+            <h4>
+              <%= adopcionPet[i].edadPet %> - <%= adopcionPet[i].gender %>
+            </h4>
           </div>
-          <a href="#"><i class="fas fas-solid fa-house-heart house"></i></a>
+          <a class="house" href="#"><i class="fa-solid fa-house"></i></a>
         </div>
-        <div class="pro">
-          <img
-            src="https://media.npr.org/assets/img/2020/03/27/dogs-coronavirus-7ddabfde75121f5020c307e134cb60dfa746fe1c-s800-c85.jpg"
-            alt="" />
-          <div class="des">
-            <h5>Floki</h5>
-            <span>Tamaño</span>
-
-            <div class="star">
-              <i class="fas fa-solid fa-dog"></i>
-              <i class="fas fa-solid fa-dog"></i>
-              <i class="fas fa-regular fa-dog"></i>
-            </div>
-            <h4>5 Años</h4>
-          </div>
-          <a href="#"><i class="fa-regular fa-house-heart house"></i></a>
-        </div>
-        <div class="pro">
-          <img
-            src="https://media.npr.org/assets/img/2020/03/27/dogs-coronavirus-7ddabfde75121f5020c307e134cb60dfa746fe1c-s800-c85.jpg"
-            alt="" />
-          <div class="des">
-            <h5>Floki</h5>
-            <span>Tamaño</span>
-
-            <div class="star">
-              <i class="fas fa-solid fa-dog"></i>
-              <i class="fas fa-solid fa-dog"></i>
-              <i class="fas fa-regular fa-dog"></i>
-            </div>
-            <h4>5 Años</h4>
-          </div>
-          <a href="#"><i class="fa-regular fa-house-heart house"></i></a>
-        </div>
-        <div class="pro">
-          <img
-            src="https://media.npr.org/assets/img/2020/03/27/dogs-coronavirus-7ddabfde75121f5020c307e134cb60dfa746fe1c-s800-c85.jpg"
-            alt="" />
-          <div class="des">
-            <h5>Floki</h5>
-            <span>Tamaño</span>
-
-            <div class="star">
-              <i class="fas fa-solid fa-dog"></i>
-              <i class="fas fa-solid fa-dog"></i>
-              <i class="fas fa-regular fa-dog"></i>
-            </div>
-            <h4>5 Años</h4>
-          </div>
-          <a href="#"><i class="fa-regular fa-house-heart house"></i></a>
-        </div>
+        <%}%>
       </div>
     </section>
 

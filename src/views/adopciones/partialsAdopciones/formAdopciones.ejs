@@ -1,292 +1,224 @@
-    <form>
-      <div class="form__row">
-        <input type="text" id="name" />
-        <label for="name">Nombre</label>
-      </div>
-      <div class="form__row">
-        <input type="text" id="last-Name" />
-        <label for="last-Name">Apellidos</label>
-      </div>
-      <div class="form__row">
-        <input type="email" id="email" />
-        <label for="email">Email</label>
-      </div>
-      <div class="form__row">
-        <input type="number" id="phone" />
-        <label for="phone">Telefono</label>
-      </div>
-      <div class="form__row">
-        <input type="number" id="edad" />
-        <label for="phone">Edad</label>
-      </div>
-      <div class="form__row">
-        <input type="number" id="Ciudad" />
-        <label for="phone">Ciudad</label>
-      </div>
-      <div class="form__row">
-        <input type="number" id="direccion" />
-        <label for="phone">Dirección</label>
-      </div>
-      <div class="form__row">
-        <input type="number" id="cp" />
-        <label for="phone">CP</label>
-      </div>
+<form>
+  <div class="form__row">
+    <input type="text" id="name" />
+    <label for="name">Nombre</label>
+  </div>
+  <div class="form__row">
+    <input type="text" id="last-Name" />
+    <label for="last-Name">Apellidos</label>
+  </div>
+  <div class="form__row">
+    <input type="email" id="email" />
+    <label for="email">Email</label>
+  </div>
+  <div class="form__row">
+    <input type="number" id="phone" />
+    <label for="phone">Telefono</label>
+  </div>
+  <div class="form__row">
+    <input type="number" id="edad" />
+    <label for="age">Edad</label>
+  </div>
+  <div class="form__row">
+    <input type="text" id="Ciudad" />
+    <label for="city">Ciudad</label>
+  </div>
+  <div class="form__row">
+    <input type="text" id="direccion" />
+    <label for="adress">Dirección</label>
+  </div>
+  <div class="form__row">
+    <input type="number" id="cp" />
+    <label for="cp">CP</label>
+  </div>
 
-      <div class="form__raw">
-        <span>Que mascota quieres adoptar?</span><br />
-        <label>
-          <input
-            type="radio"
-            id="inp_pref_perro"
-            name="Preferencia"
-            value="perro" />
-          Perro
-        </label>
-        <label>
-          <input
-            type="radio"
-            id="inp_pref_gato"
-            name="Preferencia"
-            value="gato" />
-          Gato
-        </label>
-        <label>
-          <input
-            type="radio"
-            id="inp_pref_gato"
-            name="Preferencia"
-            value="otroAnimal
+  <div class="form__raw">
+    <span>Que mascota quieres adoptar?</span><br />
+    <label>
+      <input type="radio" id="prefPetPerro" name="prefPet" value="perro" />
+      Perro
+    </label>
+    <label>
+      <input type="radio" id="prefPetGato" name="prefPet" value="gato" />
+      Gato
+    </label>
+    <label>
+      <input
+        type="radio"
+        id="prefPetOtro"
+        name="prefPet"
+        value="otroAnimal
           " />
-          Otro
-        </label>
-      </div>
+      Otro
+    </label>
+  </div>
 
-      <div class="form__raw">
-        <span>Vive en</span><br />
-        <label>
-          <input
-            type="radio"
-            id="inp_pref_perro"
-            name="Preferencia"
-            value="perro" />
-          Casa
-        </label>
-        <label>
-          <input
-            type="radio"
-            id="inp_pref_gato"
-            name="Preferencia"
-            value="gato" />
-          Departamento
-        </label>
-      </div>
+  <div class="form__raw">
+    <span>Vive en</span><br />
+    <label>
+      <input type="radio" id="homeHouse" name="home" value="casa" />
+      Casa
+    </label>
+    <label>
+      <input type="radio" id="homeApartment" name="home" value="apartamento" />
+      Apartamento
+    </label>
+  </div>
 
-      <div class="form__raw">
-        <span>¿Con quien vive?</span><br />
-        <label>
-          <input
-            type="radio"
-            id="inp_pref_perro"
-            name="Preferencia"
-            value="perro" />
-          Pareja
-        </label>
-        <label>
-          <input
-            type="radio"
-            id="inp_pref_gato"
-            name="Preferencia"
-            value="gato" />
-          Solo
-        </label>
-        <label>
-          <input
-            type="radio"
-            id="inp_pref_gato"
-            name="Preferencia"
-            value="otroAnimal
+  <div class="form__raw">
+    <span>¿Con quien vive?</span><br />
+    <label>
+      <input type="radio" id="homeCouple" name="owner" value="pareja" />
+      Pareja
+    </label>
+    <label>
+      <input type="radio" id="homeAlone" name="owner" value="solo" />
+      Solo
+    </label>
+    <label>
+      <input
+        type="radio"
+        id="homeKids"
+        name="owner"
+        value="hijos
           " />
-          Hijos
-        </label>
-      </div>
+      Hijos
+    </label>
+  </div>
 
-      <div class="form__raw">
-        <span>¿Estan todos de acuerdo con adoptar?</span><br />
-        <label>
-          <input
-            type="radio"
-            id="inp_pref_perro"
-            name="Preferencia"
-            value="perro" />
-          Si
-        </label>
-        <label>
-          <input
-            type="radio"
-            id="inp_pref_gato"
-            name="Preferencia"
-            value="gato" />
-          No
-        </label>
-      </div>
+  <div class="form__raw">
+    <span>¿Estan todos de acuerdo con adoptar?</span><br />
+    <label>
+      <input type="radio" id="adoptSi" name="agreement" value="si" />
+      Si
+    </label>
+    <label>
+      <input type="radio" id="adoptNo" name="agreement" value="no" />
+      No
+    </label>
+  </div>
 
-      <div class="form__raw">
-        <span>¿Tenes mascotas?</span><br />
-        <label>
-          <input
-            type="radio"
-            id="inp_pref_perro"
-            name="Preferencia"
-            value="perro" />
-          Si
-        </label>
-        <label>
-          <input
-            type="radio"
-            id="inp_pref_gato"
-            name="Preferencia"
-            value="gato" />
-          No
-        </label>
-      </div>
+  <div class="form__raw">
+    <span>¿Tenes mascotas?</span><br />
+    <label>
+      <input type="radio" id="otherPetSi" name="otherPet" value="si" />
+      Si
+    </label>
+    <label>
+      <input type="radio" id="otherPetNo" name="otherPet" value="no" />
+      No
+    </label>
+  </div>
 
-      <div class="form__raw">
-        ¿Cuantas horas al dia la mascota estaria sola?
-        <textarea
-          id="textarea"
-          cols="30"
-          rows="10"
-          placeholder="Completar aqui"></textarea>
-      </div>
+  <div class="form__raw">
+    ¿Cuantas horas al dia la mascota estaria sola?
+    <textarea
+      id="textarea"
+      cols="30"
+      rows="10"
+      placeholder="Completar aqui"></textarea>
+  </div>
 
-      <div class="form__raw">
-        ¿Por que quieres adoptar?
-        <textarea
-          id="textarea"
-          cols="30"
-          rows="10"
-          placeholder="Completar aqui"></textarea>
-      </div>
+  <div class="form__raw">
+    ¿Por que quieres adoptar?
+    <textarea
+      id="textarea"
+      cols="30"
+      rows="10"
+      placeholder="Completar aqui"></textarea>
+  </div>
 
-      <div class="form__raw">
-        <span>¿Tenes disponibilidad para pasear?</span><br />
-        <label>
-          <input
-            type="radio"
-            id="inp_pref_perro"
-            name="Preferencia"
-            value="perro" />
-          Si
-        </label>
-        <label>
-          <input
-            type="radio"
-            id="inp_pref_gato"
-            name="Preferencia"
-            value="gato" />
-          No
-        </label>
-      </div>
+  <div class="form__raw">
+    <span>¿Tenes disponibilidad para pasear?</span><br />
+    <label>
+      <input type="radio" id="walkingSi" name="walkingTime" value="si" />
+      Si
+    </label>
+    <label>
+      <input type="radio" id="walkingNo" name="walkingTime" value="no" />
+      No
+    </label>
+    <label>
+      <input type="radio" id="walkingNA" name="walkingTime" value="na" />
+      NA
+    </label>
+  </div>
 
-      <div class="form__raw">
-        <span>En caso de viajar, ¿tenes quien lo cuide?</span><br />
-        <label>
-          <input
-            type="radio"
-            id="inp_pref_perro"
-            name="Preferencia"
-            value="perro" />
-          Si
-        </label>
-        <label>
-          <input
-            type="radio"
-            id="inp_pref_gato"
-            name="Preferencia"
-            value="gato" />
-          No
-        </label>
-      </div>
+  <div class="form__raw">
+    <span>En caso de viajar, ¿tenes quien lo cuide?</span><br />
+    <label>
+      <input type="radio" id="travelSi" name="travel" value="si" />
+      Si
+    </label>
+    <label>
+      <input type="radio" id="travelNo" name="travel" value="no" />
+      No
+    </label>
+  </div>
 
-      <div class="form__raw">
-        Gastos
-        <textarea
-          id="textarea"
-          cols="30"
-          rows="10"
-          placeholder="Describir quien se hace cargo"></textarea>
-      </div>
+  <div class="form__raw">
+    Gastos
+    <textarea
+      id="textarea"
+      cols="30"
+      rows="10"
+      placeholder="Describir quien se hace cargo"></textarea>
+  </div>
 
-      <div class="form__raw">
-        <span
-          >Estas de acuerdo con castrar o esterilizar a la mascota cumplidos los
-          8 meses de edad?</span
-        ><br />
-        <label>
-          <input
-            type="radio"
-            id="inp_pref_perro"
-            name="Preferencia"
-            value="perro" />
-          Si
-        </label>
-        <label>
-          <input
-            type="radio"
-            id="inp_pref_gato"
-            name="Preferencia"
-            value="gato" />
-          No
-        </label>
-      </div>
+  <div class="form__raw">
+    <span
+      >Estas de acuerdo con castrar o esterilizar a la mascota cumplidos los 8
+      meses de edad?</span
+    ><br />
+    <label>
+      <input type="radio" id="castrarSi" name="castrar" value="si" />
+      Si
+    </label>
+    <label>
+      <input type="radio" id="castrarNo" name="castrar" value="no" />
+      No
+    </label>
+  </div>
 
-      <div class="form__raw">
-        <span
-          >¿Está dispuesto y tendría la capacidad física y emocional para que la
-          mascota tenga un periodo de ajuste en el que se enseñe y aprenda las
-          normas y se adapte a la familia? </span
-        ><br />
-        <label>
-          <input
-            type="radio"
-            id="inp_pref_perro"
-            name="Preferencia"
-            value="perro" />
-          Si
-        </label>
-        <label>
-          <input
-            type="radio"
-            id="inp_pref_gato"
-            name="Preferencia"
-            value="gato" />
-          No
-        </label>
-      </div>
+  <div class="form__raw">
+    <span
+      >¿Está dispuesto y tendría la capacidad física y emocional para que la
+      mascota tenga un periodo de ajuste en el que se enseñe y aprenda las
+      normas y se adapte a la familia? </span
+    ><br />
+    <label>
+      <input
+        type="radio"
+        id="apoyoEmocionalSi"
+        name="apoyoEmocional"
+        value="si" />
+      Si
+    </label>
+    <label>
+      <input
+        type="radio"
+        id="apoyoEmocionalNo"
+        name="apoyoEmocional"
+        value="no" />
+      No
+    </label>
+  </div>
 
-      <div class="form__raw">
-        <span
-          >Si la adopción se concreta, está de acuerdo con las verificaciones
-          por correo electrónico, telefónica, redes sociales y de ser necesario
-          la realización de visitas al hogar? </span
-        ><br />
-        <label>
-          <input
-            type="radio"
-            id="inp_pref_perro"
-            name="Preferencia"
-            value="perro" />
-          Si
-        </label>
-        <label>
-          <input
-            type="radio"
-            id="inp_pref_gato"
-            name="Preferencia"
-            value="gato" />
-          No
-        </label>
-      </div>
+  <div class="form__raw">
+    <span
+      >Si la adopción se concreta, está de acuerdo con las verificaciones por
+      correo electrónico, telefónica, redes sociales y de ser necesario la
+      realización de visitas al hogar? </span
+    ><br />
+    <label>
+      <input type="radio" id="verifyInfoSi" name="verifyInfo" value="si" />
+      Si
+    </label>
+    <label>
+      <input type="radio" id="verifyInfoNo" name="verifyInfo" value="no" />
+      No
+    </label>
+  </div>
 
-      <button type="submit">Enviar Formulario</button>
-    </form>
+  <button type="submit">Enviar Formulario</button>
+</form>

@@ -38,7 +38,7 @@
             <div class="text-danger"><%= errors.descriptions.msg %></div>
           <% } %>
         </div>
-        
+
         <div class="container--flex">
           <label for="" class="form__label">Tamaños disponibles:</label>
           <ul>
@@ -54,13 +54,14 @@
 
         <div class="container--flex">
           <label for="" class="form__label">Marca del producto:</label>
-          
+
           <select name="brand">
             <option value="" disabled selected>- Seleccione la Marca -</option>
             <% allBrands.forEach(element=>{%>
             <option value="<%=element.id%>"><%= element.name%></option>
             <% }) %>
           </select>
+
           <% if (locals.errors && errors.brand) { %>
             <div class="text-danger"><%= errors.brand.msg %></div>
           <% } %>
@@ -68,7 +69,7 @@
         </div>
         <div class="container--flex">
           <label for="" class="form__label">Categoria:</label>
-          
+
           <select name="category">
             <option value="" disabled selected>- Seleccione la categoria -</option>
             <% allCategories.forEach(element=>{ %>
@@ -76,9 +77,13 @@
             <% }) %>
           </select>
 
+
           <% if (locals.errors && errors.category) { %>
             <div class="text-danger"><%= errors.category.msg %></div>
           <% } %>
+
+        
+
 
         </div>
         <!-- <div class="container--flex">
