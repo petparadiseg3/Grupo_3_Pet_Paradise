@@ -20,12 +20,7 @@ window.addEventListener("load", function () {
             field.classList.add("is-invalid");
             field.nextElementSibling.classList.add("text-danger");
             field.nextElementSibling.innerText = message; 
-        } else if(fieldValue.trim().length <= 4){
-            field.classList.add("is-invalid");
-    
-            field.nextElementSibling.classList.remove("text-danger");
-            field.nextElementSibling.innerText = "";
-        }
+        } 
     }
     
     
@@ -63,13 +58,28 @@ window.addEventListener("load", function () {
     
     productNameField.addEventListener("blur", (event) => validateEmptyField("El nombre no puede estar vacio", event));
     descriptionNameField.addEventListener("blur", (event) => validateEmptyField("La descripción no puede estar vacia", event));
-    sizeNameField.addEventListener("blur", (event) => validateEmptyField("El tamaño no puede estar vacio", event));
+    
+
     priceNameField.addEventListener("blur", (event) => validateEmptyField("El precio no puede estar vacio", event));
 
     
     productNameField.addEventListener("input",(event) => validateLong(5,"El nombre debe tener al menos cinco caracteres", event));
     descriptionNameField.addEventListener("input",(event) => validateLong(20,"La descripción debe tener al menos veinte caracteres", event));
+    sizeNameField.addEventListener("input", (event) => {
+        const field = event.target; 
+        const fieldValue = event.target.value; 
+    if(fieldValue.trim().length === 0){ 
+        field.classList.add("is-invalid");
+        field.nextElementSibling.classList.add("text-danger");
+        field.nextElementSibling.innerText = "El tamaño no puede estar vacio"; 
+    } else{
+        field.classList.remove("is-invalid");
+        field.classList.add("is-valid");
 
+        field.nextElementSibling.classList.remove("text-danger");
+        field.nextElementSibling.innerText = "";
+    }
+    });
 
     priceNameField.addEventListener("input", (event) => extPermitidas("Debes introducir un valor numérico", event));
     stockNameField.addEventListener("input", (event) => extPermitidas("Debes introducir un valor numérico", event));
