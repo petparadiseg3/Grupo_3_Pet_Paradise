@@ -1,3 +1,4 @@
+const { validationResult } = require("express-validator");
 const db = require("../database/models/index");
 const Weight = db.Weight;
 const Brand = db.Brand;
@@ -8,22 +9,34 @@ const Op = Sequelize.Op;
 
 let productController = {
   crear: async function (req, res) {
-    let alllBrands = db.Brand.findAll();
-    let alllProducts = db.Product.findAll();
-    let alllCategories = db.Category.findAll();
+    let allBrands = await db.Brand.findAll();
+    let allProducts = await db.Product.findAll();
+    let allCategories = await db.Category.findAll();
 
-    Promise.all([alllBrands, alllProducts, alllCategories]).then(
-      ([allBrands, allProducts, allCategories]) => {
-        return res.render("productos/addProduct.ejs", {
-          allBrands,
-          allProducts,
-          allCategories,
-        });
-      }
-    );
+    return res.render("productos/addProduct.ejs", {
+          allBrands:allBrands,
+          allProducts:allProducts,
+          allCategories:allCategories,
+    });
+
   },
 
   guardado: async function (req, res) {
+
+    allBrands = await db.Brand.findAll();
+    allCategories = await db.Category.findAll();
+    
+
+    const resultValidation = validationResult(req);
+    if (resultValidation.errors.length > 0) {
+      return res.render("productos/addProduct", {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+        allBrands,
+        allCategories
+      });
+    }
+    
     const {
       name,
       descriptions,
@@ -50,12 +63,12 @@ let productController = {
         product_id: product.id,
       });
 
-      await db.Weight.create({
-        size: size2,
-        stock: stock2,
-        price: price2,
-        product_id: product.id,
-      });
+      // await db.Weight.create({
+      //   size: size2,
+      //   stock: stock2,
+      //   price: price2,
+      //   product_id: product.id,
+      // });
 
       res.redirect("/products");
     } catch (error) {

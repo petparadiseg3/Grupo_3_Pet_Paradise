@@ -8,7 +8,7 @@
       <form
         action="/products/create"
         method="POST"
-        class="form-register"
+        class="form-register "
         enctype="multipart/form-data"
       >
         <h1 class="form__title">Agregar nuevo producto</h1>
@@ -17,31 +17,38 @@
           <label for="" class="form__label">Nombre del producto:</label
           ><input
             type="text"
-            class="form__input"
+            class="form__input form-control"
             name="name"
             placeholder="p.ejemplo: Pedigre Premium"
-            required
           />
+          <% if (locals.errors && errors.name) { %>
+            <div class="text-danger"><%= errors.name.msg %></div>
+          <% } %>
         </div>
+        
         <div class="container--flex">
           <label for="" class="form__label">Descripción del producto:</label
           ><input
             type="text"
-            class="form__input"
+            class="form__input form-control"
             name="descriptions"
             placeholder="p.ejemplo: Alimento para perros a base de pollo"
-            required
           />
+          <% if (locals.errors && errors.descriptions) { %>
+            <div class="text-danger"><%= errors.descriptions.msg %></div>
+          <% } %>
         </div>
+
         <div class="container--flex">
           <label for="" class="form__label">Tamaños disponibles:</label>
           <ul>
             <li>
               <label>Tamaño:</label>
-              <input type="text" name="size" />
+              <input class="form-control" type="text" name="size" />
+              <span></span>
             </li>
-            <li><label>Stock:</label> <input type="number" name="stock" /></li>
-            <li><label>Precio:</label> <input type="number" name="price" /></li>
+            <li><label>Stock:</label> <input class="form-control" type="number" name="stock" /> <span></span></li>
+            <li><label>Precio:</label> <input class="form-control" type="number" name="price" /> <span></span></li>
           </ul>
         </div>
 
@@ -50,26 +57,39 @@
 
           <select name="brand">
             <option value="" disabled selected>- Seleccione la Marca -</option>
-            <% allBrands.forEach(bra=>{ %>
-            <option value="<%= bra.id %>"><%= bra.name%></option>
+            <% allBrands.forEach(element=>{%>
+            <option value="<%=element.id%>"><%= element.name%></option>
             <% }) %>
           </select>
+
+          <% if (locals.errors && errors.brand) { %>
+            <div class="text-danger"><%= errors.brand.msg %></div>
+          <% } %>
+
         </div>
         <div class="container--flex">
           <label for="" class="form__label">Categoria:</label>
 
           <select name="category">
             <option value="" disabled selected>- Seleccione la categoria -</option>
-            <% allCategories.forEach(cat=>{ %>
-            <option value="<%= cat.id %>"><%= cat.name%></option>
+            <% allCategories.forEach(element=>{ %>
+            <option value="<%= element.id %>"><%= element.name%></option>
             <% }) %>
           </select>
-        </div>
 
+
+          <% if (locals.errors && errors.category) { %>
+            <div class="text-danger"><%= errors.category.msg %></div>
+          <% } %>
 
         
-        <div class="container--flex">
+
+
+        </div>
+        <!-- <div class="container--flex">
           <label for="" class="form__label">Tamaños disponibles:</label>
+allBrands is not defined
+
           <ul>
             <li>
               <label>Tamaño:</label>
@@ -80,23 +100,26 @@
               <label>Precio:</label> <input type="number" name="price2" />
             </li>
           </ul>
-        </div>
+        </div> -->
         <a href="">Agregar nuevo tamaño</a>
 
         <div class="container--flex">
           <label for="" class="form__label">Foto del producto:</label
           ><input type="file" class="form__file" name="image" />
+          <% if (locals.errors && errors.image) { %>
+            <div class="text-danger"><%= errors.image.msg %></div>
+          <% } %>
         </div>
-
         <div class="container--flex">
           <input type="submit" class="form__submit" />
+          
           <a href="/admin"
             ><input type="button" class="form__submit" value="Volver"
           /></a>
         </div>
       </form>
     </div>
-
+    <script src="/js/productJs.js"></script>
     <%- include('../partials/footer') %>
   </body>
 </html>
