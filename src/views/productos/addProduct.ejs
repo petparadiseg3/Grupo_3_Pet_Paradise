@@ -106,6 +106,7 @@ allBrands is not defined
         <div class="container--flex">
           <label for="" class="form__label">Foto del producto:</label
           ><input type="file" class="form__file form-control" name="image" />
+          <span></span>
           <% if (locals.errors && errors.image) { %>
             <div class="text-danger"><%= errors.image.msg %></div>
           <% } %>
