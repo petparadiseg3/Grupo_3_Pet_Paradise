@@ -11,14 +11,30 @@ const productAPIController = {
         .then(products => {
             let respuesta = {
                 meta: {
-                    status : 200,
-                    total : products.length,
-                    url : 'api/products'
+                    status: 200,
+                    total: products.length,
+                    url: 'api/products'
                 },
                 data: products
             }
                 res.json(respuesta);
         })
+    },
+
+    'detail': (req, res) => {
+        db.Product.findByPk(req.params.id)
+            .then(product => {
+                let respuesta = {
+                    meta: {
+                        status: 200,
+                        total: product.length,
+                        url: '/api/products/:id'
+                    },
+                    data: product
+                }
+                res.json(respuesta);
+            })
+
     }
 
 }
