@@ -3,6 +3,7 @@ const db = require("../../database/models");
 const Sequelize = db.sequelize;
 const { Op } = require("sequelize");
 
+
 const Category = db.Category;
 const Product = db.Product;
 
@@ -22,33 +23,73 @@ const Product = db.Product;
 };
 
 module.exports = productControllerAPI; */
-const Productoo = db.Product.findAll()
+
 
 const productAPIController = {
     
-
     list: (req, res) => {
-        db.Product.findAll({
-            include: [
-                {
-                    model: db.Category, as: 'categoria', 
-                    attributes: ['name']
-                }],
-            
 
+        let getProduct = db.Product.findAll({
+            include: 
+            [{
+                model: db.Category, as: 'categoria', 
+                attributes: ['name'],
+                       
+            }],       
+        });
 
-        }).then(result => {
-            
-            return res.status(200).json(result.map((e)=> {
-                return {
-                    id: e.id,
-                    name: e.name,
-                    descriptions: e.descriptions,
-                    detail: "/api/products/" + e.id,
-                    categoria:e.categoria
+        let getCategories = db.Category.findAll({ 
+            include: 
+            [{
+                model: db.Product, as: 'product', 
+                attributes: ['id','name'],
+                        
+            }],
+                            
+        });
+
+        Promise.all([getProduct, getCategories])
+            .then(([products, categories]) => {
+                let respuesta =  {
+
+                    meta: {
+                        status: 200,
+                        count: products.length,
+                        url: "api/products",
+                    },
+
+                    products : products.map((e) => {
+                        return {
+                            id: e.id,
+                            name: e.name,
+                            descriptions: e.descriptions,
+                            detail: "/api/products/" + e.id,
+                            category: e.categoria,
+                        };
+                    }),
+    
+                    categories: categories.map((e)=>{
+                        return {
+                            id: e.id,
+                            name:e.name,
+                            product:e.product,
+                        
+                        } 
+                    }),
+
+                    countByCategory: categories.map((e)=>{
+                        return {
+                            name:e.name,
+                            count:e.product.length,
+                       
+                        } 
+                    })
+                
                 }
-            }));
-        })
+                res.status(200).json(respuesta);  
+                  
+            })
+        .catch((error) => console.log(error));
     },
 
     detail: (req, res) => {
@@ -63,7 +104,7 @@ const productAPIController = {
                 };
                 res.json(respuesta);
             })
-            .catch((error) => console.log(error));
+        .catch((error) => console.log(error));
     },
 };
 
