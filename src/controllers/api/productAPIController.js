@@ -3,28 +3,6 @@ const db = require("../../database/models");
 const Sequelize = db.sequelize;
 const { Op } = require("sequelize");
 
-
-const Category = db.Category;
-const Product = db.Product;
-
-/* let productControllerAPI = {
-  buscador: async (req, res) => {
-    
-
-    try {
-      let allCategories = await Category.findAll();
-      let result = await Product.findAll({ where: {  } });
-
-      res.json(result);
-    } catch (error) {
-      console.log(error);
-    }
-  },
-};
-
-module.exports = productControllerAPI; */
-
-
 const productAPIController = {
     
     list: (req, res) => {
