@@ -21,6 +21,7 @@ const routerBrand = require("./routes/brandRoutes");
 const routerCategory = require("./routes/categoryRoutes");
 const routerAdopcion = require("./routes/adopcionRoutes");
 const routerAPI = require("./routes/apiRoutes");
+const apiProductsRouter = require("./routes/api/products")
 
 //Debemos indicar cual es el motor de plantillas que estamos usando EJS
 app.set("view engine", "ejs");
@@ -55,6 +56,7 @@ app.use("/brand", routerBrand);
 app.use("/category", routerCategory);
 app.use("/adopcion", routerAdopcion);
 app.use("/api", routerAPI);
+app.use('/api', apiProductsRouter);
 
 app.listen(3001, () => {
   console.log("Servidor escuchando en puerto 3001");
