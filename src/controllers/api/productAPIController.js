@@ -3,30 +3,26 @@ const db = require("../../database/models");
 const Sequelize = db.sequelize;
 const { Op } = require("sequelize");
 
+
 const productAPIController = {
     
     list: (req, res) => {
 
-        let getProduct = db.Product.findAll({
-            include: 
-            [{
-                model: db.Category, as: 'categoria', 
-                attributes: ['name'],
-                       
-            }],       
+        let getProducts = db.Product.findAll({
+            include: [
+                {model: db.Category, as: 'categoria', attributes: ['id','name']}
+            ],
+
         });
 
         let getCategories = db.Category.findAll({ 
-            include: 
-            [{
-                model: db.Product, as: 'product', 
-                attributes: ['id','name'],
-                        
-            }],
+            include: [
+                {model: db.Product, as: 'product', attributes: ['id','name']}
+            ],
                             
         });
 
-        Promise.all([getProduct, getCategories])
+        Promise.all([getProducts, getCategories])
             .then(([products, categories]) => {
                 let respuesta =  {
 
@@ -71,14 +67,26 @@ const productAPIController = {
     },
 
     detail: (req, res) => {
-        db.Product.findByPk(req.params.id)
+        db.Product.findByPk(req.params.id, {
+            include: [
+                {model: db.Category, as: 'categoria',attributes: ['id','name']},
+                {model: db.Brand, as: 'marca', attributes: ['id','name']}          
+            ],       
+        })
             .then((product) => {
                 let respuesta = {
                     meta: {
                         status: 200,
                         url: "/api/products/:id",
                     },
-                    data: product,
+                    data: {
+                        id: product.id,
+                        name: product.name,
+                        descriptions: product.descriptions,
+                        image: "http://localhost:3001/images-back/productos/" + product.image,
+                        brand: product.marca,
+                        category: product.categoria
+                    }
                 };
                 res.json(respuesta);
             })
