@@ -1,4 +1,3 @@
-const path = require("path");
 const db = require("../../database/models");
 const Sequelize = db.sequelize;
 const { Op } = require("sequelize");
