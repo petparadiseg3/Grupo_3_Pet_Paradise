@@ -51,7 +51,7 @@ const productAPIController = {
                             name: e.name,
                             descriptions: e.descriptions,
                             detail: "http://localhost:3001/api/products/" + e.id,
-                            category: e.categoria,
+                            category: e.categoria.name,
                             image: "http://localhost:3001/images-back/productos/" + e.image,
                         };
                     }),
