@@ -40,7 +40,7 @@ let apiController = {
         country: user.country,
         phone: user.phone,
         date: user.date,
-        picture_user: user.picture_user,
+        picture_user: "http://localhost:3001/images-back/usuarios/" + user.picture_user,
       };
       if (user.name) {
         res.status(200).json(theUser);
