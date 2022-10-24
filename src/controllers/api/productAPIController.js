@@ -4,26 +4,33 @@ const { Op } = require("sequelize");
 
 
 const productAPIController = {
-    
+
     list: (req, res) => {
 
         let getProducts = db.Product.findAll({
             include: [
-                {model: db.Category, as: 'categoria', attributes: ['id','name']}
+                { model: db.Category, as: 'categoria', attributes: ['id', 'name'] }
             ],
 
         });
 
-        let getCategories = db.Category.findAll({ 
+        let getCategories = db.Category.findAll({
             include: [
-                {model: db.Product, as: 'product', attributes: ['id','name']}
+                { model: db.Product, as: 'product', attributes: ['id', 'name'] }
             ],
-                            
+
         });
 
-        Promise.all([getProducts, getCategories])
-            .then(([products, categories]) => {
-                let respuesta =  {
+        let getBrands = db.Brand.findAll({
+            include: [
+                { model: db.Product, as: 'marcas', attributes: ['id', 'name'] }
+            ],
+
+        });
+
+        Promise.all([getProducts, getCategories, getBrands])
+            .then(([products, categories, brands]) => {
+                let respuesta = {
 
                     meta: {
                         status: 200,
@@ -31,46 +38,50 @@ const productAPIController = {
                         url: "api/products",
                     },
 
-                    products : products.map((e) => {
+                    countByCategory: categories.map((e) => {
+                        return {
+                            name: e.name,
+                            count: e.product.length,
+                        }
+                    }),
+
+                    products: products.map((e) => {
                         return {
                             id: e.id,
                             name: e.name,
                             descriptions: e.descriptions,
-                            detail: "/api/products/" + e.id,
+                            detail: "http://localhost:3001/api/products/" + e.id,
                             category: e.categoria,
+                            image: "http://localhost:3001/images-back/productos/" + e.image,
                         };
                     }),
-    
-                    categories: categories.map((e)=>{
+
+                    categories: categories.map((e) => {
                         return {
                             id: e.id,
-                            name:e.name,
-                            product:e.product,
-                        
-                        } 
+                            name: e.name,
+                            product: e.product,
+
+                        }
                     }),
 
-                    countByCategory: categories.map((e)=>{
-                        return {
-                            name:e.name,
-                            count:e.product.length,
-                       
-                        } 
-                    })
-                
+                    countCategories: categories.length,
+                    countBrands: brands.length,
+
+
                 }
-                res.status(200).json(respuesta);  
-                  
+                res.status(200).json(respuesta);
+
             })
-        .catch((error) => console.log(error));
+            .catch((error) => console.log(error));
     },
 
     detail: (req, res) => {
         db.Product.findByPk(req.params.id, {
             include: [
-                {model: db.Category, as: 'categoria',attributes: ['id','name']},
-                {model: db.Brand, as: 'marca', attributes: ['id','name']}          
-            ],       
+                { model: db.Category, as: 'categoria', attributes: ['id', 'name'] },
+                { model: db.Brand, as: 'marca', attributes: ['id', 'name'] }
+            ],
         })
             .then((product) => {
                 let respuesta = {
@@ -89,7 +100,7 @@ const productAPIController = {
                 };
                 res.json(respuesta);
             })
-        .catch((error) => console.log(error));
+            .catch((error) => console.log(error));
     },
 };
 

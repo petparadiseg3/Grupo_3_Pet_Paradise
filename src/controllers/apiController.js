@@ -9,16 +9,25 @@ let apiController = {
       let allUser = await User.findAll();
       let count = await User.count();
 
-      const users = allUser.map((e) => {
-        return {
-          id: e.id,
-          name: e.name,
-          email: e.email,
-          detail: "/api/users/" + e.id,
-        };
-      });
 
-      res.status(200).json([{ count }, { users }]);
+      let respuesta = {
+        meta: {
+          status: 200,
+          count: count,
+          url: "api/users",
+        },
+        users: allUser.map((e) => {
+          return {
+            id: e.id,
+            name: e.name,
+            email: e.email,
+            detail: "/api/users/" + e.id,
+          };
+        }),
+      }
+
+
+      res.status(200).json(respuesta);
     } catch (error) {
       res.status(500).send({
         message:

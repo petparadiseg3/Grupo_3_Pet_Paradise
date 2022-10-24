@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const methodOverride = require("method-override");
+var cors = require('cors')
 
 //? Aqui requiero los paquetes para trabajar lo referido a session y cookies
 const session = require("express-session");
@@ -42,6 +43,8 @@ app.use(
     saveUninitialized: false,
   })
 );
+
+app.use(cors({origin: "*",}))
 
 app.use(cookies());
 app.use(userLoggedMiddleware);
