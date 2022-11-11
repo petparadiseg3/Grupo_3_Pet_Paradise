@@ -9,7 +9,7 @@ const session = require("express-session");
 const cookies = require("cookie-parser");
 
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
-
+const userRole = require("./middlewares/userRole");
 //? Requerir el middleware que controla si el usuario está o no Logueado
 
 app.use(express.static(path.join(__dirname, "../public")));
@@ -48,6 +48,7 @@ app.use(cors({origin: "*",}))
 
 app.use(cookies());
 app.use(userLoggedMiddleware);
+app.use(userRole);
 
 //? Para indicarle express la carpeta donde se encuentran los archivos estáticos
 
